@@ -1,0 +1,245 @@
+/* Big screen :1200px. */
+@media (min-width: 1200px) and (max-width: 1500px) {
+
+
+}
+
+
+/* Normal screen :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .rightmenu button {
+        padding: 10px 10px;
+    }
+
+}
+
+ 
+/* Tablet screen :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero-wrp {
+        padding: 30px;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+    
+    .hero-wrp-left {
+        max-width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .footer-blk {
+        text-align: center;
+    }
+    
+    ul.social {
+        justify-content: center;
+    }
+    
+    .footer-blk p {
+        text-align: center;
+        display: block;
+    }
+    
+    .footer-blk .tosmenus {
+        text-align: center;
+        margin: 7px 0;
+        margin-top: 15px;
+    }
+     
+}
+
+ 
+/* small screen :320px. */
+@media (max-width: 767px) {
+    .hero-wrp {
+        padding: 20px;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+    
+    .hero-wrp-left {
+        max-width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .footer-blk {
+        text-align: center;
+    }
+    
+    ul.social {
+        justify-content: center;
+    }
+    
+    .footer-blk p {
+        text-align: center;
+        display: block;
+    }
+    
+    .footer-blk .tosmenus {
+        text-align: center;
+        margin: 7px 0;
+        margin-top: 15px;
+    }
+     
+    .hero-wrp-left h3 {
+        font-size: 22px;
+    }
+    
+    .infoBlk {
+        margin-bottom: 30px;
+    }
+    
+    .infoBlk h1 {
+        font-size: 50px;
+    }
+    
+    .info-wrp {
+        padding-bottom: 10px;
+    }
+    
+    .about-wrps {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        height: auto;
+        overflow: auto;
+    }
+    
+    .about-contents, .about-wrps .popupVideo {
+        display: block;
+        width: 100%;
+    }
+    
+    .about-wrps .popupVideo {
+        min-height: 200px;
+        height: 200px;
+    }
+    
+    .about-contents {
+        padding: 20px;
+    }
+    
+section.why-section {
+    padding: 30px 0;
+  }
+  .section-title h3 {
+    font-size: 28px;
+}
+.cta-wrp{
+    margin: 0;
+}
+.contact-wrp {
+    padding: 20px; 
+    margin: 40px 0; 
+}
+.contact-wrp button {
+    display: block;
+    width: 100%;
+}
+.contact-wrp button {
+    display: block;
+    width: 100%;
+}
+
+ul.addrLst {
+    flex-wrap: wrap;
+}
+
+ul.addrLst li {
+    width: 100%;
+}
+.testimonial-blk {
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.testimonial-blk img {
+    margin: auto;
+    margin-bottom: 20px;
+}
+.rightmenu button {
+    padding: 10px 11px;
+}
+
+.header-area {
+    padding: 15px 0;
+}
+.rightmenu button{
+    display: none;
+} 
+
+div#DemoVideo .modal-body iframe { 
+    height: 320px;
+}
+
+.hero-wrp-school {
+    padding: 90px 0;
+}
+
+.hero-wrp-school h3 {
+    font-size: 22px;
+}
+
+.hero-wrp-school p {
+    font-size: 15px;
+}
+
+.rightImg img {
+    display: block;
+    width: 100%;
+}
+
+.rightImg {
+    width: 100%;
+    height: 200px;
+}
+
+.about-contents ul {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.single_notice {
+    flex-wrap: wrap;
+}
+
+.single_notice button {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.single_notice-left {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.single_notice-left h5 {
+    font-size: 16px;
+}
+
+.spotlight-group a.spotlight {
+    width: 100px;
+    height: 100px;
+}
+section.events-section {
+    padding: 20px 0;
+}
+
+
+
+
+
+
+
+}
+ 
+/* Large Mobile screen :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.container {width:450px}
+
+.rightmenu button{
+    display: block;
+} 
+
+}

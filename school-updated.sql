@@ -1,0 +1,1710 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Oct 14, 2023 at 08:35 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `school`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `abouts`
+--
+
+CREATE TABLE `abouts` (
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` int NOT NULL,
+  `about` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `total_student` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `total_teacher` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `total_stuff` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `abouts`
+--
+
+INSERT INTO `abouts` (`id`, `user_id`, `about`, `slug`, `total_student`, `total_teacher`, `total_stuff`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1389, 'about', NULL, '120', '165410', '154', 1, NULL, '2023-09-11 01:11:44'),
+(2, 1391, NULL, NULL, NULL, NULL, NULL, 1, '2023-09-12 00:07:38', '2023-09-12 00:07:38'),
+(3, 1393, 'this is about section of school', NULL, '1254', '50', '56', 1, '2023-09-12 00:14:50', '2023-09-12 00:20:22'),
+(4, 1394, 'about school about school about school about school about school about school 123', 'sadique-123', '5052', '50', '20', 1, '2023-09-13 04:27:40', '2023-09-16 04:24:44'),
+(5, 1395, 'guest welcome guest welcomeguest welcome guest welcome', 'guest', '500', '50', '56', 1, '2023-10-14 01:37:07', '2023-10-14 01:39:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `branches`
+--
+
+CREATE TABLE `branches` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint UNSIGNED NOT NULL,
+  `member_id` bigint UNSIGNED NOT NULL,
+  `created_by` bigint UNSIGNED NOT NULL,
+  `openHours` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mapLink` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contacts` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` smallint UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` bigint UNSIGNED DEFAULT NULL,
+  `content_id` bigint DEFAULT NULL,
+  `parent` bigint UNSIGNED DEFAULT NULL,
+  `commentable_id` bigint UNSIGNED DEFAULT NULL,
+  `commentable_type` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` mediumtext COLLATE utf8mb4_unicode_ci,
+  `status` smallint UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` bigint UNSIGNED NOT NULL,
+  `contact_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sent_by` int DEFAULT NULL,
+  `sent_to` int DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci,
+  `is_verified` smallint DEFAULT NULL,
+  `verification_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ip_address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `contact_type`, `sent_by`, `sent_to`, `name`, `email`, `phone`, `subject`, `message`, `is_verified`, `verification_code`, `ip_address`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'contact_us', 8, 9, 'sadique', 'shahriarshuvo714@gmail.com', '01843736673', NULL, 'test message', NULL, NULL, NULL, NULL, '2023-08-06 22:47:16', '2023-08-06 22:47:16'),
+(2, 'contact_us', 8, 9, 'test1', 'test123@gmail.com', '01843736673', NULL, 'test msg', NULL, NULL, NULL, NULL, '2023-08-06 22:47:43', '2023-08-06 22:47:43'),
+(3, 'contact_us', 8, 9, 'JosephLer', 'no.reply.LucJensen@gmail.com', '82162335516', NULL, 'Hi-ya! stateagro.llc \r\n \r\nDid you know that it is possible to send requests absolutely legally? We offer a unique way of submitting appeals through contact forms. These kinds of feedback forms can be located on lots of webpages. \r\nWhen such business offers are sent, no personal data is used, and messages are sent to forms specifically designed to receive messages and appeals safely and securely. Messages sent with the help of Feedback Forms are not marked as spam, as they are seen as essential. \r\nWe offer you to try our service for free. \r\nWe will provide up to 50,000 messages for you. \r\n \r\nThe cost of sending one million messages is $59. \r\n \r\nThis message was automatically generated. \r\nPlease use the contact details below to get in touch with us. \r\n \r\nContact us. \r\nTelegram - https://t.me/FeedbackFormEU \r\nSkype  live:feedbackform2019 \r\nWhatsApp  +375259112693 \r\nWhatsApp  https://wa.me/+375259112693 \r\n \r\nWe only use chat for communication.', NULL, NULL, NULL, NULL, '2023-08-22 20:02:42', '2023-08-22 20:02:42'),
+(4, 'contact_us', 8, 9, 'sadique', 'shahriarshuvo714@gmail.com', NULL, NULL, 'dzfsd', NULL, NULL, NULL, '1', '2023-09-09 22:07:07', '2023-09-09 22:07:07'),
+(5, 'contact_us', 8, 9, 'sadique', 'shahriarshuvo714@gmail.com', NULL, NULL, 'this is for school test msg', NULL, NULL, NULL, '1', '2023-09-09 23:51:19', '2023-09-09 23:51:19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contents`
+--
+
+CREATE TABLE `contents` (
+  `id` bigint UNSIGNED NOT NULL,
+  `content_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keywords` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_canonical` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_heading` varchar(1024) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_image` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci,
+  `summary` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `note` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_robots` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `barcode` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` smallint DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contents`
+--
+
+INSERT INTO `contents` (`id`, `content_type`, `user_id`, `name`, `subtitle`, `slug`, `meta_title`, `meta_keywords`, `meta_description`, `meta_canonical`, `meta_heading`, `meta_image`, `description`, `summary`, `note`, `meta_robots`, `barcode`, `status`, `created_at`, `updated_at`) VALUES
+(760, 'slider', 1, 'FAST DELIVERY SERVICES', NULL, 'FAST DELIVERY SERVICES', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, '2023-07-29 04:34:28', '2023-07-29 04:36:18'),
+(761, 'slider', 1, '100% Halal Cattle Feed', NULL, 'cattle-feed', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'We provide top-notch, 100% halal-certified cattle feed sourced from trusted suppliers.', NULL, NULL, NULL, 1, '2023-07-29 04:36:13', '2023-08-06 05:27:46'),
+(762, 'slider', 1, 'ROAD TRANSPORTATION', NULL, 'road-transportation', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'We deliver by ROAD TRANSPORTATION to ensure prompt and reliable distribution of our 100% Halal Cattle Feed products to our valued customers.', NULL, NULL, NULL, 1, '2023-07-29 04:36:45', '2023-08-06 05:37:15'),
+(763, 'slider', 1, 'SAFE & FAST LOGISTICS', NULL, 'safe-&-fast-logistics', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'SAFE & FAST LOGISTICS is at the core of our operations, ensuring the secure and timely delivery of our 100% Halal Cattle Feed products to customers worldwide.', NULL, NULL, NULL, 1, '2023-07-29 04:53:30', '2023-08-06 05:37:53'),
+(764, 'service', 1, 'Ground shipping', NULL, 'ground-shipping', NULL, NULL, NULL, NULL, NULL, NULL, '<p>Ground shipping refers to the transportation of goods or packages over land, typically using trucks, vans, or other terrestrial vehicles. It is one of the most common and widely used methods for transporting goods within a country or region. Ground shipping is often chosen for its cost-effectiveness and versatility in handling various types of cargo.</p>\r\n\r\n<p>Here are some key characteristics and features of ground shipping:</p>\r\n\r\n<ol>\r\n	<li>\r\n	<p>Land-based transport: Ground shipping operates on roads and highways, using ground vehicles to move goods from one location to another.</p>\r\n	</li>\r\n	<li>\r\n	<p>Delivery time: The delivery time for ground shipping can vary depending on the distance between the origin and destination, as well as other factors like weather conditions and traffic. Generally, it is slower than air freight but faster than sea freight.</p>\r\n	</li>\r\n	<li>\r\n	<p>Cost-effective: Ground shipping is often more affordable compared to other shipping methods like air freight, making it a popular choice for domestic and regional shipments.</p>\r\n	</li>\r\n	<li>\r\n	<p>Local and regional distribution: Ground shipping is commonly used for local and regional distribution of goods, particularly for businesses supplying products within a specific area.</p>\r\n	</li>\r\n	<li>\r\n	<p>Parcel carriers and freight companies: Ground shipping services are offered by various parcel carriers and freight companies. These companies have established networks and routes to efficiently move goods across different regions.</p>\r\n	</li>\r\n	<li>\r\n	<p>Tracking and visibility: Most ground shipping services provide tracking capabilities, allowing both the shipper and recipient to monitor the package&#39;s status and estimated delivery time.</p>\r\n	</li>\r\n	<li>\r\n	<p>Weight and size limitations: Ground shipping may have weight and size restrictions on individual packages, which can vary depending on the carrier and the type of shipment.</p>\r\n	</li>\r\n	<li>\r\n	<p>Last-mile delivery: Ground shipping is frequently used for last-mile delivery, referring to the final leg of the shipping process from the local distribution center to the recipient&#39;s doorstep.</p>\r\n	</li>\r\n	<li>\r\n	<p>Eco-friendly alternatives: As environmental concerns grow, some ground shipping companies are exploring eco-friendly alternatives, such as using electric or hybrid vehicles.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p>It&#39;s important to note that ground shipping is suitable for various types of goods but may not be the best option for time-sensitive shipments or those requiring international delivery. In such cases, expedited shipping methods like air freight or ocean freight may be more appropriate.</p>', NULL, NULL, NULL, NULL, 1, '2023-07-30 01:05:38', '2023-07-30 01:05:38'),
+(765, 'service', 1, 'Cargo Transportation', NULL, 'cargo-transportation', NULL, NULL, NULL, NULL, NULL, NULL, '<p>Cargo transportation refers to the movement of goods, merchandise, or commodities from one location to another using various modes of transportation. It is a crucial aspect of the global supply chain and plays a significant role in the movement and distribution of goods between producers, suppliers, manufacturers, and consumers.</p>\r\n\r\n<p>There are several modes of cargo transportation, each suited to different types of cargo, distances, and delivery requirements. The main modes of cargo transportation include:</p>\r\n\r\n<ol>\r\n	<li>\r\n	<p>Air Freight: Cargo transportation by air involves using airplanes to move goods quickly over long distances, both domestically and internationally. It is often chosen for time-sensitive or high-value shipments due to its speed and efficiency.</p>\r\n	</li>\r\n	<li>\r\n	<p>Ocean Freight: Ocean transportation, also known as sea freight, involves shipping cargo in containers on cargo ships across oceans and seas. It is a cost-effective option for transporting large quantities of goods over long distances, especially for international trade.</p>\r\n	</li>\r\n	<li>\r\n	<p>Road Freight: Cargo transportation by road involves using trucks, trailers, and other land vehicles to move goods over shorter distances within a country or region. It is commonly used for last-mile delivery and for transporting goods to areas not accessible by other modes of transportation.</p>\r\n	</li>\r\n	<li>\r\n	<p>Rail Freight: Rail transportation involves moving cargo on trains over land, providing a more fuel-efficient option for long-distance cargo transportation, especially for bulk shipments like minerals, coal, and grains.</p>\r\n	</li>\r\n	<li>\r\n	<p>Intermodal Transportation: Intermodal transportation combines multiple modes of transportation to move cargo efficiently from origin to destination. For example, using trucks to transport goods to a rail terminal, where they are loaded onto a train for long-haul transportation, and then transferred back to trucks for final delivery.</p>\r\n	</li>\r\n	<li>\r\n	<p>Courier and Parcel Services: These services specialize in transporting smaller packages and parcels quickly and reliably, often using a combination of air and ground transportation.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p>Cargo transportation is facilitated by a network of logistics companies, freight forwarders, carriers, shipping lines, and other transportation providers. They manage the movement of cargo, handle documentation, ensure compliance with regulations, and offer tracking and visibility to both shippers and recipients.</p>\r\n\r\n<p>Efficient cargo transportation is vital for the smooth functioning of economies and international trade. It enables the availability of goods across various regions, supports industries, and helps meet consumer demands. The choice of the transportation mode depends on factors such as the type of cargo, distance, urgency, cost, and environmental considerations.</p>', NULL, NULL, NULL, NULL, 1, '2023-07-30 01:16:13', '2023-07-30 01:16:13'),
+(766, 'service', 1, 'Air Freight', NULL, 'air-freight', NULL, NULL, NULL, NULL, NULL, NULL, '<p>Air freight, also known as air cargo, refers to the transportation of goods or commodities by air using aircraft. It is a mode of cargo transportation that offers fast and efficient delivery of goods over long distances, both domestically and internationally. Air freight is commonly used for time-sensitive shipments, high-value goods, perishable items, and items requiring expedited delivery.</p>\r\n\r\n<p>Here are some key features and characteristics of air freight:</p>\r\n\r\n<ol>\r\n	<li>\r\n	<p>Speed: Air freight is the fastest mode of transportation for goods over long distances. It significantly reduces transit times compared to other modes like ocean freight or road transport.</p>\r\n	</li>\r\n	<li>\r\n	<p>Global Reach: Air freight allows goods to be transported between countries and continents quickly, making it an essential component of international trade and global supply chains.</p>\r\n	</li>\r\n	<li>\r\n	<p>High-value and Perishable Goods: Air freight is often preferred for transporting high-value goods, such as electronics, pharmaceuticals, and luxury items, as it provides enhanced security and reduces the risk of damage or theft. Perishable items like fresh produce and flowers are also commonly transported by air to maintain their freshness.</p>\r\n	</li>\r\n	<li>\r\n	<p>Airport-to-Airport or Door-to-Door: Air freight services can be offered in different ways. Some shipments are transported from one airport to another, requiring additional ground transportation to reach the final destination (airport-to-airport). Other services offer door-to-door delivery, where the cargo is picked up from the shipper&#39;s location and delivered directly to the recipient&#39;s address.</p>\r\n	</li>\r\n	<li>\r\n	<p>Cargo Types: Air freight can accommodate a wide range of cargo types, from small parcels and packages to large and bulky items. However, there may be limitations on the size and weight of individual shipments, depending on the aircraft&#39;s capacity and airline regulations.</p>\r\n	</li>\r\n	<li>\r\n	<p>Special Handling: Certain goods may require special handling or temperature-controlled conditions during air transportation. Air freight carriers are equipped to handle various types of specialized cargo, such as hazardous materials or live animals.</p>\r\n	</li>\r\n	<li>\r\n	<p>Freight Forwarders: Shippers often use freight forwarding companies to arrange air freight shipments. Freight forwarders handle the logistics, documentation, customs clearance, and coordination with airlines to ensure a smooth and timely delivery process.</p>\r\n	</li>\r\n	<li>\r\n	<p>Cost: Air freight is generally more expensive than other modes of transportation, such as ocean freight or road transport. The higher cost is primarily due to the speed and efficiency of air transportation.</p>\r\n	</li>\r\n	<li>\r\n	<p>Security: Air freight undergoes stringent security measures to ensure the safety and integrity of the cargo during transit.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p>Overall, air freight is a reliable and efficient option for businesses and individuals who require fast delivery of goods across long distances, especially when time is of the essence. However, for certain types of cargo and when cost is a major factor, other modes of transportation like ocean freight or road transport may be more suitable.</p>', NULL, NULL, NULL, NULL, 1, '2023-07-30 01:17:25', '2023-07-30 01:17:25'),
+(767, 'service', 1, 'Ocean Freight', NULL, 'ocean-freight', NULL, NULL, NULL, NULL, NULL, NULL, '<p>Ocean freight, also known as sea freight, refers to the transportation of goods or cargo by sea using cargo ships or vessels. It is one of the most common and cost-effective modes of transporting large quantities of goods over long distances, especially for international trade and shipments between continents.</p>\r\n\r\n<p>Here are the key features and characteristics of ocean freight:</p>\r\n\r\n<ol>\r\n	<li>\r\n	<p>International Shipping: Ocean freight is primarily used for transporting goods between different countries and continents. It enables the movement of cargo across vast distances and plays a crucial role in global trade.</p>\r\n	</li>\r\n	<li>\r\n	<p>Cost-Effective: Compared to other modes of transportation like air freight, ocean freight is generally more cost-effective, particularly for large and bulky shipments. This makes it a popular choice for goods with lower urgency and longer lead times.</p>\r\n	</li>\r\n	<li>\r\n	<p>Containerized Shipping: Most ocean freight is transported in standardized shipping containers, which come in various sizes, such as 20 feet and 40 feet. Containerization allows for efficient loading and unloading of cargo, and it helps protect goods during transit.</p>\r\n	</li>\r\n	<li>\r\n	<p>Different Types of Cargo: Ocean freight can handle a wide variety of cargo types, including dry goods, machinery, vehicles, perishable goods (using refrigerated containers), hazardous materials (in compliance with international regulations), and more.</p>\r\n	</li>\r\n	<li>\r\n	<p>Transit Time: Ocean freight is generally slower than air freight, and the transit time varies depending on the distance and the shipping route. Shipments between continents can take several weeks or even months.</p>\r\n	</li>\r\n	<li>\r\n	<p>Port-to-Port or Door-to-Door: Ocean freight services can be arranged in different ways. Some shipments are transported from one port to another, with the responsibility for inland transportation falling on the shipper or recipient (port-to-port). Other services offer door-to-door delivery, where the shipping company handles the transportation from the shipper&#39;s location to the recipient&#39;s address.</p>\r\n	</li>\r\n	<li>\r\n	<p>Freight Forwarders and NVOCCs: Shippers often utilize the services of freight forwarders or Non-Vessel Operating Common Carriers (NVOCCs) to arrange ocean freight shipments. These intermediaries handle the logistics, documentation, customs clearance, and coordination with shipping lines to facilitate the smooth movement of cargo.</p>\r\n	</li>\r\n	<li>\r\n	<p>Regulations and Customs: Ocean freight involves adherence to various international regulations, customs procedures, and import/export requirements. Proper documentation and compliance are essential for smooth customs clearance.</p>\r\n	</li>\r\n	<li>\r\n	<p>Environmental Impact: While ocean freight is a relatively eco-friendly mode of transportation compared to air freight, it still contributes to greenhouse gas emissions. Efforts are being made to improve the environmental sustainability of shipping, such as the adoption of cleaner technologies and fuel-efficient practices.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p>Ocean freight is particularly well-suited for transporting goods in large quantities, such as raw materials, consumer goods, and bulk commodities. It plays a vital role in connecting markets and facilitating international trade by providing a reliable and cost-effective means of transporting goods across the world&#39;s oceans.</p>', NULL, NULL, NULL, NULL, 1, '2023-07-30 01:18:11', '2023-07-30 01:18:11'),
+(768, 'service', 1, 'Packaging & Storage', NULL, 'packaging-&-storage', NULL, NULL, NULL, NULL, NULL, NULL, '<p>Packaging and storage are two essential components of the logistics and supply chain process, ensuring the safe and efficient handling, protection, and preservation of goods from their production or procurement to their final distribution or use. Both packaging and storage play significant roles in maintaining the quality of products and facilitating their movement through various stages of the supply chain.</p>\r\n\r\n<p>Packaging: Packaging refers to the process of enclosing products or items in protective containers to safeguard them during transportation, handling, and storage. It involves the design, production, and selection of suitable materials and containers to meet the specific requirements of the goods being shipped. Packaging serves several important functions:</p>\r\n\r\n<ol>\r\n	<li>\r\n	<p>Protection: The primary purpose of packaging is to protect the goods from damage, breakage, contamination, and other hazards that may occur during handling and transit.</p>\r\n	</li>\r\n	<li>\r\n	<p>Containment: Packaging keeps the goods contained, preventing them from spilling or leaking.</p>\r\n	</li>\r\n	<li>\r\n	<p>Identification: Packaging often includes labels, barcodes, and other markings to identify the product, its contents, origin, destination, and handling instructions.</p>\r\n	</li>\r\n	<li>\r\n	<p>Convenience: Packaging can be designed for easy handling, stacking, and transportation, optimizing space utilization and making it more convenient for logistics operations.</p>\r\n	</li>\r\n	<li>\r\n	<p>Branding and Marketing: Packaging plays a vital role in brand recognition and marketing, as it often serves as the first point of contact between the product and the consumer.</p>\r\n	</li>\r\n	<li>\r\n	<p>Environmental Considerations: Sustainable and eco-friendly packaging options are gaining importance as companies strive to minimize their environmental impact.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p>Storage: Storage, on the other hand, involves the safekeeping of goods or products in a designated facility or warehouse until they are ready for distribution or use. Effective storage practices are crucial for maintaining the quality, condition, and accessibility of goods. Key aspects of storage include:</p>\r\n\r\n<ol>\r\n	<li>\r\n	<p>Warehousing: Goods are stored in warehouses or storage facilities equipped with appropriate conditions, such as temperature control (in the case of perishable items), security measures, and inventory management systems.</p>\r\n	</li>\r\n	<li>\r\n	<p>Inventory Management: Efficient storage relies on proper inventory management to keep track of stock levels, monitor product expiration dates (for perishable goods), and ensure timely replenishment.</p>\r\n	</li>\r\n	<li>\r\n	<p>Order Fulfillment: Storage facilities are often integrated with order fulfillment processes, ensuring that products can be picked, packed, and shipped quickly and accurately.</p>\r\n	</li>\r\n	<li>\r\n	<p>FIFO and LIFO: Storage practices may involve the use of inventory management principles such as &quot;First-In-First-Out&quot; (FIFO) or &quot;Last-In-First-Out&quot; (LIFO) to manage the flow of goods and prevent product obsolescence.</p>\r\n	</li>\r\n	<li>\r\n	<p>Cross-Docking: In some cases, storage may be minimal or even unnecessary through a logistics process known as cross-docking, where goods are immediately transferred from the inbound transport to the outbound transport without intermediate storage.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p>Effective packaging and storage are critical for businesses to maintain the quality and integrity of their products, meet customer expectations, reduce losses, and streamline the supply chain process. They play key roles in ensuring that goods reach their intended recipients in optimal condition and within the expected timeframe.</p>', NULL, NULL, NULL, NULL, 1, '2023-07-30 01:19:00', '2023-07-30 01:19:00'),
+(769, 'service', 1, 'Railway Logistics', NULL, 'railway-logistics', NULL, NULL, NULL, NULL, NULL, NULL, '<p>Railway logistics, also known as rail logistics or rail transportation logistics, refers to the management and coordination of the movement of goods and freight via railways. It encompasses a range of activities involved in planning, organizing, and executing the transportation of cargo by trains, as well as the associated support services.</p>\r\n\r\n<p>Railway logistics plays a significant role in the overall transportation and supply chain industry, offering several advantages for the movement of goods over long distances. Some key aspects of railway logistics include:</p>\r\n\r\n<ol>\r\n	<li>\r\n	<p>Freight Transportation: Railway logistics involves the transportation of various types of cargo, including raw materials, finished products, consumer goods, and bulk commodities, using trains. Rail freight transport is particularly well-suited for large-volume and heavy goods.</p>\r\n	</li>\r\n	<li>\r\n	<p>Infrastructure and Network Management: Effective railway logistics require the management and maintenance of railway infrastructure, including tracks, terminals, and yards. Railways operate within a network of routes that connect major cities, industrial centers, and ports.</p>\r\n	</li>\r\n	<li>\r\n	<p>Freight Operations: Railway logistics teams handle the scheduling, loading, unloading, and routing of trains carrying freight. They plan the most efficient routes and coordinate the movement of trains to optimize cargo delivery.</p>\r\n	</li>\r\n	<li>\r\n	<p>Intermodal Transportation: Railways often integrate with other modes of transportation, such as trucking or ocean shipping, in a logistics concept known as intermodal transportation. This approach involves using multiple modes to move cargo from its origin to its destination.</p>\r\n	</li>\r\n	<li>\r\n	<p>Supply Chain Integration: Railway logistics is an integral part of the overall supply chain process. It involves collaboration with suppliers, manufacturers, distributors, and customers to ensure seamless movement and delivery of goods.</p>\r\n	</li>\r\n	<li>\r\n	<p>Warehousing and Distribution: Railways may have associated warehouses and distribution centers along their routes, where goods can be stored temporarily before onward transportation.</p>\r\n	</li>\r\n	<li>\r\n	<p>Safety and Regulations: Safety is of paramount importance in railway logistics. Strict adherence to safety regulations, including handling hazardous materials, is crucial to prevent accidents and ensure the well-being of personnel and the public.</p>\r\n	</li>\r\n	<li>\r\n	<p>Environmental Considerations: Rail transport is generally considered more eco-friendly and energy-efficient than other modes, such as road transport or air freight. As a result, railway logistics can be an environmentally sustainable option for certain types of cargo.</p>\r\n	</li>\r\n	<li>\r\n	<p>Last-Mile Delivery: While railways are efficient for long-haul transportation, they may require complementary transportation methods, like trucks, for last-mile delivery to reach final destinations.</p>\r\n	</li>\r\n</ol>\r\n\r\n<p>Railway logistics provides a cost-effective and reliable means of transporting goods overland, especially for long distances and bulk shipments. It complements other transportation modes, offering an integrated and holistic approach to moving goods across the supply chain. As technology and infrastructure continue to advance, railway logistics is likely to remain an essential component of global trade and commerce.</p>', NULL, NULL, NULL, NULL, 1, '2023-07-30 01:20:07', '2023-07-30 01:20:07'),
+(770, 'page', 1, 'About CEO', NULL, 'about-ceo', NULL, NULL, NULL, NULL, NULL, NULL, '<p>Nuruzzaman Sardar is the visionary CEO of State Agro LLC, a prominent export-import business operating in both Bangladesh and the USA. With a rich background in agribusiness and international trade, Nuruzzaman has played a pivotal role in driving State Agro LLC&#39;s success and establishing it as a leading player in the global market.</p>\r\n\r\n<p>Under his dynamic leadership, State Agro LLC has achieved remarkable growth and expanded its reach across borders. Nuruzzaman&#39;s strategic vision has led to the establishment of strong trade relationships between Bangladesh and the USA, fostering mutual growth and benefiting both nations&#39; economies.</p>\r\n\r\n<p>His commitment to excellence and innovation has driven the company to embrace the latest technologies, ensuring efficient supply chain management and the delivery of top-quality products to customers worldwide. Nuruzzaman&#39;s customer-centric approach has earned State Agro LLC a reputation for reliability and customer satisfaction, solidifying its position as a trusted partner in the international trade arena.</p>\r\n\r\n<p>Nuruzzaman Sardar&#39;s dedication to sustainable business practices has also led to a positive impact on local farming communities, promoting responsible agricultural practices and empowering farmers in both Bangladesh and the USA.</p>\r\n\r\n<p>As a respected figure in the export-import industry, Nuruzzaman actively advocates for fair trade policies and participates in international forums to foster collaboration and promote global agricultural development.</p>\r\n\r\n<p>Under his visionary guidance, State Agro LLC continues to excel in the export-import business, making a significant contribution to the growth of both Bangladesh and the USA while leaving a lasting mark on the global stage.</p>', 'About CEO of State Agro LLC', NULL, NULL, NULL, 1, '2023-07-30 04:26:44', '2023-07-30 04:26:44'),
+(771, 'page', 1, 'OUR TEAM', NULL, 'our-team', NULL, NULL, NULL, NULL, NULL, NULL, '<p>Team Members of the State Agro LLC</p>', 'Team Members of the State Agro LLC', NULL, NULL, NULL, 1, '2023-07-30 05:59:24', '2023-07-30 05:59:24'),
+(772, 'product', 1, 'Oil', NULL, 'oil', NULL, NULL, NULL, NULL, NULL, NULL, '<p>Oil, also known as petroleum, is a versatile and vital natural resource that plays a central role in modern society. It is a fossil fuel formed from ancient organic matter, such as plankton and algae, buried deep within the Earth&#39;s crust over millions of years. The extraction and refinement of oil yield various valuable products, including gasoline, diesel, jet fuel, and a wide range of petrochemicals used in manufacturing plastics, pharmaceuticals, and countless other consumer goods.</p>\r\n\r\n<p>Oil&#39;s significance stems from its extensive use in transportation, electricity generation, industrial processes, and heating applications. It fuels cars, trucks, airplanes, ships, and trains, making it the backbone of global transportation networks. Additionally, oil is a critical component in the production of electricity, powering thermal power plants in many parts of the world.</p>\r\n\r\n<p>However, the extensive reliance on oil also presents environmental challenges, as burning fossil fuels contributes to greenhouse gas emissions and climate change. Consequently, the search for sustainable and renewable energy sources continues to grow in importance as nations strive to balance their energy needs with environmental concerns. Despite these challenges, oil remains a cornerstone of the global economy and energy landscape, influencing geopolitics and shaping economic relationships between nations.</p>\r\n\r\n<p>Importing oil from oil companies to Bangladesh is a vital aspect of the country&#39;s energy strategy. As Bangladesh lacks significant domestic oil reserves, it heavily relies on foreign suppliers to meet its growing energy demands. Oil companies from various countries, such as Middle Eastern nations, play a crucial role in supplying crude oil and refined petroleum products to Bangladesh. These imports are used to power industries, transportation, and households, contributing significantly to the nation&#39;s economic growth and development. The Bangladeshi government maintains strong partnerships and contracts with oil companies, ensuring a steady and reliable supply of oil to support the nation&#39;s energy requirements.</p>', NULL, NULL, NULL, NULL, 1, '2023-08-01 00:48:10', '2023-08-01 00:48:10'),
+(773, 'product', 1, 'Sugar', NULL, 'sugar', NULL, NULL, NULL, NULL, NULL, NULL, '<p>Sugar production is a crucial industry that involves the extraction and processing of sugar from sugarcane or sugar beet. Sugarcane, a tall perennial grass, and sugar beet, a root vegetable, are the primary sources of sugar worldwide. The production process begins with harvesting the raw material, after which the sugarcane or sugar beet undergoes crushing or extraction to extract the juice or sap containing sugar.</p>\r\n\r\n<p>Once extracted, the sugarcane juice or sugar beet sap undergoes various stages of purification and refining to remove impurities and concentrate the sugar content. This process typically involves filtration, clarification, and crystallization. The final product is raw sugar, which still contains some impurities and molasses.</p>\r\n\r\n<p>Further refining steps are taken to produce refined sugar, a more widely consumed form of sugar. The refining process involves melting and purifying the raw sugar to achieve higher levels of purity and uniform crystal size. The result is the familiar white granulated sugar found in households and the food industry.</p>\r\n\r\n<p>Sugar production is a significant global industry, with many countries being major producers and exporters. The sugar industry provides livelihoods for millions of people and plays a crucial role in the economies of many developing nations. However, like other agricultural industries, sugar production also faces challenges related to environmental sustainability and labor practices. The ongoing efforts to address these issues aim to make sugar production more sustainable and socially responsible while meeting the world&#39;s demand for this sweet commodity.</p>', NULL, NULL, NULL, NULL, 1, '2023-08-01 00:54:49', '2023-08-01 00:54:49'),
+(774, 'product', 1, 'Red Lintil', NULL, 'red-lintil', NULL, NULL, NULL, NULL, NULL, NULL, '<p>Red lentil import is the process of purchasing and bringing in red lentils from foreign countries to meet the demand for this versatile legume in a particular market. Red lentils, a popular pulse crop rich in protein and essential nutrients, are widely consumed globally and are a staple in various cuisines.</p>\r\n\r\n<p>Countries that do not produce sufficient quantities of red lentils domestically or have a high demand for them often import these legumes from major exporting nations such as Canada, India, Turkey, and Australia. The import process involves negotiating contracts with exporters, shipping the lentils to the importing country, and clearing customs and regulatory requirements.</p>\r\n\r\n<p>Red lentil importation is crucial for ensuring a stable supply of this nutritious food source in regions where it is widely consumed. It provides consumers with access to a diverse range of food options and supports the food industry by meeting the demand for red lentils in various forms, such as whole, split, or processed into flours and pastes. However, fluctuations in international prices, trade policies, and logistical challenges can influence the availability and cost of imported red lentils in the importing country. Importers need to carefully manage these factors to maintain a steady and affordable supply for consumers.</p>', NULL, NULL, NULL, NULL, 1, '2023-08-01 00:58:28', '2023-08-01 00:58:28'),
+(775, 'page', 1, 'Why buy from us', NULL, 'why-buy-from-us', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-08-06 09:30:10', '2023-08-06 09:30:10'),
+(776, 'page', 1, 'About Us', 'About CEO of State Agro LLC', 'about', NULL, NULL, NULL, NULL, NULL, NULL, '<p>State Agro Trading LLC is a dynamic and versatile company that specializes in a wide range of services related to agro-trading and logistics. With a strong presence in the international market, the company has established itself as a reliable partner for clients seeking efficient and seamless transportation of goods across different modes of transportation.</p>\r\n\r\n<h2><strong>Services Offered</strong></h2>\r\n\r\n<p><strong>Railway Logistics:</strong> State Agro Trading LLC provides efficient and cost-effective railway logistics solutions for the transportation of goods over land. Whether it&#39;s moving bulk quantities of agro products or handling specialized cargo, their expert team ensures timely and secure deliveries.</p>\r\n\r\n<p><strong>Packaging &amp; Storage:</strong> The company offers professional packaging services to ensure that products are properly handled and protected during transit. Additionally, State Agro Trading LLC provides secure storage facilities to keep products in optimal condition until they are ready for shipment.</p>\r\n\r\n<p><strong>Ocean Freight: </strong>With an extensive network of partners and carriers, the company offers reliable ocean freight services to facilitate international trade. They handle the complexities of maritime transportation, ensuring smooth and timely deliveries to various destinations worldwide.</p>\r\n\r\n<p><strong>Air Freight: </strong>For time-sensitive shipments or perishable goods, State Agro Trading LLC offers efficient air freight solutions. Leveraging their expertise in air cargo logistics, they prioritize speed and safety to meet their client&#39;s requirements.</p>\r\n\r\n<p><strong>Cargo Transportation: </strong>State Agro Trading LLC provides comprehensive cargo transportation services, encompassing a variety of goods and destinations. Their logistics capabilities cover a wide range of industries, ensuring smooth handling and timely deliveries.</p>\r\n\r\n<p><strong>Ground Shipping:</strong> Whether it&#39;s local or regional transportation, the company&#39;s ground shipping services ensure efficient and reliable delivery of goods. They have a strong fleet of vehicles and skilled personnel to handle ground transportation needs.</p>\r\n\r\n<p><strong>Export Import Business Consultancy: </strong>Apart from transportation and logistics services, State Agro Trading LLC offers export-import business consultancy. Their experienced team provides valuable insights and guidance to clients, helping them navigate international trade regulations and optimize their supply chain.</p>\r\n\r\n<p>Export &amp; Import Products:</p>\r\n\r\n<h2>State Agro Trading LLC deals with a select range of export and import products, including:</h2>\r\n\r\n<p><strong>Red Lentil: </strong>The company trades high-quality red lentils, catering to the growing demand for this nutritious and versatile legume in various international markets.</p>\r\n\r\n<p><strong>Sugar: </strong>They handle the export and import of sugar, an essential commodity in the food industry and a sought-after product in many regions.</p>\r\n\r\n<p><strong>Oil:</strong> State Agro Trading LLC is involved in the trade of edible oils, catering to the culinary and industrial needs of different countries.</p>\r\n\r\n<p><strong>Locations:</strong></p>\r\n\r\n<p>State Agro Trading LLC operates from two key offices, ensuring a global presence and localized support:</p>\r\n\r\n<p><strong>USA Office:</strong><br />\r\nAddress: 9041 170th Jamaica, New York 11432</p>\r\n\r\n<p><strong>Bangladesh Office:</strong><br />\r\nAddress: House -34, Road 3, Block- A, Dhakauddin Mohammedpur, Dhaka-1207, Bangladesh</p>\r\n\r\n<p>With a diverse range of services, a reliable network of partners, and a commitment to excellence, State Agro Trading LLC stands as a trusted partner in the agro trading and logistics industry, facilitating seamless international trade for its clients.</p>', NULL, NULL, NULL, NULL, 1, '2023-08-06 09:30:10', '2023-08-06 06:03:24'),
+(777, 'page', 1, 'Privacy Policy', NULL, 'privacy-policy', NULL, NULL, NULL, NULL, NULL, NULL, '<p>At StateAgro LLC, we are committed to protecting your privacy. This Privacy Policy outlines the types of information we collect, how we use and protect it, and your rights regarding your personal data. By visiting our website and using our services, you agree to the practices described in this policy.</p>\r\n\r\n<p>Information We Collect<br />\r\na. Personal Information: We may collect personal information such as your name, email address, phone number, and other relevant contact details when you voluntarily provide them to us through our website or other communication channels.</p>\r\n\r\n<p>b. Cookies and Tracking Technologies: Like many websites, we use cookies and similar technologies to collect certain information about your interactions with our website. This information may include your IP address, browser type, device information, and browsing patterns. Cookies help us enhance your browsing experience and optimize our website&#39;s functionality.</p>\r\n\r\n<p>How We Use Your Information<br />\r\na. Providing Services: We use the information you provide to deliver the products, services, or information you request from us.</p>\r\n\r\n<p>b. Communication: We may use your contact information to send you relevant updates, promotional offers, newsletters, or respond to your inquiries.</p>\r\n\r\n<p>c. Website Improvement: Your information helps us understand how users interact with our website, enabling us to improve its layout, features, and functionality.</p>\r\n\r\n<p>Data Security<br />\r\nWe take data security seriously and employ industry-standard measures to safeguard your information from unauthorized access, alteration, disclosure, or destruction. Despite our best efforts, no method of data transmission over the internet or electronic storage is completely secure, so we cannot guarantee absolute security.</p>\r\n\r\n<p>Third-Party Disclosure<br />\r\nWe do not sell, trade, or otherwise transfer your personally identifiable information to third parties without your consent, except when required by law or necessary to provide services or products you have requested. We may, however, share non-personally identifiable information with trusted third parties to analyze website usage or improve our services.</p>\r\n\r\n<p>Your Rights<br />\r\na. Access: You have the right to request access to the personal information we hold about you and obtain a copy of it.</p>\r\n\r\n<p>b. Correction: If you believe any of the information we have about you is inaccurate or incomplete, you can request corrections or updates.</p>\r\n\r\n<p>c. Deletion: You have the right to request the deletion of your personal information from our records.</p>\r\n\r\n<p>Children&#39;s Privacy<br />\r\nOur services are not intended for individuals under the age of 18. We do not knowingly collect or store personal information from minors. If you believe your child has provided us with personal information, please contact us, and we will promptly delete the information.</p>\r\n\r\n<p>Changes to Privacy Policy<br />\r\nWe reserve the right to modify this Privacy Policy at any time. Any changes will be posted on this page, and the effective date will be updated accordingly.</p>\r\n\r\n<p>Contact Us<br />\r\nIf you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>\r\n\r\n<p>StateAgro LLC</p>\r\n\r\n<p>9041 170th &nbsp;Jamaica, &nbsp;New York 11432</p>\r\n\r\n<p>info@stateagro.llc<br />\r\n+19173794125</p>\r\n\r\n<p>By using our website and services, you acknowledge that you have read and understood this Privacy Policy and consent to the collection, use, and disclosure of your personal information as described herein.</p>', NULL, NULL, NULL, NULL, 1, '2023-08-06 04:03:38', '2023-08-06 06:10:29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `content_employee`
+--
+
+CREATE TABLE `content_employee` (
+  `id` bigint UNSIGNED NOT NULL,
+  `content_id` bigint UNSIGNED NOT NULL,
+  `employee_id` bigint UNSIGNED NOT NULL,
+  `post` smallint UNSIGNED DEFAULT NULL,
+  `sequence` smallint DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `content_tag`
+--
+
+CREATE TABLE `content_tag` (
+  `content_id` bigint UNSIGNED NOT NULL,
+  `tag_id` bigint UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employees`
+--
+
+CREATE TABLE `employees` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(600) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `designation` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `profilePhoto` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` bigint UNSIGNED DEFAULT NULL,
+  `member_id` bigint UNSIGNED DEFAULT NULL,
+  `created_by` bigint UNSIGNED NOT NULL,
+  `contact` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `website` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bloodGroup` smallint UNSIGNED DEFAULT NULL,
+  `socialMedia` varchar(1024) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `about` text COLLATE utf8mb4_unicode_ci,
+  `status` smallint UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` bigint UNSIGNED NOT NULL,
+  `event_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` int NOT NULL,
+  `start_date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `end_date` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `entry_fee` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keywords` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_canonical` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_image` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_robots` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_heading` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `event_type`, `title`, `slug`, `user_id`, `start_date`, `end_date`, `address`, `location`, `logo`, `file`, `description`, `entry_fee`, `meta_title`, `meta_keywords`, `meta_description`, `meta_canonical`, `meta_image`, `meta_robots`, `meta_heading`, `status`, `created_at`, `updated_at`) VALUES
+(1, NULL, 'hello123', NULL, 1389, NULL, NULL, NULL, NULL, NULL, 'bcs-maop.jpg', 'hhgvvv', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-09-11 23:28:47', '2023-09-11 23:32:09'),
+(2, NULL, 'new event', NULL, 1393, NULL, NULL, NULL, NULL, NULL, 'awakenings-music-festival-biggest-european-festivals-2020.jpg', 'Hi this is event', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-09-12 00:18:05', '2023-09-12 00:18:05'),
+(3, NULL, 'event one123', NULL, 1394, NULL, NULL, NULL, NULL, NULL, 'about.png', 'event one details more\r\nevent one details more\r\nevent one details more', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-09-16 03:35:32', '2023-09-16 04:28:36'),
+(4, NULL, 'event 011', 'guest', 1395, NULL, NULL, NULL, NULL, NULL, 'banner10.jpg', 'Hi cvgbfgb xfgb', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2023-10-14 01:41:49', '2023-10-14 01:44:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
+--
+
+CREATE TABLE `failed_jobs` (
+  `id` bigint UNSIGNED NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `landings`
+--
+
+CREATE TABLE `landings` (
+  `id` bigint UNSIGNED NOT NULL,
+  `linktype` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pagelink` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nextpagelink` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `statuscode` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `landings`
+--
+
+INSERT INTO `landings` (`id`, `linktype`, `pagelink`, `nextpagelink`, `statuscode`, `created_at`, `updated_at`) VALUES
+(1, 'content', 'this-is-slider-one-and-its-name', NULL, '200', '2023-03-26 20:28:24', '2023-03-26 20:28:24'),
+(2, 'content', 'a', 'this-is-slider-one-and-its-name-47', '301', '2023-03-26 20:32:46', '2023-03-26 21:38:59'),
+(3, 'content', 'abc', 'this-is-slider-one-and-its-name-abc', '301', '2023-03-26 20:50:48', '2023-03-27 21:47:53'),
+(4, 'content', 'this-is-slider-one-and-its-name-4', NULL, '200', '2023-03-26 21:38:08', '2023-03-26 21:38:08'),
+(5, 'content', 'this-is-slider-one-and-its-name-47', 'this-is-slider-one-and-its-name-48', '301', '2023-03-26 21:38:59', '2023-03-27 21:45:57'),
+(6, 'content', 'test-slider-6', 'test-slider-6-to-new47', '301', '2023-03-26 21:48:29', '2023-03-26 21:50:57'),
+(7, 'content', 'test-slider-6-to-new47', NULL, '200', '2023-03-26 21:50:57', '2023-03-26 21:50:57'),
+(8, 'content', 'this-is-slider-one-and-its-name-48', NULL, '200', '2023-03-27 21:45:57', '2023-03-27 21:45:57'),
+(9, 'content', 'this-is-slider-one-and-its-name-abc', NULL, '200', '2023-03-27 21:47:53', '2023-03-27 21:47:53'),
+(10, 'content', 'aaaaaaaaaaaa', NULL, '200', '2023-03-28 19:38:54', '2023-03-28 19:38:54'),
+(11, 'content', 'aa', NULL, '200', '2023-03-28 19:45:12', '2023-03-28 19:45:12'),
+(12, 'content', 'sujon-slider', 'sujon-slider-edited-first-time', '301', '2023-03-28 19:56:07', '2023-03-28 19:57:28'),
+(13, 'content', 'sujon-slider-edited-first-time', NULL, '200', '2023-03-28 19:57:27', '2023-03-28 19:57:27'),
+(14, 'landing', 'search', NULL, '200', '2023-03-29 09:03:41', '2023-03-29 09:03:41'),
+(25, 'landing', 'shop', NULL, '200', '2023-04-05 17:49:08', '2023-04-05 17:49:08'),
+(26, 'content', 'new-dmeo', NULL, '200', '2023-04-05 17:51:49', '2023-04-05 17:51:49'),
+(27, 'content', 'test-2', NULL, '200', '2023-04-05 18:17:35', '2023-04-05 18:17:35'),
+(28, 'event', 'কম্পিউটার মেলা22', NULL, '200', '2023-04-05 19:37:58', '2023-04-05 19:37:58'),
+(30, 'news', 'রাজধানীতে তীব্র যানজট, তিন কারণ জানাল ট্রাফিক পুলিশ', NULL, '200', '2023-04-05 20:38:46', '2023-04-05 20:38:46'),
+(31, 'news', 'রাজধানীতে তীব্র যানজট, তিন কারণ জানাল ট্রাফিক-পুলিশ', NULL, '200', '2023-04-05 20:39:15', '2023-04-05 20:39:15'),
+(32, 'news', 'রাজধানীতে-তীব্র-যানজট-তিন-কারণ -জানাল-ট্রাফিক-পুলিশ', NULL, '200', '2023-04-05 20:40:29', '2023-04-05 20:40:29'),
+(33, 'news', 'চ্যাটজিপিটির সঙ্গে প্রতিদ্বন্দ্বিতা করতে ‘বার্ড’ হালনাগাদ করবে-গুগল', NULL, '200', '2023-04-05 20:41:13', '2023-04-05 20:41:13'),
+(34, 'news', 'কম্পিউটারেও ব্যবহার করা যাবে অ্যান্ড্রয়েডের নিয়ারবাই শেয়ার সুবিধা', NULL, '200', '2023-04-05 20:41:57', '2023-04-05 20:41:57'),
+(35, 'news', 'কম্পিউটারেও ব্যবহার করা যাবে অ্যান্ড্রয়েডের নিয়ারবাই শেয়ার সুবিধা .', NULL, '200', '2023-04-05 20:42:06', '2023-04-05 20:42:06'),
+(36, 'landing', 'news', NULL, '200', '2023-04-05 21:28:29', '2023-04-05 21:28:29'),
+(38, 'landing', 'members', NULL, '200', '2023-04-05 22:18:22', '2023-04-05 22:18:22'),
+(39, 'landing', 'member', NULL, '200', '2023-04-07 16:37:39', '2023-04-07 16:37:39'),
+(40, 'content', 'new-notice', NULL, '200', '2023-04-07 17:08:19', '2023-04-07 17:08:19'),
+(42, 'content', 'demo notice', NULL, '200', '2023-04-07 17:20:49', '2023-04-07 17:20:49'),
+(43, 'notice', 'latest news', NULL, '404', '2023-04-07 17:24:10', '2023-06-13 20:12:05'),
+(44, 'notice', 'special notice', NULL, '200', '2023-04-07 17:45:02', '2023-04-07 17:45:02'),
+(45, 'gallery', 'new event gallery', NULL, '200', '2023-04-07 18:00:05', '2023-04-07 18:00:05'),
+(46, 'gallery', 'multi image', NULL, '200', '2023-04-07 18:08:05', '2023-04-07 18:08:05'),
+(47, 'landing', 'gallery', NULL, '200', '2023-04-07 18:16:41', '2023-04-07 18:16:41'),
+(48, 'notice', 'new video section', NULL, '200', '2023-04-07 18:28:43', '2023-04-07 18:28:43'),
+(49, 'video', 'new video', NULL, '200', '2023-04-07 18:35:23', '2023-04-07 18:35:23'),
+(50, 'video', 'new video one', NULL, '200', '2023-04-07 18:49:49', '2023-04-07 18:49:49'),
+(51, 'video', 'video url', NULL, '200', '2023-04-07 18:55:55', '2023-04-07 18:55:55'),
+(52, 'landing', 'videos', NULL, '200', '2023-04-07 19:00:33', '2023-04-07 19:00:33'),
+(53, 'page', 'new-page', NULL, '200', '2023-04-11 19:28:40', '2023-04-11 19:28:40'),
+(54, 'page', 'new-page-demo', NULL, '200', '2023-04-11 19:34:57', '2023-04-11 19:34:57'),
+(55, 'page', 'test-1-page', NULL, '200', '2023-04-11 20:16:58', '2023-04-11 20:16:58'),
+(56, 'page', 'new-page-create', NULL, '404', '2023-04-11 20:57:13', '2023-04-11 21:32:01'),
+(57, 'page', 'aaa', NULL, '200', '2023-04-11 21:11:17', '2023-04-11 21:38:03'),
+(58, 'gallery', 'gallery-1', NULL, '200', '2023-04-12 17:23:44', '2023-04-12 17:23:44'),
+(59, 'notice', 'notice-one', NULL, '200', '2023-04-12 17:47:01', '2023-04-12 17:47:01'),
+(60, 'blog', 'HOW DO COMPANIES BACK UP THEIR DATA', NULL, '200', '2023-04-14 16:48:14', '2023-04-14 16:48:14'),
+(61, 'landing', 'blog', NULL, '200', '2023-04-14 17:36:30', '2023-04-14 17:36:30'),
+(62, 'landing', 'contact', NULL, '200', '2023-04-14 17:45:12', '2023-04-14 17:45:12'),
+(64, 'blog', 'HOW TO SET A STATIC IP ADDRESS FOR A PRINTER', NULL, '404', '2023-04-14 18:13:32', '2023-05-09 18:47:06'),
+(65, 'blog', 'HOW DO I RESET MY KEYBOARD?', NULL, '200', '2023-04-14 18:15:10', '2023-04-14 18:15:10'),
+(66, 'blog', 'DO YOU RECOMMEND COMPANIES USE ETHERNET OR WIFI', NULL, '404', '2023-04-14 18:35:08', '2023-05-09 18:47:16'),
+(67, 'event', 'International Telco Warfare', NULL, '200', '2023-04-14 19:01:08', '2023-04-14 19:01:08'),
+(68, 'notice', 'notice-5', 'বিসিএস কম্পিউটার সিটি, আইডিবিতে চলছে “সিটি আইটি ঈদ উৎসব ২০২৩', '301', '2023-04-14 20:27:47', '2023-04-15 18:24:57'),
+(69, 'notice', 'বিসিএস কম্পিউটার সিটি, আইডিবিতে চলছে “সিটি আইটি ঈদ উৎসব ২০২৩', NULL, '200', '2023-04-15 18:24:57', '2023-04-15 18:24:57'),
+(70, 'notice', 'j', NULL, '200', '2023-04-15 18:34:43', '2023-04-15 18:34:43'),
+(71, 'landing', 'get-a-quotation', NULL, '200', '2023-04-15 18:50:51', '2023-04-15 18:50:51'),
+(72, 'video', 'video-gallery-1', NULL, '200', '2023-04-15 19:43:59', '2023-04-15 19:43:59'),
+(73, 'video', 'video-gallery-two', NULL, '200', '2023-04-15 19:59:01', '2023-04-15 19:59:01'),
+(74, 'video', 'gallery-3', NULL, '200', '2023-04-15 20:02:56', '2023-04-15 20:02:56'),
+(88, 'page', 'why-buy-from-us', NULL, '200', '2023-04-16 18:20:42', '2023-04-16 18:20:42'),
+(89, 'press', 'press-one', NULL, '200', '2023-04-17 23:30:49', '2023-04-17 23:30:49'),
+(90, 'event', 'demo122342354', NULL, '200', '2023-04-18 01:12:51', '2023-04-18 01:12:51'),
+(91, 'event', 'EARTH DAY 2023: WHAT THE EVENTS INDUSTRY IS DOING TO ACHIEVE NET ZERO CARBON EVENTS BY 2050', NULL, '200', '2023-04-18 18:10:08', '2023-04-18 18:10:08'),
+(92, 'event', 'trial-event', NULL, '404', '2023-04-26 17:31:46', '2023-04-26 17:31:46'),
+(93, 'event', 'trial-event-today', NULL, '200', '2023-04-26 17:33:52', '2023-04-26 17:33:52'),
+(94, 'event', 'yesterday-event', NULL, '200', '2023-04-26 17:35:06', '2023-04-26 17:35:06'),
+(95, 'event', 'dfsdfgsgsg', NULL, '200', '2023-04-26 17:41:08', '2023-04-26 17:41:08'),
+(96, 'landing', 'press-release', NULL, '200', '2023-04-28 18:19:22', '2023-04-28 18:19:22'),
+(97, 'press', 'press-2', NULL, '200', '2023-04-28 18:47:30', '2023-04-28 18:47:30'),
+(98, 'notice', 'acknowledgement-of-our-privacy-statement', NULL, '200', '2023-05-01 18:05:38', '2023-05-01 18:05:38'),
+(108, 'blog', 'new-create-blog-1', NULL, '404', '2023-05-06 23:15:21', '2023-05-09 18:47:21'),
+(109, 'blog', 'a345234534', NULL, '404', '2023-05-06 23:17:48', '2023-05-09 18:47:26'),
+(110, 'blog', 'test-blog-two-new-tag-and-category', NULL, '404', '2023-05-06 23:19:05', '2023-05-09 18:47:31'),
+(111, 'tag', 'a7', NULL, '200', '2023-05-06 23:24:32', '2023-05-06 23:24:32'),
+(112, 'content', 'a712', NULL, '200', '2023-05-06 23:29:02', '2023-05-06 23:29:02'),
+(113, 'tag', 'test-tag-1', 'test-tag-11', '301', '2023-05-06 23:37:43', '2023-05-06 23:38:11'),
+(114, 'tag', 'test-tag-11', 'tag-cat-3', '301', '2023-05-06 23:38:11', '2023-05-06 23:40:19'),
+(115, 'tag', 'tag-cat-1', 'computer-service', '301', '2023-05-06 23:39:37', '2023-06-17 18:28:45'),
+(116, 'tag', 'tag-cat-2', 'information-technology', '301', '2023-05-06 23:39:58', '2023-06-17 18:28:09'),
+(117, 'tag', 'tag-cat-3', 'science-and-technology', '301', '2023-05-06 23:40:19', '2023-06-17 18:29:14'),
+(118, 'tag', 'tag-tag-1', 'computer-online', '301', '2023-05-06 23:41:45', '2023-06-17 18:27:00'),
+(119, 'tag', 'tag-tag-2', '/home', '301', '2023-05-06 23:41:59', '2023-05-08 16:47:55'),
+(120, 'blog', 'blog-name-tag-2-cat-2', 'blog-name-tag-2-cat-2-edited', '301', '2023-05-06 23:42:54', '2023-05-06 23:43:21'),
+(121, 'blog', 'blog-name-tag-2-cat-2-edited', NULL, '404', '2023-05-06 23:43:21', '2023-05-09 18:47:36'),
+(122, 'tag', '/home', NULL, '200', '2023-05-08 16:47:55', '2023-05-08 16:47:55'),
+(123, 'landing', 'about-us', NULL, '200', '2023-05-08 17:08:15', '2023-05-08 17:08:15'),
+(124, 'tag', 'menu-members', NULL, '200', '2023-05-08 17:16:18', '2023-05-08 17:16:18'),
+(126, 'content', 'new', NULL, '200', '2023-05-08 19:08:02', '2023-05-08 19:08:02'),
+(127, 'content', 'new-test-size-slider', NULL, '200', '2023-05-08 19:11:55', '2023-05-08 19:11:55'),
+(128, 'content', 'new-test2', NULL, '200', '2023-05-08 19:15:55', '2023-05-08 19:15:55'),
+(129, 'content', 'newd4', NULL, '200', '2023-05-08 19:24:21', '2023-05-08 19:24:21'),
+(130, 'content', 'newzxzgxfh', NULL, '200', '2023-05-08 19:25:41', '2023-05-08 19:25:41'),
+(131, 'content', 'test4', NULL, '200', '2023-05-08 19:37:32', '2023-05-08 19:37:32'),
+(132, 'content', 'demogsxtfdfgsd', NULL, '200', '2023-05-08 19:38:41', '2023-05-08 19:38:41'),
+(133, 'content', 'test10', NULL, '200', '2023-05-08 19:45:04', '2023-05-08 19:45:04'),
+(134, 'content', 'demo', NULL, '200', '2023-05-08 19:52:40', '2023-05-08 19:52:40'),
+(135, 'content', 'demo999', NULL, '200', '2023-05-08 19:54:26', '2023-05-08 19:54:26'),
+(136, 'content', 'demozzx', NULL, '200', '2023-05-08 20:00:48', '2023-05-08 20:00:48'),
+(137, 'content', 'demo789', NULL, '200', '2023-05-08 20:01:57', '2023-05-08 20:01:57'),
+(138, 'content', 'new444', NULL, '200', '2023-05-08 20:03:14', '2023-05-08 20:03:14'),
+(139, 'blog', 'test-244', NULL, '404', '2023-05-08 20:03:58', '2023-05-09 18:47:41'),
+(140, 'content', 'this-is-slider-for-testing', NULL, '200', '2023-05-08 20:08:09', '2023-05-08 20:08:09'),
+(141, 'content', 'aa33', NULL, '200', '2023-05-08 20:10:02', '2023-05-08 20:10:02'),
+(142, 'content', 'slider-1', NULL, '200', '2023-05-08 20:15:59', '2023-05-08 20:15:59'),
+(143, 'content', 'sdfasdfasdf', NULL, '200', '2023-05-08 20:16:44', '2023-05-08 20:16:44'),
+(144, 'content', 'dd', NULL, '200', '2023-05-08 20:22:01', '2023-05-08 20:22:01'),
+(145, 'content', 's3', NULL, '200', '2023-05-08 20:22:26', '2023-05-08 20:22:26'),
+(146, 'content', 'asdfasasdfdf', NULL, '200', '2023-05-08 20:23:12', '2023-05-08 20:23:12'),
+(147, 'content', 'sssss', NULL, '200', '2023-05-08 20:30:19', '2023-05-08 20:30:19'),
+(148, 'news', '-------', 'রাজধানীতে-তীব্র যানজট তিন কারণ জানাল ট্রাফিক পুলিশ', '301', '2023-05-09 16:44:17', '2023-05-09 17:19:34'),
+(149, 'news', 'রাজধানীতে-তীব্র যানজট তিন কারণ জানাল ট্রাফিক পুলিশ', NULL, '200', '2023-05-09 17:19:34', '2023-05-09 17:19:34'),
+(150, 'news', 'চ্যাটজিপিটির সঙ্গে প্রতিদ্বন্দ্বিতা করতে ‘বার্ড’ হালনাগাদ করবে গুগল', NULL, '200', '2023-05-09 17:29:56', '2023-05-09 17:29:56'),
+(151, 'news', 'চ্যাটজিপিটির সঙ্গে প্রতিদ্বন্দ্বিতা করতে ‘বার্ড’ হালনাগাদ করবে গুগল |', NULL, '200', '2023-05-09 17:30:19', '2023-05-09 17:30:19'),
+(152, 'news', 'কম্পিউটারেও ব্যবহার করা যাবে অ্যান্ড্রয়েডের নিয়ারবাই শেয়ার সুবিধা ...', NULL, '200', '2023-05-09 17:31:50', '2023-05-09 17:31:50'),
+(153, 'notice', 'bcs-notice-testing', NULL, '200', '2023-05-09 18:08:44', '2023-05-09 18:08:44'),
+(154, 'content', 'new-test-slider-one', NULL, '200', '2023-05-09 18:30:45', '2023-05-09 18:30:45'),
+(155, 'content', 'new-test-slider-two', NULL, '200', '2023-05-09 18:32:02', '2023-05-09 18:32:02'),
+(156, 'blog', 'HOW DO COMPANIES BACK UP THEIR DATAAA', NULL, '200', '2023-05-09 18:50:59', '2023-05-09 18:50:59'),
+(158, 'tag', '#', NULL, '200', '2023-05-10 21:08:33', '2023-05-10 21:08:33'),
+(159, 'tag', 'tag-notice', NULL, '200', '2023-05-10 21:17:21', '2023-05-10 21:17:21'),
+(160, 'gallery', 'test-007', NULL, '200', '2023-05-12 19:06:13', '2023-05-12 19:06:13'),
+(161, 'gallery', 'test-008', NULL, '200', '2023-05-12 19:07:50', '2023-05-12 19:07:50'),
+(162, 'gallery', 'test-009', NULL, '200', '2023-05-12 19:12:26', '2023-05-12 19:12:26'),
+(163, 'gallery', 'test-010', NULL, '200', '2023-05-12 19:13:15', '2023-05-12 19:13:15'),
+(164, 'gallery', 'test-11', NULL, '200', '2023-05-12 19:14:27', '2023-05-12 19:14:27'),
+(165, 'gallery', 'test-12', NULL, '200', '2023-05-12 19:44:13', '2023-05-12 19:44:13'),
+(166, 'gallery', 'test-13', NULL, '200', '2023-05-12 19:44:52', '2023-05-12 19:44:52'),
+(167, 'gallery', 'test-014', NULL, '200', '2023-05-12 20:13:51', '2023-05-12 20:13:51'),
+(168, 'landing', 'notice', NULL, '200', '2023-05-13 21:57:00', '2023-05-13 21:57:00'),
+(169, 'press', 'new-test-press', NULL, '200', '2023-05-13 22:21:38', '2023-05-13 22:21:38'),
+(170, 'press', 'new-press-relaease', NULL, '200', '2023-05-13 22:23:18', '2023-05-13 22:23:18'),
+(171, 'event', 'test-event-1', NULL, '200', '2023-05-14 16:28:39', '2023-05-14 16:28:39'),
+(172, 'event', 'event-test-2', NULL, '200', '2023-05-14 16:38:22', '2023-05-14 16:38:22'),
+(173, 'event', 'test-event-3', NULL, '200', '2023-05-14 16:55:47', '2023-05-14 16:55:47'),
+(174, 'event', 'test-event-4', NULL, '200', '2023-05-14 17:46:32', '2023-05-14 17:46:32'),
+(175, 'landing', 'about', NULL, '200', '2023-05-14 22:45:51', '2023-05-14 22:46:20'),
+(176, 'landing', 'committee', NULL, '200', '2023-05-16 17:30:13', '2023-05-16 17:30:13'),
+(177, 'gallery', 'test-20', NULL, '200', '2023-05-16 18:10:38', '2023-05-16 18:10:38'),
+(178, 'video', 'new video test', NULL, '200', '2023-05-16 19:53:50', '2023-05-16 19:53:50'),
+(179, 'video', 'video-test-23', NULL, '200', '2023-05-16 20:37:25', '2023-05-16 20:37:25'),
+(180, 'video', 'video-test-24', NULL, '200', '2023-05-16 20:42:03', '2023-05-16 20:42:03'),
+(181, 'video', 'test video 30', NULL, '200', '2023-05-16 20:46:36', '2023-05-16 20:46:36'),
+(182, 'video', 'test-25', NULL, '200', '2023-05-16 20:50:20', '2023-05-16 20:50:20'),
+(183, 'video', 'test-35', NULL, '200', '2023-05-16 21:08:37', '2023-05-16 21:08:37'),
+(184, 'video', 'text-30', NULL, '200', '2023-05-16 22:37:57', '2023-05-16 22:37:57'),
+(185, 'video', 'test50', NULL, '200', '2023-05-16 22:47:50', '2023-05-16 22:47:50'),
+(186, 'video', 'demozdd', NULL, '200', '2023-05-16 22:48:59', '2023-05-16 22:48:59'),
+(187, 'video', 'testvideo 51', NULL, '200', '2023-05-16 22:53:41', '2023-05-16 22:53:41'),
+(188, 'video', 'test55', NULL, '200', '2023-05-16 23:49:57', '2023-05-16 23:49:57'),
+(189, 'video', 'demo test video 150', NULL, '200', '2023-05-17 00:30:26', '2023-05-17 00:30:26'),
+(190, 'video', 'test video 35', NULL, '404', '2023-05-17 16:40:34', '2023-05-17 16:42:54'),
+(191, 'video', 'video test-500', NULL, '200', '2023-05-17 17:25:09', '2023-05-17 17:25:09'),
+(192, 'video', 'vidoe32131', NULL, '200', '2023-05-17 22:07:47', '2023-05-17 22:07:47'),
+(193, 'tag', 'about-footer', NULL, '200', '2023-05-20 17:24:26', '2023-05-20 17:24:26'),
+(194, 'tag', 'members-footer', NULL, '200', '2023-05-20 18:31:49', '2023-05-20 18:31:49'),
+(195, 'tag', 'event-footer', NULL, '200', '2023-05-20 18:36:56', '2023-05-20 18:36:56'),
+(196, 'content', 'bcs-logo', NULL, '200', '2023-05-20 20:11:31', '2023-05-20 20:11:31'),
+(197, 'content', 'bcs-logo-2', NULL, '200', '2023-05-20 20:20:25', '2023-05-20 20:20:25'),
+(198, 'blog', 'বৃষ্টি উৎসব ২০২৩ বিসিএস কম্পিউটার সিটি, ঢাকা', NULL, '200', '2023-05-21 20:53:01', '2023-05-21 20:53:01'),
+(199, 'news', 'বৃষ্টি-উৎসব-২০২৩-বিসিএস-কম্পিউটার-সিটি-ঢাকা', NULL, '200', '2023-05-22 16:37:08', '2023-05-22 16:37:08'),
+(201, 'news', 'বৃষ্টি-উৎসব-২০২৩-:-বিসিএস-কম্পিউটার-সিটি,-ঢাকা', NULL, '200', '2023-05-22 19:00:21', '2023-05-22 19:00:21'),
+(202, 'news', 'বৃষ্টি-উৎসব-২০২৩-:-বিসিএস-কম্পিউটার-সিটি,-ঢাকাcvcvx', NULL, '404', '2023-05-22 19:27:22', '2023-05-22 19:27:22'),
+(203, 'news', 'বৃষ্টি-উৎসব-২০২৩-:-বিসিএস-কম্পিউটার-সিটি,-ঢাকা],./ghujyf', NULL, '200', '2023-05-22 19:35:32', '2023-05-22 19:35:32'),
+(204, 'news', 'বৃষ্টি-উৎসব-২০২৩-:-বিসিএস-কম্পিউটার-সিটি,-ঢাকা31425x', NULL, '200', '2023-05-22 19:35:50', '2023-05-22 19:35:50'),
+(205, 'news', 'বৃষ্টি-উৎসব-২০২৩-:-বিসিএস-কম্পিউটার-সিটি,-ঢাকাzzzzz', NULL, '200', '2023-05-22 19:37:34', '2023-05-22 19:37:34'),
+(700, 'tag', 'বৃষ্টি-উৎসব', 'computer-technology', '301', '2023-05-23 21:19:01', '2023-06-17 18:27:52'),
+(701, 'tag', 'ঘামাচি', 'ঘামাচি-1', '301', '2023-05-23 21:20:33', '2023-06-13 21:37:43'),
+(932, 'gallery', 'a-a-aa-a-', NULL, '200', '2023-05-28 23:49:29', '2023-05-28 23:49:29'),
+(951, 'notice', 'list-of-selected-trainees-for-professional-courses-of-it-scholarship-program,-round-–-55', NULL, '404', '2023-05-31 19:20:06', '2023-06-19 19:36:51'),
+(952, 'notice', 'মৌখিক-পরীক্ষার-জন্য-নির্বাচিত-প্রার্থী-তালিকা-ও-সূচী,-isdb-bisew-vocational-training---round-32', NULL, '404', '2023-05-31 19:26:52', '2023-06-19 19:38:35'),
+(953, 'page', 'mission', NULL, '200', '2023-05-31 21:03:41', '2023-06-21 01:00:54'),
+(954, 'page', 'vision', NULL, '200', '2023-05-31 21:04:14', '2023-06-21 01:06:19'),
+(955, 'page', 'message-from-chariman', NULL, '200', '2023-05-31 21:05:05', '2023-06-21 01:23:04'),
+(956, 'page', 'our-values', NULL, '200', '2023-05-31 21:32:43', '2023-06-21 01:08:08'),
+(958, 'tag', 'new-blog', NULL, '200', '2023-06-12 19:16:30', '2023-06-12 19:16:30'),
+(959, 'tag', 'new-events', NULL, '200', '2023-06-12 19:22:39', '2023-06-12 19:22:39'),
+(960, 'tag', 'new-news', NULL, '200', '2023-06-12 19:23:32', '2023-06-12 19:23:32'),
+(961, 'tag', 'new-video', NULL, '200', '2023-06-12 19:24:21', '2023-06-12 19:24:21'),
+(962, 'tag', 'new-press-release', NULL, '200', '2023-06-12 19:29:20', '2023-06-12 19:29:20'),
+(963, 'tag', 'new-videos', NULL, '200', '2023-06-12 19:30:13', '2023-06-12 19:30:13'),
+(964, 'tag', 'new-contact', NULL, '200', '2023-06-12 19:31:21', '2023-06-12 19:31:21'),
+(965, 'tag', 'video-1', NULL, '200', '2023-06-12 20:06:38', '2023-06-12 20:06:38'),
+(966, 'tag', 'video-1-g', NULL, '200', '2023-06-12 20:08:03', '2023-06-12 20:08:03'),
+(967, 'news', 'আইডিবিতে-চলছে-\'সিটি-আইটি-ঈদ-উৎসব-২০২৩\'', NULL, '200', '2023-06-12 20:50:50', '2023-06-12 20:50:50'),
+(968, 'news', 'আইডিবিতে-চলছে-‘সিটি-আইটি-ঈদ-উৎসব-২০২৩', NULL, '200', '2023-06-12 20:53:55', '2023-06-12 20:53:55'),
+(969, 'news', 'আইডিবিতে-চলছে-সিটি-আইটি-ঈদ-উৎসব-', NULL, '200', '2023-06-12 21:07:52', '2023-06-12 21:07:52'),
+(970, 'blog', 'laptop-buying-guide-finding-the-perfect-laptop-for-your-needs', NULL, '200', '2023-06-12 21:25:29', '2023-06-12 21:25:29'),
+(971, 'blog', 'pc-case-buying-guide-choosing-the-perfect-case-for-your-computer', NULL, '200', '2023-06-12 21:47:05', '2023-06-12 21:47:05'),
+(972, 'blog', 'buying-the-perfect-computer-monitor', NULL, '200', '2023-06-12 22:15:55', '2023-06-12 22:16:03'),
+(973, 'tag', 'bcs-computer-city', NULL, '200', '2023-06-13 07:37:02', '2023-06-13 07:37:02'),
+(974, 'tag', 'bcs-computer-city-dhaka', NULL, '200', '2023-06-13 07:46:46', '2023-06-13 07:46:46'),
+(975, 'tag', 'idb-bhaban-dhaka', NULL, '200', '2023-06-13 07:47:09', '2023-06-13 07:47:09'),
+(976, 'tag', 'computer-shop', NULL, '200', '2023-06-13 07:47:36', '2023-06-13 07:47:36'),
+(977, 'tag', 'computer-market', NULL, '200', '2023-06-13 07:47:56', '2023-06-13 07:47:56'),
+(978, 'tag', 'pc-builder', NULL, '200', '2023-06-13 07:48:15', '2023-06-13 07:48:15'),
+(979, 'tag', 'laptop', NULL, '200', '2023-06-13 07:48:45', '2023-06-13 07:48:45'),
+(980, 'tag', 'desktop', NULL, '200', '2023-06-13 07:48:57', '2023-06-13 07:48:57'),
+(981, 'tag', 'it-products', NULL, '200', '2023-06-13 07:49:25', '2023-06-13 07:49:25'),
+(982, 'tag', 'computer-hardware', NULL, '200', '2023-06-13 07:49:54', '2023-06-13 07:49:54'),
+(983, 'tag', 'computer-software', NULL, '200', '2023-06-13 07:50:21', '2023-06-13 07:50:21'),
+(984, 'tag', 'latest-technology', NULL, '200', '2023-06-13 07:50:49', '2023-06-13 07:50:49'),
+(985, 'tag', 'computer-market-bangladesh', NULL, '200', '2023-06-13 07:51:18', '2023-06-13 07:51:18'),
+(986, 'tag', 'shopping-complex', NULL, '200', '2023-06-13 07:51:38', '2023-06-13 07:51:38'),
+(987, 'tag', 'repair-computer', NULL, '200', '2023-06-13 07:52:18', '2023-06-13 07:52:18'),
+(988, 'tag', 'cctv', NULL, '200', '2023-06-13 07:52:33', '2023-06-13 07:52:33'),
+(989, 'tag', 'ram', NULL, '200', '2023-06-13 07:52:47', '2023-06-13 07:52:47'),
+(990, 'tag', 'motherboard', NULL, '200', '2023-06-13 07:53:01', '2023-06-13 07:53:01'),
+(991, 'content', 'why-come-idb', NULL, '200', '2023-06-13 17:24:51', '2023-06-13 17:24:51'),
+(992, 'content', 'idb-banner', NULL, '200', '2023-06-13 17:37:36', '2023-06-13 17:37:36'),
+(993, 'content', 'bann', NULL, '200', '2023-06-13 17:45:33', '2023-06-13 17:45:33'),
+(994, 'press', 'bcs-computer-city-website-will-publish-soon', NULL, '200', '2023-06-13 18:52:00', '2023-06-13 18:52:00'),
+(995, 'tag', 'ram1', NULL, '200', '2023-06-13 21:26:44', '2023-06-13 21:26:44'),
+(996, 'tag', 'technology', NULL, '200', '2023-06-13 21:30:14', '2023-06-13 21:30:14'),
+(997, 'tag', 'ঘামাচি-1', 'pc-case', '301', '2023-06-13 21:37:43', '2023-06-17 18:26:35'),
+(998, 'blog', 'why-motherboard-is-important-for-pc-?-', 'why-motherboard-is-important-for-pc', '301', '2023-06-14 17:42:21', '2023-06-14 17:45:59'),
+(999, 'blog', 'why-motherboard-is-important-for-pc', NULL, '404', '2023-06-14 17:45:59', '2023-06-14 18:19:34'),
+(1000, 'gallery', 'idb-internal-image', 'bcs-computer-city-shopping-complex-inside-ground-floor-gallery', '301', '2023-06-16 19:01:59', '2023-06-17 17:54:24'),
+(1001, 'tag', 'new-gallery', NULL, '200', '2023-06-16 19:06:00', '2023-06-16 19:06:00'),
+(1002, 'gallery', 'this-the-internal-image-of-idb', 'bcs-computer-city-shopping-complex-inside-image-gallery', '301', '2023-06-16 19:13:17', '2023-06-17 17:50:07'),
+(1003, 'gallery', 'bcs-computer-city-shopping-complex-inside-image-gallery', 'bcs-computer-city-shopping-complex-inside', '301', '2023-06-17 17:50:07', '2023-06-20 00:57:57'),
+(1004, 'gallery', 'bcs-computer-city-shopping-complex-inside-ground-floor-gallery', 'bcs-computer-city-shopping-complex-inside-ground-floor', '301', '2023-06-17 17:54:24', '2023-06-20 00:57:21'),
+(1005, 'tag', 'pc-case', NULL, '404', '2023-06-17 18:26:35', '2023-06-17 18:26:35'),
+(1006, 'tag', 'computer-online', NULL, '200', '2023-06-17 18:27:00', '2023-06-17 18:27:00'),
+(1007, 'tag', 'computer-technology', NULL, '200', '2023-06-17 18:27:52', '2023-06-17 18:27:52'),
+(1008, 'tag', 'information-technology', NULL, '200', '2023-06-17 18:28:09', '2023-06-17 18:28:09'),
+(1009, 'tag', 'computer-service', NULL, '200', '2023-06-17 18:28:45', '2023-06-17 18:28:45'),
+(1010, 'tag', 'science-and-technology', NULL, '200', '2023-06-17 18:29:14', '2023-06-17 18:29:14'),
+(1011, 'tag', 'committee-members', NULL, '200', '2023-06-17 18:51:11', '2023-06-17 18:51:11'),
+(1012, 'content', '600', 'city-it-post-eid-2023', '301', '2023-06-18 21:55:57', '2023-07-09 21:41:43'),
+(1558, 'member', '1200-mhz-plus', NULL, '200', '2023-06-18 19:41:50', '2023-06-18 19:41:50'),
+(1559, 'employee', 'md-islam', NULL, '200', '2023-06-18 19:41:50', '2023-06-18 19:41:50'),
+(1560, 'member', 'a-t-associates', NULL, '200', '2023-06-18 19:41:50', '2023-06-18 19:41:50'),
+(1561, 'employee', 'md-obayedul-islam', NULL, '200', '2023-06-18 19:41:50', '2023-06-18 19:41:50'),
+(1562, 'member', 'a-2000-systems', NULL, '200', '2023-06-18 19:41:50', '2023-06-18 19:41:50'),
+(1563, 'employee', 'ms-sufia-aftab-chowdhury', NULL, '200', '2023-06-18 19:41:50', '2023-06-18 19:41:50'),
+(1564, 'member', 'abc-computer-corner', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1565, 'employee', 'mr-shahidul-islam', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1566, 'member', 'advanced-information-tech', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1567, 'employee', 'mr-hasan-md-mustafizur-rahman', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1568, 'member', 'ananda-computers', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1569, 'employee', 'iqbal-hossain', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1570, 'member', 'asiatic-traders', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1571, 'employee', 'abu-saeed', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1572, 'member', 'barnali-computers', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1573, 'employee', 'md-abbas-ali', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1574, 'member', 'baticram-electronics-computers', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1575, 'employee', 'ariful-islam-arzu', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1576, 'member', 'bd-tech-computers', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1577, 'employee', 'mohammad-naheedul-islam', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1578, 'member', 'binary-logic', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1579, 'employee', 'md-nazrul-islam', 'monsur-ahmed-chowdhury', '301', '2023-06-18 19:41:51', '2023-06-20 23:17:32'),
+(1580, 'member', 'bits-limited', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1581, 'employee', 'tania-tabassum', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1582, 'member', 'books-tech-view', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1583, 'employee', 'md-mahbubur-rahman', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1584, 'member', 'borland-computers', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1585, 'employee', 'kawsar-hossain', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1586, 'member', 'businessland-limited', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1587, 'employee', 'md-sazzad-hossain', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1588, 'member', 'businesslink-computers-ltd', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1589, 'employee', 'mrs-afsana-afroze', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1590, 'member', 'butterfly-system-solutions', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1591, 'employee', 'md-easin-miah', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1592, 'member', 'buy-win', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1593, 'employee', 'mohammad-mahabubur-rahman', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1594, 'member', 'canon-singapore-pvt-ltd', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1595, 'employee', 'sm-ahsan-habib', 'mr-azim-kafi', '301', '2023-06-18 19:41:52', '2023-07-08 15:53:27'),
+(1596, 'member', 'cds-it-limited', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1597, 'employee', 'ali-asad', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1598, 'member', 'cats-limited', 'cacts-limited', '301', '2023-06-18 19:41:52', '2023-07-08 16:37:51'),
+(1599, 'employee', 'uttom-das', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1600, 'member', 'classic-business-centre', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1601, 'employee', 'dilip-chandra-das', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1602, 'member', 'com-culus-system-innovation', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1603, 'employee', 'akbar-hossen', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1604, 'member', 'complus', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1605, 'employee', 'saiful-hassan', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1606, 'member', 'comptech-network-system-pvt-ltd', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1607, 'employee', 'harun-ur-rashid', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1608, 'member', 'computer-clinic-ltd', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1609, 'employee', 'md-manjurul-islam-rubel', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1610, 'member', 'computer-jagat', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1611, 'employee', 'md-abdul-hafiz-sagar', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1612, 'member', 'computer-services', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1613, 'employee', 'mohammad-najmul-hasan', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1614, 'member', 'computer-solutions-inc', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1615, 'employee', 'golam-morshed-sarwar', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1616, 'member', 'computer-source-ltd', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1617, 'employee', 'faysal-ahmed', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1618, 'member', 'computer-valley-ltd', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1619, 'employee', 'rezaul-islam-khan', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1620, 'member', 'computer-village', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1621, 'employee', 'md-faruk-hossain', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1622, 'member', 'comtrade', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1623, 'employee', 'mesbah-uddin', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1624, 'member', 'confidence-computer-network', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1625, 'employee', 'mr-hazim', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1626, 'member', 'confidence-computer-corner', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1627, 'employee', 'md-nesarul-islam', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1628, 'member', 'cotec-bangladesh', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1629, 'employee', 'md-habibur-rahman-shahed', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1630, 'member', 'cyber-bridge', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1631, 'employee', 'md-mofijul-islam-babu', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1632, 'member', 'cyber-communications', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1633, 'employee', 'md-masum', NULL, '200', '2023-06-18 19:41:53', '2023-06-18 19:41:53'),
+(1634, 'member', 'computer-city-technologies-ltd', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1635, 'employee', 'golam-sarwar-babar', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1636, 'member', 'daffodil-computers-ltd', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1637, 'employee', 'dr-md-sabur-khan', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1638, 'member', 'dcode-limited', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1639, 'employee', 'md-mizanur-rahman', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1640, 'member', 'delta-network-system-ltd', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1641, 'employee', 'md-faisal-ali', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1642, 'member', 'deshary-computer-systems', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1643, 'employee', 'akm-rasal-kabir', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1644, 'member', 'dhrubo-ltd', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1645, 'employee', 'mohammad-mohibul-islam', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1646, 'member', 'digital-bridge', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1647, 'employee', 'mr-liton-kumar', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1648, 'member', 'digital-pace', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1649, 'employee', 'md-imran', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1650, 'member', 'digitus-computers', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1651, 'employee', 'md-manik', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1652, 'member', 'dolphin-computers-ltd', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1653, 'employee', 'abdul-khaleque-patwary', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1654, 'member', 'digimark-solution', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1655, 'employee', 'md-aminur-rahman', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1656, 'member', 'dreamland-computer', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1657, 'employee', 'm-shafiullah', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1658, 'member', 'dutch-bangla-bank', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1659, 'member', 'electronic-concept', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1660, 'employee', 'kazi-shohidul-islam', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1661, 'member', 'electrosonic', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1662, 'employee', 'zoynul-arifin', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1663, 'member', 'excel-technologies-ltd', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1664, 'employee', 'mr-goutam-saha', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1665, 'member', 'executive-machines-limited', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1666, 'member', 'eerna-limited', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1667, 'employee', 'md-asraful-islam-sohel', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1668, 'member', 'eastern-it', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1669, 'employee', 'md-nahid-iqbal', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1670, 'member', 'fastrack-solutions', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1671, 'employee', 'md-golam-rabbani', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1672, 'member', 'flora-limited', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1673, 'employee', 's-a-imrul-alam', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1674, 'member', 'foresight-systems-resources', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1675, 'employee', 'md-abdur-razzak', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1676, 'member', 'gateway-tech', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1677, 'employee', 'mohammad-sharifuddowla-ripon', NULL, '200', '2023-06-18 19:41:55', '2023-06-18 19:41:55'),
+(1678, 'member', 'general-computer', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1679, 'employee', 'md-jahedul-alam', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1680, 'member', 'genesis-computers-ltd', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1681, 'employee', 'md-asgar-hossain', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1682, 'member', 'global-brand-pvt-ltd', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1683, 'employee', 'md-kamruzzaman', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1684, 'member', 'golden-trade-international-bd', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1685, 'employee', 'md-abdullah-riyad', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1686, 'member', 'greatway-computer-system', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1687, 'employee', 'md-ferdaus-hossain', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1688, 'member', 'hitech-professionals', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1689, 'employee', 'md-azizul-hak', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1690, 'member', 'imagineering-micro-system-peripherals', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1691, 'employee', 'khandokar-habibul-hassan', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1692, 'member', 'index-it-ltd', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1693, 'employee', 'mahfuzur-rahman', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1694, 'member', 'infosys-information-systems', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1695, 'employee', 'md-akbar-ali', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1696, 'member', 'inpace-management-services-limited', 'Inpace Management Services Limited', '301', '2023-06-18 19:41:56', '2023-07-14 23:18:55'),
+(1697, 'employee', 'gulam-sanwer-real', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1698, 'member', 'integra-computers-and-electronics', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1699, 'employee', 'hafiz-ahmmad-hiru', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1700, 'member', 'international-computer-network', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1701, 'employee', 'mr-abdul-majid-mondal', NULL, '200', '2023-06-18 19:41:56', '2023-06-18 19:41:56'),
+(1702, 'member', 'international-computer-vision-limited', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1703, 'employee', 'md-saberuzzaman-sohel', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1704, 'member', 'interpreter-infotech', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1705, 'employee', 'sumon-saha', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1706, 'member', 'ioe-bangladesh-limited', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1707, 'employee', 'paramananda-das', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1708, 'member', 'ipsita-computers-pte-ltd', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1709, 'employee', 'abdullah-alam', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1710, 'member', 'j-a-n-associates-ltd', 'jan-associates', '301', '2023-06-18 19:41:57', '2023-07-08 16:13:59'),
+(1711, 'employee', 'abdullah-al-mamun', 'dipankar-raha', '301', '2023-06-18 19:41:57', '2023-07-08 16:12:04'),
+(1712, 'member', 'jet-corporation-ltd', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1713, 'employee', 'md-shariful-islam', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1714, 'member', 'logitech-computers', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1715, 'employee', 'md-abdur-rauf', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1716, 'member', 'lucid-computers', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1717, 'employee', 'ataullah-zilany', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1718, 'member', 'mars-partners-bon-appetit', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1719, 'member', 'massive-computers', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1720, 'employee', 'sk-musa-kamal-mihir', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1721, 'member', 'micro-electronics-limited', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1722, 'employee', 'md-arifud-doula', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1723, 'member', 'micro-plus-computer-system', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1724, 'employee', 'md-shohid-khan', NULL, '200', '2023-06-18 19:41:57', '2023-06-18 19:41:57'),
+(1725, 'member', 'microdill-computers', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1726, 'employee', 'md-ayub-khan', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1727, 'member', 'micron-computers-technology', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1728, 'employee', 'mahabub', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1729, 'member', 'microtop-system', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1730, 'employee', 'md-nazrul-islam-rony', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1731, 'member', 'microway-systems', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1732, 'employee', 'md-shahiduzzaman', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1733, 'member', 'monarch-it-limited', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1734, 'employee', 'samir-kumar-das', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1735, 'member', 'ncll-systems-ltd', 'Network-Computing-Line-Ltd', '301', '2023-06-18 19:41:58', '2023-07-08 00:00:25'),
+(1736, 'employee', 's-m-aminur-rahman', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1737, 'member', 'netstar-private-limited', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1738, 'employee', 'monsurul-hoque-chowdhury', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1739, 'member', 'nexus', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1740, 'member', 'nikor', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1741, 'employee', 'md-anamul-haque-sharker', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1742, 'member', 'nsz-computers', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1743, 'employee', 'eng-rashedul-islam', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1744, 'member', 'ocean-peripherals', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1745, 'employee', 'md-hamidur-rahman', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1746, 'member', 'one-stop-service-solution', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1747, 'employee', 'md-saiful-islam-khan-shohel', NULL, '200', '2023-06-18 19:41:58', '2023-06-18 19:41:58'),
+(1748, 'member', 'onix-computers-system', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1749, 'employee', 'md-nurun-nabi', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1750, 'member', 'orient-computers', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1751, 'employee', 'md-jabedur-rahman-shakee', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1752, 'member', 'panaroma-computer', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1753, 'employee', 'md-liton-hossain', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1754, 'member', 'perennial-international', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1755, 'employee', 'anowar-parvaz', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1756, 'member', 'pro-2-interactive-ltd', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1757, 'employee', 'humayun-kabir', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1758, 'member', 'radiance-computers-ltd', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1759, 'employee', 'mohammad-nizamul-haque', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1760, 'member', 'rain-computers', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1761, 'employee', 'h-m-sohel-sikder', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1762, 'member', 'rainbow-express-parcel-services-ltd', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1763, 'employee', 'sohel-pervez', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1764, 'member', 'richman-informatics', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1765, 'employee', 'md-abul-kalam-azad', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1766, 'member', 'rishit-computers-ltd', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1767, 'employee', 'mayen-uddin-rasel', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1768, 'member', 'rm-systems-ltd', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1769, 'employee', 'md-ali-ashfak', NULL, '200', '2023-06-18 19:41:59', '2023-06-18 19:41:59'),
+(1770, 'member', 'rr-enterprise', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1771, 'employee', 'md-abdul-momen', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1772, 'member', 'rs-computers-system', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1773, 'employee', 'pijush-kumar-chakravortty', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1774, 'member', 'ryans-it-ltd', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1775, 'member', 'salta-computer-systems-ltd', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1776, 'employee', 'md-humayun-kabir', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1777, 'member', 'samanta-computer-and-services', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1778, 'employee', 'abu-bakar-siddik', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1779, 'member', 'smart-technologies-bd-ltd', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1780, 'employee', 'md-moniruzzaman-khan', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1781, 'member', 'softech-computers-networks-ltd', 'Softech Computer & networks Ltd, Sr#117, 1st Floor,Bcs Computer City,Dhaka-1207.', '301', '2023-06-18 19:42:00', '2023-07-16 18:54:40'),
+(1782, 'employee', 'monir-hossain-patwary', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1783, 'member', 'softlink', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1784, 'employee', 'md-mahabubar-rahman', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1785, 'member', 'source-edge-ltd', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1786, 'employee', 'abu-sayeed-khan', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1787, 'member', 'south-bangla-computers', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1788, 'member', 'southland-computer-pvt-ltd', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1789, 'employee', 'md-yousuf-sujon', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1790, 'member', 'system-communications', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1791, 'employee', 'shimul-hossain', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1792, 'member', 'speed-technology-engineering-ltd', NULL, '200', '2023-06-18 19:42:00', '2023-06-18 19:42:00'),
+(1793, 'member', 'srishty-it', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1794, 'member', 'star-tech-engineering-ltd', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1795, 'employee', 'b-m-sharif-shadiq', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1796, 'member', 'super-dot-com', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1797, 'member', 'superior-electronics-pvt-ltd', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1798, 'employee', 'md-shakhawat-hossain-tipu', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1799, 'member', 'sweep-computers-ltd', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1800, 'employee', 'syed-abu-obaida-lalu', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1801, 'member', 'sys-computers-ltd', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1802, 'employee', 'md-noor-islam', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1803, 'member', 'sys-international', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1804, 'employee', 'akther-hossain-khan', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1805, 'member', 'sydneysun-international', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1806, 'employee', 'md-rabby-islam', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1807, 'member', 'system-palace', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1808, 'employee', 'manoj-das', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1809, 'member', 'tajco-international', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1810, 'employee', 'md-toslim-uddin-riaj', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1811, 'member', 'tcs-computer-services-ltd', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1812, 'employee', 'md-monirur-rahman', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1813, 'member', 'u-tech-infution', NULL, '200', '2023-06-18 19:42:01', '2023-06-18 19:42:01'),
+(1814, 'member', 'tech-valley-distributions-ltd', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1815, 'employee', 'md-harunur-rashid', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1816, 'member', 'tech-view-ltd', NULL, '200', '2023-06-18 19:42:02', '2023-06-19 01:56:03'),
+(1817, 'employee', 'anwarur-rahman', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1818, 'member', 'techland', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1819, 'employee', 'borhan-uddin-akbar', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1820, 'member', 'techno-care-computers-ltd', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1821, 'employee', 'saiful-islam-arju', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1822, 'member', 'techno-link-international-ltd', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1823, 'employee', 'shamim-serniabad', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1824, 'member', 'techno-planet-systems', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1825, 'employee', 'md-j-hassan-rajib', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1826, 'member', 'technoedge-corporation-ltd', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1827, 'employee', 'md-towhidul-islam', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1828, 'member', 'techshop-plus', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1829, 'employee', 'md-golam-azam-juel', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1830, 'member', 'the-computers-limited', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1831, 'member', 'the-home', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1832, 'member', 'the-solutions-bd', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1833, 'employee', 'monirul-ahsan', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1834, 'member', 'telephone-shilpa-sanhatha', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02');
+INSERT INTO `landings` (`id`, `linktype`, `pagelink`, `nextpagelink`, `statuscode`, `created_at`, `updated_at`) VALUES
+(1835, 'employee', 'a-b-m-nahid', NULL, '200', '2023-06-18 19:42:02', '2023-06-18 19:42:02'),
+(1836, 'member', 'tree-tech', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1837, 'member', 'unique-business-systems-ltd', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1838, 'employee', 'shahina-begum', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1839, 'member', 'united-computer-centre', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1840, 'employee', 'sharif-mohammad-kawsar', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1841, 'member', 'united-computers', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1842, 'employee', 'md-iubair-ahmed', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1843, 'member', 'universal-systems', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1844, 'employee', 'md-mazibur-rahman-sawpon', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1845, 'member', 'walton-plaza', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1846, 'employee', 'md-mazedur-rahman', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1847, 'member', 'wit-computers', 'Sense Of Originality', '301', '2023-06-18 19:42:03', '2023-07-09 19:08:51'),
+(1848, 'employee', 'mohammad-sajib-mia', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1849, 'member', 'zenith-international', NULL, '200', '2023-06-18 19:42:03', '2023-06-18 19:42:03'),
+(1850, 'employee', 'al-mozher-imam-chowdhury-pinu', NULL, '200', '2023-06-18 19:41:52', '2023-06-18 19:41:52'),
+(1852, 'employee', 'md-jahed-ali-bhuiyan', NULL, '200', '2023-06-18 19:41:51', '2023-06-18 19:41:51'),
+(1853, 'employee', 'fazlur-bari-liton', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1854, 'employee', 'skaikh-musa-kamal', NULL, '200', '2023-06-18 19:41:54', '2023-06-18 19:41:54'),
+(1855, 'employee', 'md-rafiqul-islam', NULL, '200', '2023-06-18 19:41:50', '2023-06-18 19:41:50'),
+(1856, 'notice', 'ঈদ-উল-আযহার-ছুটির-নোটিশ', 'bcs-computer-city-eid-ul-adha-vacation-notice-2023', '301', '2023-06-19 19:36:23', '2023-06-19 19:51:30'),
+(1857, 'notice', 'bcs-computer-city-eid-ul-adha-vacation-notice-2023', NULL, '200', '2023-06-19 19:51:30', '2023-06-19 19:51:30'),
+(1858, 'gallery', 'bcs-city-it-fair-image-gallery', NULL, '200', '2023-06-19 23:30:12', '2023-06-19 23:30:12'),
+(1859, 'gallery', 'bcs-computer-city-shopping-complex-inside-ground-floor', NULL, '200', '2023-06-20 00:57:21', '2023-06-20 00:57:21'),
+(1860, 'gallery', 'bcs-computer-city-shopping-complex-inside', NULL, '200', '2023-06-20 00:57:57', '2023-06-20 00:57:57'),
+(1861, 'employee', 'monsur-ahmed-chowdhury', 'nazrul-islam', '301', '2023-06-20 23:17:32', '2023-06-22 23:25:24'),
+(1862, 'tag', 'digital-services', NULL, '200', '2023-06-21 01:15:51', '2023-06-21 01:15:51'),
+(1863, 'page', 'bcs-computer-city-website-internal-manual', NULL, '404', '2023-06-21 19:50:41', '2023-06-21 20:04:18'),
+(1864, 'content', 'bcs-members', NULL, '200', '2023-06-22 00:58:09', '2023-06-22 00:58:09'),
+(1865, 'employee', 'nazrul-islam', NULL, '200', '2023-06-22 23:25:24', '2023-06-22 23:25:24'),
+(1866, 'content', 'eid-banner', NULL, '200', '2023-06-27 22:24:54', '2023-06-27 22:24:54'),
+(1867, 'event', 'road-show-2023', NULL, '404', '2023-07-03 13:46:07', '2023-07-03 13:52:13'),
+(1868, 'event', 'national-mourning-day', NULL, '404', '2023-07-03 13:50:18', '2023-07-03 13:50:18'),
+(1869, 'member', 'Network-Computing-Line-Ltd', NULL, '200', '2023-07-08 00:00:25', '2023-07-08 00:00:25'),
+(1870, 'employee', 'mr-azim-kafi', NULL, '200', '2023-07-08 15:53:27', '2023-07-08 15:53:27'),
+(1871, 'employee', 'dipankar-raha', NULL, '200', '2023-07-08 16:12:04', '2023-07-08 16:12:04'),
+(1872, 'member', 'jan-associates', 'j-a-n-associates', '301', '2023-07-08 16:13:59', '2023-07-08 16:16:34'),
+(1873, 'member', 'j-a-n-associates', NULL, '200', '2023-07-08 16:16:34', '2023-07-08 16:16:34'),
+(1874, 'member', 'cacts-limited', NULL, '200', '2023-07-08 16:37:51', '2023-07-08 16:37:51'),
+(1875, 'member', 'Sense Of Originality', NULL, '200', '2023-07-09 19:08:51', '2023-07-09 19:08:51'),
+(1876, 'content', 'city-it-post-eid-festival-2023', NULL, '200', '2023-07-09 20:22:24', '2023-07-09 20:22:24'),
+(1877, 'content', 'city-it-post-eid-2023', NULL, '200', '2023-07-09 21:41:43', '2023-07-09 21:41:43'),
+(1878, 'content', 'hp-city-it-post-eid-festival-2023', NULL, '200', '2023-07-09 21:50:00', '2023-07-09 21:50:00'),
+(1879, 'event', 'hp-city-it-post-eid-festival', NULL, '200', '2023-07-09 22:25:04', '2023-07-09 22:25:04'),
+(1880, 'content', 'bcs-city-it-eid-festival-hp', NULL, '200', '2023-07-14 22:30:44', '2023-07-14 22:30:44'),
+(1881, 'member', 'Inpace Management Services Limited', NULL, '200', '2023-07-14 23:18:55', '2023-07-14 23:18:55'),
+(1882, 'member', 'Softech Computer & networks Ltd, Sr#117, 1st Floor,Bcs Computer City,Dhaka-1207.', NULL, '200', '2023-07-16 18:54:40', '2023-07-16 18:54:40'),
+(1883, 'content', 'FAST DELIVERY SERVICES', NULL, '200', '2023-07-28 22:34:28', '2023-07-28 22:34:28'),
+(1884, 'service', 'fast-delivery-services', 'cattle-feed', '301', '2023-07-28 22:36:13', '2023-08-06 05:27:46'),
+(1885, 'service', 'road-transportation', NULL, '200', '2023-07-28 22:36:45', '2023-07-28 22:36:45'),
+(1886, 'service', 'safe-&-fast-logistics', NULL, '200', '2023-07-28 22:53:30', '2023-07-28 22:53:30'),
+(1887, 'service', 'ground-shipping', NULL, '200', '2023-07-29 19:05:38', '2023-07-29 19:05:38'),
+(1888, 'service', 'cargo-transportation', NULL, '200', '2023-07-29 19:16:13', '2023-07-29 19:16:13'),
+(1889, 'service', 'air-freight', NULL, '200', '2023-07-29 19:17:25', '2023-07-29 19:17:25'),
+(1890, 'service', 'ocean-freight', NULL, '200', '2023-07-29 19:18:11', '2023-07-29 19:18:11'),
+(1891, 'service', 'packaging-&-storage', NULL, '200', '2023-07-29 19:19:00', '2023-07-29 19:19:00'),
+(1892, 'service', 'railway-logistics', NULL, '200', '2023-07-29 19:20:07', '2023-07-29 19:20:07'),
+(1893, 'page', 'about-ceo', NULL, '200', '2023-07-29 22:26:44', '2023-07-29 22:26:44'),
+(1894, 'page', 'our-team', NULL, '200', '2023-07-29 23:59:24', '2023-07-29 23:59:24'),
+(1895, 'product', 'oil', NULL, '200', '2023-07-31 18:48:10', '2023-07-31 18:48:10'),
+(1896, 'product', 'sugar', NULL, '200', '2023-07-31 18:54:49', '2023-07-31 18:54:49'),
+(1897, 'product', 'red-lintil', NULL, '200', '2023-07-31 18:58:28', '2023-07-31 18:58:28'),
+(1898, 'landing', 'products', NULL, '200', '2023-07-31 19:32:47', '2023-07-31 19:32:47'),
+(1899, 'landing', 'services', NULL, '200', '2023-07-31 19:53:30', '2023-07-31 19:53:30'),
+(1901, 'page', 'privacy-policy', NULL, '200', '2023-08-06 04:03:38', '2023-08-06 04:03:38'),
+(1902, 'tag', 'menu-privacy-policy', NULL, '200', '2023-08-06 04:08:03', '2023-08-06 04:08:03'),
+(1903, 'content', 'cattle-feed', NULL, '200', '2023-08-06 05:27:46', '2023-08-06 05:27:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `members`
+--
+
+CREATE TABLE `members` (
+  `id` bigint UNSIGNED NOT NULL,
+  `memberId` varchar(16) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` bigint UNSIGNED DEFAULT NULL,
+  `created_by` bigint UNSIGNED DEFAULT NULL,
+  `title` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subtitle` varchar(1024) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(600) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `memberSince` date DEFAULT NULL,
+  `validTill` date DEFAULT NULL,
+  `logo` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `companyInfo` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `bcsMemberId` varchar(16) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `companyType` smallint DEFAULT NULL,
+  `businessNature` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `businessAddress` varchar(256) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `establishYear` smallint DEFAULT NULL,
+  `floorCentral` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telephone` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mobile` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `companyWebsite` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `aboutCompany` mediumtext COLLATE utf8mb4_unicode_ci,
+  `shareImage` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `googleMap` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `socialMedia` varchar(1024) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `metaTitle` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `metaKeywords` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `metaDescription` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `user_id`, `name`, `slug`, `position`, `file`, `message`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1389, 'test13841', NULL, '123451', 'bangla-utshob-logo-1.jpg', 'hkgbkjgg', 1, '2023-09-11 22:36:07', '2023-09-11 22:38:39'),
+(2, 1393, 'new message', NULL, '1', 'bcs-computer-city-1.jpg', 'mission is to revolutionize how the world works together. We exist to democratize access to talent and to provide talent with access to opportunities so anyone can grow their business, brand, or dreams.mission is to revolutionize how the world works together. We exist to democratize access to talent and to provide talent with access to. mission is to', 1, '2023-09-12 00:19:13', '2023-09-12 00:35:56'),
+(3, 1394, 'new message 123', NULL, '12', 'crucial-logo.png', 'message', 1, '2023-09-16 04:27:50', '2023-09-16 04:28:01'),
+(4, 1395, 'message one', 'guest', '12', 'sunmi-logo.jpg', 'guest welcome guest welcome guest welcome', 1, '2023-10-14 01:41:13', '2023-10-14 01:41:13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
+--
+
+CREATE TABLE `migrations` (
+  `id` int UNSIGNED NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
+(3, '2014_10_12_200000_add_two_factor_columns_to_users_table', 1),
+(4, '2019_08_19_000000_create_failed_jobs_table', 1),
+(5, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(6, '2023_03_19_055655_create_welcomes_table', 1),
+(7, '2023_03_20_101847_create_contents_table', 1),
+(8, '2023_03_20_110106_create_uploads_table', 1),
+(9, '2023_03_22_050110_create_events_table', 1),
+(10, '2023_03_22_111228_add_role_id_to_users_table', 1),
+(11, '2023_03_23_081354_create_landings_table', 2),
+(12, '2023_03_28_064905_create_siteoptions_table', 3),
+(13, '2023_03_23_065346_create_contacts_table', 4),
+(14, '2023_03_29_090631_create_pagesettings_table', 4),
+(15, '2023_03_29_184842_add_page_description_to_pagesettings_table', 5),
+(16, '2023_03_30_104410_create_members_table', 6),
+(17, '2023_04_02_081905_create_employees_table', 7),
+(18, '2023_04_03_075108_create_branches_table', 8),
+(19, '2023_04_05_062853_create_content_employee_table', 9),
+(20, '2023_04_13_091441_create_tags_table', 10),
+(21, '2023_04_29_045819_create_subscribes_table', 11),
+(22, '2023_05_07_103502_create_content_tag_table', 12),
+(23, '2023_05_07_103738_create_content_tag_table', 13),
+(24, '2023_05_18_062948_create_comments_table', 14),
+(29, '2023_09_10_071128_create_schools_table', 15),
+(30, '2023_09_11_065050_create_abouts_table', 16),
+(31, '2023_09_11_071236_create_teachers_table', 17),
+(32, '2023_09_12_041257_create_messages_table', 18),
+(33, '2023_09_12_043915_create_notices_table', 19);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notices`
+--
+
+CREATE TABLE `notices` (
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `notices`
+--
+
+INSERT INTO `notices` (`id`, `user_id`, `name`, `slug`, `message`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1389, 'admin34654', NULL, 'Hi', 1, '2023-09-11 22:58:23', '2023-09-11 23:12:19'),
+(3, 1393, 'new notice', NULL, 'hello this is new notice', 1, '2023-09-12 00:18:30', '2023-09-12 00:18:30'),
+(4, 1394, 'demo notice vlgkjsfdg fgl;jv', NULL, 'notice details hello', 1, '2023-09-16 03:24:27', '2023-09-16 03:24:27'),
+(5, 1394, 'notice two', NULL, 'notice 2 details', 1, '2023-09-16 03:33:14', '2023-09-16 03:33:14'),
+(6, 1394, 'notice one', NULL, 'notice details', 1, '2023-09-16 04:28:14', '2023-09-16 04:28:14'),
+(7, 1395, 'notice 01', 'guest', 'guest welcome guest welcome guest welcome', 1, '2023-10-14 01:41:28', '2023-10-14 01:41:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pagesettings`
+--
+
+CREATE TABLE `pagesettings` (
+  `id` bigint UNSIGNED NOT NULL,
+  `meta_slug` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_heading` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_keyword` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_image` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_robots` varchar(16) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_canonical` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `page_description` mediumtext COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pagesettings`
+--
+
+INSERT INTO `pagesettings` (`id`, `meta_slug`, `meta_heading`, `meta_title`, `meta_keyword`, `meta_description`, `meta_image`, `meta_robots`, `meta_canonical`, `created_at`, `updated_at`, `page_description`) VALUES
+(1, 'index', 'State Agro Trading LLC, Trade with US', 'Export Import Business Solutions | State Agro LLC', NULL, 'Get Export & Import Solution With The State Agro Trading LLC,', 'https://www.stateagro.llc/images/uploads/large/state-agro-privacy-policy.webp', 'index,follow', NULL, '2023-03-28 09:23:21', '2023-08-06 06:19:56', '<p>We are here to with 100% authentic services and products</p>');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_reset_tokens`
+--
+
+CREATE TABLE `password_reset_tokens` (
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `password_reset_tokens`
+--
+
+INSERT INTO `password_reset_tokens` (`email`, `token`, `created_at`) VALUES
+('khurshidalamnsz@gmail.com', '$2y$10$iVB2cAe4nz5gKQUwuKCjjOcQEZe.wLgMQCe5QCjrE0QnDxUG1.TxW', '2023-07-19 01:36:43'),
+('shahriarshuvo714@gmail.com', '$2y$10$5Eg45QxLWCfYVPOkMH.VHe70HvdTJXMu.7VzAQO07znTHMkrNQpCG', '2023-05-06 23:50:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personal_access_tokens`
+--
+
+CREATE TABLE `personal_access_tokens` (
+  `id` bigint UNSIGNED NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `last_used_at` timestamp NULL DEFAULT NULL,
+  `expires_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `schools`
+--
+
+CREATE TABLE `schools` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` int DEFAULT NULL,
+  `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `eiin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `established` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `schools`
+--
+
+INSERT INTO `schools` (`id`, `name`, `user_id`, `slug`, `file`, `logo`, `eiin`, `established`, `phone`, `address`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'new test size slider', NULL, 'new-test-size-slider', NULL, NULL, '124265666', '2023-09-11', '0184373667333', 'IDB Bhaban, 8-A Rokeya Sharani, Dhaka 12077', 1, '2023-09-10 03:23:43', '2023-09-10 04:08:57'),
+(2, 'new test size slideras', 1387, 'new-test-size-slider1', NULL, NULL, '124265', '2023-09-11', '01843736673', 'IDB Bhaban, 8-A Rokeya Sharani, Dhaka 1207', 1, '2023-09-10 03:23:43', '2023-09-10 03:23:43'),
+(7, 'Notre Dame College Dhaka', 1393, 'notre-dame-college-dhaka', 'about-us.png', NULL, '124265', '2023-09-13', '01843736673', 'IDB Bhaban, 8-A Rokeya Sharani, Dhaka 1207', 1, '2023-09-12 00:14:50', '2023-09-12 02:53:41'),
+(8, 'sadique 123', 1394, 'sadique-123', 'bcs-gallery-image-02.webp', 'isdb-bisew.png', '124265', NULL, '01843736673', 'IDB Bhaban, 8-A Rokeya Sharani, Dhaka 1207', 1, '2023-09-13 04:27:40', '2023-09-16 04:24:04'),
+(9, 'guest', 1395, 'guest', 'slider-image.webp', 'isdb-bisew-1.png', '124265', '2023-10-14', '01843736673', 'IDB Bhaban, 8-A Rokeya Sharani, Dhaka 1207', 1, '2023-10-14 01:37:07', '2023-10-14 01:43:39');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `siteoptions`
+--
+
+CREATE TABLE `siteoptions` (
+  `id` bigint UNSIGNED NOT NULL,
+  `okey` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ovalue` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `siteoptions`
+--
+
+INSERT INTO `siteoptions` (`id`, `okey`, `ovalue`, `created_at`, `updated_at`) VALUES
+(1, 'cms_author', 'Fenix Digital Solution', '2023-03-28 07:04:48', '2023-07-24 03:29:13'),
+(2, 'cms_publisher', 'State Agro LLC', '2023-03-28 07:04:48', '2023-03-28 02:43:27'),
+(3, 'cms_facebook', 'https://www.facebook.com/', '2023-03-28 02:54:07', '2023-06-13 13:09:19'),
+(4, 'cms_sitename', 'State Agro LLC', '2023-03-28 03:03:25', '2023-06-14 04:28:49'),
+(5, 'cms_assets', 'https://www.stateagro.llc', '2023-03-28 03:38:09', '2023-08-06 04:14:30'),
+(6, 'cms_url', 'https://www.stateagro.llc', '2023-03-28 03:38:30', '2023-08-06 04:14:33'),
+(7, 'cms_devlink', 'https://www.fenix.com', '2023-03-28 04:03:26', '2023-03-28 04:03:26'),
+(8, 'cms_twitter', 'https://www.twitter.com', '2023-03-29 05:24:06', '2023-06-14 02:10:23'),
+(9, 'cms_headcode', '<!-- head code -->', '2023-03-29 05:33:52', '2023-06-25 02:39:12'),
+(10, 'cms_bodycode', '<!-- body code -->', '2023-03-29 05:34:05', '2023-03-29 05:34:05'),
+(11, 'cms_layout', 'sa', '2023-03-30 23:00:53', '2023-04-05 23:35:14'),
+(12, 'cms_plan_gic', '10', '2023-04-18 05:41:25', '2023-04-18 05:41:25'),
+(13, 'cms_plan_pic', '10', '2023-05-02 05:18:03', '2023-05-02 05:18:03'),
+(14, 'cms_hnc', '3', '2023-05-13 23:30:24', '2023-05-13 23:30:24'),
+(15, 'cms_hsc', '154', '2023-05-13 23:33:51', '2023-05-13 23:35:17'),
+(16, 'cms_hpc', '50000', '2023-05-13 23:34:26', '2023-05-13 23:34:26'),
+(17, 'cms_hbc', '10000', '2023-05-13 23:34:51', '2023-05-13 23:34:51'),
+(18, 'cms_contactaddress', '9041 170th  Jamaica,  New York 11432', '2023-05-13 23:43:45', '2023-05-13 23:43:45'),
+(19, 'cms_linkedin', 'https://www.linkedin.com', '2023-05-13 23:49:31', '2023-06-14 02:10:19'),
+(20, 'cms_logo_public', 'logo.webp', '2023-05-13 23:49:31', '2023-06-15 03:35:19'),
+(21, 'cms_home_buy_from_us', 'home_why_buy_2', '2023-05-13 23:49:31', '2023-06-22 02:05:04'),
+(22, 'cms_email', 'info@stateagro.llc', '2023-05-13 23:49:31', '2023-08-06 06:08:32'),
+(23, 'cms_phone', '+19173794125', '2023-05-13 23:49:31', '2023-05-13 23:49:31'),
+(24, 'cms_share_image', 'state-agro-privacy-policy.webp', '2023-06-14 01:03:21', '2023-08-06 05:42:40'),
+(25, 'cms_home_slider', 'home_slider_2', '2023-05-13 23:30:24', '2023-06-22 06:13:05'),
+(26, 'cms_home_slider_box_content', 'home_inner_image_box', '2023-05-13 23:30:24', '2023-06-22 06:13:21'),
+(27, 'cms_maplink', 'https://www.google.com/maps/@40.7150748,-74.0012255,12.21z?entry=ttu', '2023-03-27 03:38:09', '2023-06-27 23:35:11'),
+(28, 'cms_contactaddress2', 'House -34, Road 3, Block- A, Dhakauddin\nMohammedpur, Dhaka-1207, Bangladesh', '2023-05-13 23:43:45', '2023-05-13 23:43:45'),
+(29, 'cms_phone2', '+8801788-755126', '2023-05-13 23:49:31', '2023-05-13 23:49:31'),
+(30, 'cms_instagram', 'https://www.instagram.com/', '2023-03-29 05:24:06', '2023-06-14 02:10:23'),
+(32, 'cms_pinterest', 'https://www.pinterest.com/', '2023-03-29 05:24:06', '2023-06-14 02:10:23'),
+(33, 'cms_maplink2', 'https://goo.gl/maps/z9NtxNNXr45AF2uC6', '2023-03-27 03:38:09', '2023-06-27 23:35:11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscribes`
+--
+
+CREATE TABLE `subscribes` (
+  `id` bigint UNSIGNED NOT NULL,
+  `subscribe_type` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_verified` smallint DEFAULT NULL,
+  `status` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tags`
+--
+
+CREATE TABLE `tags` (
+  `id` bigint UNSIGNED NOT NULL,
+  `tag_type` smallint NOT NULL,
+  `user_id` bigint UNSIGNED NOT NULL,
+  `parent` bigint UNSIGNED DEFAULT NULL,
+  `title` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(612) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `linkto` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `linkUrl` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sequence` smallint UNSIGNED DEFAULT NULL,
+  `status` smallint UNSIGNED DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tags`
+--
+
+INSERT INTO `tags` (`id`, `tag_type`, `user_id`, `parent`, `title`, `slug`, `linkto`, `linkUrl`, `sequence`, `status`, `created_at`, `updated_at`) VALUES
+(26, 1, 7, 0, 'Home', 'home', NULL, '/', 1, 1, '2023-05-07 05:41:59', '2023-05-08 22:47:55'),
+(27, 1, 7, 0, 'About', 'about-us', 'about-us', NULL, 2, 1, '2023-05-08 23:08:15', '2023-05-28 23:11:37'),
+(31, 2, 7, 0, 'About', 'about-footer', 'about-us', NULL, 2, 1, '2023-05-20 23:24:26', '2023-08-06 04:01:31'),
+(42, 1, 7, 0, 'Contact', 'new-contact', 'contact', NULL, 5, 1, '2023-06-13 01:31:21', '2023-06-13 01:31:21'),
+(65, 1, 7, 0, 'Products', 'menu-products', 'products', NULL, 4, 1, '2023-06-13 01:31:21', '2023-06-13 01:31:21'),
+(66, 1, 7, 0, 'Services', 'menu-services', 'services', NULL, 4, 1, '2023-06-13 01:31:21', '2023-06-13 01:31:21'),
+(67, 2, 1, 0, 'Privacy Policy', 'menu-privacy-policy', 'privacy-policy', NULL, 3, 1, '2023-08-06 04:08:03', '2023-08-06 04:08:03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teachers`
+--
+
+CREATE TABLE `teachers` (
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `stuff_type` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `position` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `about` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` int DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `teachers`
+--
+
+INSERT INTO `teachers` (`id`, `user_id`, `name`, `slug`, `stuff_type`, `file`, `position`, `phone`, `email`, `about`, `status`, `created_at`, `updated_at`) VALUES
+(4, 1389, 'teacher 2', NULL, '1', '6.png', '15', '018437366324', 'shahriarshuvo714@gmail.com', 'this is teacher 2', 1, '2023-09-11 05:10:23', '2023-09-11 05:10:49'),
+(5, 1389, 'test message', NULL, NULL, '8.png', '12321', NULL, NULL, NULL, 1, '2023-09-11 22:32:44', '2023-09-11 22:32:44'),
+(6, 1393, 'abdul hamid', NULL, '1', '2.jpg', '1', '018437366733', 'shahriarshuvo714@gmail.com', 'head master', 1, '2023-09-12 00:19:44', '2023-09-12 00:19:44'),
+(7, 1394, 'test0123', NULL, '1', 'team1.jpg', 'Web Developer', '01843736673', 'shahriarshuvo714@gmail.com', 'ne teacher', 1, '2023-09-16 04:25:15', '2023-09-16 04:27:23'),
+(8, 1395, 'teacher 1', 'guest', '1', 'sunmi-logo.webp', '12', '01843736673', 'shahriarshuvo714@gmail.com', 'guest welcome guest welcome guest welcome', 1, '2023-10-14 01:40:33', '2023-10-14 01:40:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `uploads`
+--
+
+CREATE TABLE `uploads` (
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` bigint UNSIGNED NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content_id` bigint UNSIGNED DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `caption` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `video` text COLLATE utf8mb4_unicode_ci,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` int NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `uploads`
+--
+
+INSERT INTO `uploads` (`id`, `user_id`, `slug`, `content_id`, `name`, `caption`, `description`, `video`, `file`, `url`, `status`, `created_at`, `updated_at`) VALUES
+(498, 1389, NULL, NULL, NULL, 'atm123', NULL, NULL, 'bcs-computer-city-1.jpg', NULL, 1, '2023-09-11 23:53:52', '2023-09-11 23:56:17'),
+(499, 1393, NULL, NULL, NULL, 'parking', NULL, NULL, 'exit-festival-best-europe-festivals-2020.jpg', NULL, 1, '2023-09-12 00:51:22', '2023-09-12 00:51:22'),
+(500, 1394, NULL, NULL, NULL, NULL, NULL, NULL, 'improve-your-web-page-speed.webp', NULL, 1, '2023-09-16 04:28:45', '2023-09-16 04:29:10'),
+(501, 1395, 'guest', NULL, NULL, 'atm', NULL, NULL, 'crucial-logo.webp', NULL, 1, '2023-10-14 01:42:04', '2023-10-14 01:42:04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint UNSIGNED NOT NULL,
+  `school_id` bigint DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `profile_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password_str` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook_id` text COLLATE utf8mb4_unicode_ci,
+  `two_factor_secret` text COLLATE utf8mb4_unicode_ci,
+  `two_factor_recovery_codes` text COLLATE utf8mb4_unicode_ci,
+  `two_factor_confirmed_at` timestamp NULL DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `role_id` int DEFAULT NULL,
+  `status` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `school_id`, `name`, `email`, `profile_photo`, `email_verified_at`, `password`, `password_str`, `facebook_id`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `remember_token`, `created_at`, `updated_at`, `role_id`, `status`) VALUES
+(1, NULL, 'Admin', 'a@a.com', NULL, NULL, '$2y$10$7IzXyKtCdzlTz0Lflbkr/eRV8MrSPgjlB8hsdeKJ3nu5LXUkbDVVi', NULL, NULL, NULL, NULL, NULL, 'TxOpoSCZxiku7z7ZGvWoJn8kbjwSlRlUee75QrCUp094RTMNPRGCrN5ZXVYI', '2023-03-23 01:20:24', '2023-08-06 02:50:00', 1, 1),
+(1387, NULL, 'customer', 'c@c.com', NULL, NULL, '$2y$10$avBsSxk7ECv2lILaUdVzpOTPflQO3GbDkRgv3xnsd.SmNO/265K.6', NULL, '13245745167', NULL, NULL, NULL, NULL, '2023-09-09 22:56:38', '2023-09-09 22:56:38', 2, NULL),
+(1395, NULL, 'Shahriar Shuvo', '5945705798862427@gmail.com', NULL, NULL, '$2y$10$3G10hx7wLcGZGIbvzzO9vuToIH.eePGX9kItazV7tLTDqnEGPQY5y', NULL, '5945705798862427', NULL, NULL, NULL, NULL, '2023-10-14 01:37:07', '2023-10-14 01:37:07', 2, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `welcomes`
+--
+
+CREATE TABLE `welcomes` (
+  `id` bigint UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` int DEFAULT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci,
+  `text_one` text COLLATE utf8mb4_unicode_ci,
+  `text_two` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `welcome_ticker` text COLLATE utf8mb4_unicode_ci,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `welcomes`
+--
+
+INSERT INTO `welcomes` (`id`, `title`, `slug`, `user_id`, `file`, `description`, `text_one`, `text_two`, `welcome_ticker`, `status`, `created_at`, `updated_at`) VALUES
+(1, NULL, NULL, 1389, '1.png', NULL, NULL, '', NULL, '1', '2023-07-31 03:28:25', '2023-09-11 02:55:12'),
+(2, NULL, NULL, 1391, NULL, NULL, NULL, NULL, NULL, '1', '2023-09-12 00:07:38', '2023-09-12 00:07:38'),
+(3, 'Welcome to Our School', NULL, 1393, '274125172-1338999076568694-7786269471888533691-n.jpg', 'this is welcome tex of your school', NULL, NULL, NULL, '1', '2023-09-12 00:14:50', '2023-09-12 00:21:02'),
+(4, 'about school 123', NULL, 1394, 'improve-your-web-page-speed.png', 'about school about school about school about school 123', NULL, NULL, NULL, '1', '2023-09-13 04:27:40', '2023-09-16 04:24:30'),
+(5, 'guest welcome', 'guest', 1395, 'banner6.jpg', 'guest welcome guest welcome guest welcome guest welcome guest welcome', NULL, NULL, NULL, '1', '2023-10-14 01:37:07', '2023-10-14 01:39:09');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `abouts`
+--
+ALTER TABLE `abouts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `branches`
+--
+ALTER TABLE `branches`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contents`
+--
+ALTER TABLE `contents`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `slug` (`slug`);
+
+--
+-- Indexes for table `content_employee`
+--
+ALTER TABLE `content_employee`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `content_tag`
+--
+ALTER TABLE `content_tag`
+  ADD KEY `content_tag_content_id_foreign` (`content_id`),
+  ADD KEY `content_tag_tag_id_foreign` (`tag_id`);
+
+--
+-- Indexes for table `employees`
+--
+ALTER TABLE `employees`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `employees_slug_unique` (`slug`);
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `landings`
+--
+ALTER TABLE `landings`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `pagelink` (`pagelink`);
+
+--
+-- Indexes for table `members`
+--
+ALTER TABLE `members`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `members_slug_unique` (`slug`),
+  ADD UNIQUE KEY `members_memberid_unique` (`memberId`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
+--
+ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `notices`
+--
+ALTER TABLE `notices`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pagesettings`
+--
+ALTER TABLE `pagesettings`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `pagesettings_meta_slug_unique` (`meta_slug`);
+
+--
+-- Indexes for table `password_reset_tokens`
+--
+ALTER TABLE `password_reset_tokens`
+  ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
+  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+
+--
+-- Indexes for table `schools`
+--
+ALTER TABLE `schools`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `schools_slug_unique` (`slug`);
+
+--
+-- Indexes for table `siteoptions`
+--
+ALTER TABLE `siteoptions`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `siteoptions_okey_unique` (`okey`);
+
+--
+-- Indexes for table `subscribes`
+--
+ALTER TABLE `subscribes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tags`
+--
+ALTER TABLE `tags`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `slug` (`slug`);
+
+--
+-- Indexes for table `teachers`
+--
+ALTER TABLE `teachers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `uploads`
+--
+ALTER TABLE `uploads`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`);
+
+--
+-- Indexes for table `welcomes`
+--
+ALTER TABLE `welcomes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `abouts`
+--
+ALTER TABLE `abouts`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `branches`
+--
+ALTER TABLE `branches`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `contents`
+--
+ALTER TABLE `contents`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=778;
+
+--
+-- AUTO_INCREMENT for table `content_employee`
+--
+ALTER TABLE `content_employee`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `employees`
+--
+ALTER TABLE `employees`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `failed_jobs`
+--
+ALTER TABLE `failed_jobs`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `landings`
+--
+ALTER TABLE `landings`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1904;
+
+--
+-- AUTO_INCREMENT for table `members`
+--
+ALTER TABLE `members`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `notices`
+--
+ALTER TABLE `notices`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `pagesettings`
+--
+ALTER TABLE `pagesettings`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `personal_access_tokens`
+--
+ALTER TABLE `personal_access_tokens`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `schools`
+--
+ALTER TABLE `schools`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `siteoptions`
+--
+ALTER TABLE `siteoptions`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `subscribes`
+--
+ALTER TABLE `subscribes`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tags`
+--
+ALTER TABLE `tags`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
+--
+-- AUTO_INCREMENT for table `teachers`
+--
+ALTER TABLE `teachers`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `uploads`
+--
+ALTER TABLE `uploads`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=502;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1396;
+
+--
+-- AUTO_INCREMENT for table `welcomes`
+--
+ALTER TABLE `welcomes`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `content_tag`
+--
+ALTER TABLE `content_tag`
+  ADD CONSTRAINT `content_tag_content_id_foreign` FOREIGN KEY (`content_id`) REFERENCES `contents` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `content_tag_tag_id_foreign` FOREIGN KEY (`tag_id`) REFERENCES `tags` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
