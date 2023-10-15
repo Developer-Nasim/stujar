@@ -60,7 +60,7 @@
 							$auth= Auth::user();
 						@endphp
 						@if (!empty($auth))
-							<a class="btn btn-primary" href="/user/school" >DashBoard</a>
+							<a class="btn btn-primary" href="{{ URL::to('user/school') }}" >DashBoard</a>
 						@else
 							<a href="#notices-section" class="theme-btn">Notices</a>
 						@endif 

@@ -35,15 +35,15 @@
                                 </p>
                                 <ul>
                                     <li>
-                                        <h3>{{ $about->total_student ? '' }}</h3>
+                                        <h3>{{ $about->total_student ?? '' }}</h3>
                                         <span>Students</span>
                                     </li>
                                     <li>
-                                        <h3>{{ $about->total_teacher ? '' }}</h3>
+                                        <h3>{{ $about->total_teacher ?? '' }}</h3>
                                         <span>Teacher</span>
                                     </li>
                                     <li>
-                                        <h3>{{ $about->total_stuff ? '' }}</h3>
+                                        <h3>{{ $about->total_stuff ?? '' }}</h3>
                                         <span>Others</span>
                                     </li>
                                 </ul>

@@ -68,28 +68,24 @@ Route::get('facebook_login', [AuthenticationController::class, 'facebookLogin'])
 Route::get('facebook_callback', [AuthenticationController::class, 'facebookCallback'])->name('facebook_callback');
 //Route::get('user-dashboard', [AuthenticationController::class, 'user_dashboard'])->name('user_dashboard');
 
-Route::get('/{name}', [SchoolController::class,'school_create'])->name('school_create');
 
-Route::prefix('user')->group(function () {
-
-    Route::resource('school', SchoolController::class);
-    Route::get('changeStatus', [SchoolController::class,'changeStatus']);
-    Route::resource('welcome', WelcomeController::class);
-    Route::resource('about', AboutController::class);
-    Route::resource('teacher', TeacherController::class);
-    Route::resource('message', MessageController::class);
-    Route::resource('notice', NoticeController::class);
-    Route::resource('event', EventController::class);
-    Route::resource('gallery', GalleryController::class);
-
+Route::middleware(['permission'])->group(function () {
+    Route::prefix('user')->group(function () {
+        Route::resource('school', SchoolController::class);
+        Route::get('changeStatus', [SchoolController::class,'changeStatus']);
+        Route::resource('welcome', WelcomeController::class);
+        Route::resource('about', AboutController::class);
+        Route::resource('teacher', TeacherController::class);
+        Route::resource('message', MessageController::class);
+        Route::resource('notice', NoticeController::class);
+        Route::resource('event', EventController::class);
+        Route::resource('gallery', GalleryController::class);
+    });
 });
-
-
 
 Route::middleware(['auth','user-permission'])->group(function () {
     Route::get('home', [WelcomeController::class,'home'])->name('home');
-    Route::prefix('admin')->group(function () {
-       
+    Route::prefix('admin')->group(function () { 
         Route::get('profile/edit', [UserController::class,'edit_admin_profile'])->name('edit_admin_profile');
         Route::post('profile/update/{id}', [UserController::class,'update_admin_profile'])->name('update_admin_profile');
         Route::get('subscribers', [WelcomeController::class,'subscribers'])->name('subscribers');
@@ -120,7 +116,7 @@ Route::middleware(['auth','user-permission'])->group(function () {
     });
 });
 
-
+Route::get('/{name}', [SchoolController::class,'school_create'])->name('school_create');
 
 /*
  *  All landing page for public website

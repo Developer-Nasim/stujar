@@ -28,7 +28,7 @@ class AuthenticationController extends Controller
     if($finduser) {
            // dd('not empty');
            Auth::login($finduser);
-           return redirect('/school');  
+           return redirect('user/school');  
         }
         else{
           //  dd('not empty');
