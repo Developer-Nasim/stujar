@@ -191,9 +191,12 @@ class SchoolController extends Controller
     }
     public function school_create($name){
     //   dd($name);
+    $school= '';
     $websettings = $this->getWebSettings();
     $school= School::where('slug',$name)->where('status', 1 )->first();
-    //dd($school);
+    if($school == null){
+        return view('four-zero-four');
+      }
     if($school->status == 1){  
           $teachers = DB::table('teachers')->where('slug',$name)->where('status' , 1 )->orderBy('id','desc')->paginate(12);
           $welcome = DB::table('welcomes')->where('slug',$name)->where('status' , 1 )->orderBy('id','desc')->first();
