@@ -217,6 +217,7 @@
                                         <form action="{{URL::to('user/teacher')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" value="{{ Auth::user()->id }}" name="user_id">
+                                            <input type="hidden" value="{{ $content->slug }}" name="slug">
                                             <label for="#">
                                                 Name
                                                 <input type="text" name="name" id="">
