@@ -7,7 +7,7 @@ use App\Models\Teacher;
 use App\Models\Siteoption;
 use App\Models\App;
 use Intervention\Image\Facades\Image;
-use file;
+use File;
 
 class TeacherController extends Controller
 {
