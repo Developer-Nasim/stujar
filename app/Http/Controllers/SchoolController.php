@@ -11,6 +11,7 @@ use Session;
 use App\Models\App;
 use Intervention\Image\Facades\Image;
 use DB;
+use File;
 
 
 class SchoolController extends Controller
@@ -94,6 +95,12 @@ class SchoolController extends Controller
 
         if(!empty($request->file)){
             //dd('ok'); 
+            if(!empty($content->file)){
+                File::delete(public_path() . '/images/uploads/large/'.$content->file); // Delete old flyer
+                File::delete(public_path() . '/images/uploads/small/'.$content->file); // Delete old flyer
+                File::delete(public_path() . '/images/uploads/thumb/'.$content->file); // Delete old flyer
+                 // dd($delete);
+            }
             $image_name= $request->file->getClientOriginalName();
             //dd($image_name);
             $image_name = explode('.',$image_name);
@@ -130,6 +137,11 @@ class SchoolController extends Controller
         }
         if(!empty($request->logo)){
             //dd('ok'); 
+             if(!empty($content->logo)){
+                File::delete(public_path() . '/images/uploads/large/'.$content->logo); // Delete old flyer
+                File::delete(public_path() . '/images/uploads/small/'.$content->logo); // Delete old flyer
+                File::delete(public_path() . '/images/uploads/thumb/'.$content->logo); // Delete old flyer
+            }
             $image_name= $request->logo->getClientOriginalName();
             //dd($image_name);
             $image_name = explode('.',$image_name);

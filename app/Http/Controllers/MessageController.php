@@ -7,6 +7,7 @@ use App\Models\Message;
 use App\Models\Siteoption;
 use App\Models\App;
 use Intervention\Image\Facades\Image;
+use File;
 
 class MessageController extends Controller
 {
@@ -115,6 +116,11 @@ class MessageController extends Controller
         $content->message = $request->message;
         if(!empty($request->file)){
          //dd('ok');
+         if(!empty($content->file)){
+            File::delete(public_path() . '/images/uploads/large/'.$content->file); // Delete old flyer
+            File::delete(public_path() . '/images/uploads/small/'.$content->file); // Delete old flyer
+            File::delete(public_path() . '/images/uploads/thumb/'.$content->file); // Delete old flyer
+        }
          $image_name= $request->file->getClientOriginalName();
          //dd($image_name);
          $image_name = explode('.',$image_name);

@@ -9,15 +9,7 @@ use Auth;
 
 class UserController extends Controller
 {
-    /**
-     * search user.
-     */
-    public function search(Request $request)
-    {
-        $search = $request->name;
-        $users = User::where('name', 'like', "%{$search}%")->orderBy('id','desc')->paginate(40);
-        return view('admin.user.index',compact('users','search'));
-    }
+   
     /**
      * Display a listing of the resource.
      */
@@ -106,7 +98,7 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         $content= User::findOrfail($id);
-        $content->status = 3;
+        $content->status = 5;
         $content->update();    
         return redirect()->back();
     }

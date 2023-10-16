@@ -13,6 +13,7 @@ use App\Models\User;
 use App\Models\Employee;
 use App\Models\App;
 use Intervention\Image\Facades\Image;
+use File;
 
 class WelcomeController extends Controller
 {
@@ -80,7 +81,11 @@ class WelcomeController extends Controller
         $welcome->status= 1;
         if(!empty($request->file)){
             //dd('ok');
-   
+            if(!empty($welcome->file)){
+                File::delete(public_path() . '/images/uploads/large/'.$welcome->file); // Delete old flyer
+                File::delete(public_path() . '/images/uploads/small/'.$welcome->file); // Delete old flyer
+                File::delete(public_path() . '/images/uploads/thumb/'.$welcome->file); // Delete old flyer
+            }
             $image_name= $request->file->getClientOriginalName();
             //dd($image_name);
             $image_name = explode('.',$image_name);

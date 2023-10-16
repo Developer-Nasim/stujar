@@ -6,7 +6,7 @@
   <div class="app-sidebar sidebar-shadow">
     <div class="app-header__logo">
       <a href="/" target="_blank">
-   <h2>school</h2>
+   <h2>Dashboard</h2>
       </a>
       <div class="header__pane ml-auto">
         <div>
@@ -46,14 +46,6 @@
           </li>
         @if (Auth::user()->role_id == 1)
 
-
- 
-               {{-- Media Server --}}
-                <li>
-                  <a href="{{URL::to('admin/upload')}}">
-                    <i class="metismenu-icon "></i> Media Server </a>
-                </li>
-      
                {{-- Contact --}}
                 <li>
                   <a href="#">
@@ -67,7 +59,6 @@
                     
                   </ul>
                 </li>
-             
                 {{-- User --}}
                 <li>
                   <a href="#">
@@ -83,10 +74,8 @@
                         <i class="metismenu-icon"></i>Manage </a>
                     </li>
                   </ul>
-                </li>
-              
-           @endif   
-    
+                </li>       
+           @endif 
         </ul>
       </div>
     </div>
