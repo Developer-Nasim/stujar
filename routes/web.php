@@ -42,7 +42,7 @@ use App\Http\Controllers\EventController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+require_once __DIR__ . '/fortify.php';
 
 Route::get('ccc', function(){
     Artisan::call('config:clear');
