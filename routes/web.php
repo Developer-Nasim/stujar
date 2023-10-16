@@ -27,7 +27,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\EventController;
-
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 
 
@@ -82,6 +82,34 @@ Route::middleware(['permission'])->group(function () {
         Route::resource('gallery', GalleryController::class);
     });
 });
+
+
+
+Route::group(['middleware' => config('fortify.middleware', ['web'])], function () {
+    $enableViews = config('fortify.views', true);
+
+    // Authentication...
+    if ($enableViews) {
+        Route::get('/admin/login', [AuthenticatedSessionController::class, 'create'])
+            ->middleware(['guest:'.config('fortify.guard')])
+            ->name('login');
+    }
+
+    $limiter = config('fortify.limiters.login');
+    $twoFactorLimiter = config('fortify.limiters.two-factor');
+    $verificationLimiter = config('fortify.limiters.verification', '6,1');
+
+    Route::post('/admin/login', [AuthenticatedSessionController::class, 'store'])
+        ->middleware(array_filter([
+            'guest:'.config('fortify.guard'),
+            $limiter ? 'throttle:'.$limiter : null,
+        ]));
+
+    Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+        ->name('logout');
+
+});
+
 
 Route::middleware(['auth','user-permission'])->group(function () {
     Route::get('home', [WelcomeController::class,'home'])->name('home');
