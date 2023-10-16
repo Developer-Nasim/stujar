@@ -25,7 +25,7 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
 
     // Authentication...
     if ($enableViews) {
-        Route::get('/admin/login', [AuthenticatedSessionController::class, 'create'])
+        Route::get('/customer/login', [AuthenticatedSessionController::class, 'create'])
             ->middleware(['guest:'.config('fortify.guard')])
             ->name('login');
     }
@@ -34,7 +34,7 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
     $twoFactorLimiter = config('fortify.limiters.two-factor');
     $verificationLimiter = config('fortify.limiters.verification', '6,1');
 
-    Route::post('/admin/login', [AuthenticatedSessionController::class, 'store'])
+    Route::post('/customer/login', [AuthenticatedSessionController::class, 'store'])
         ->middleware(array_filter([
             'guest:'.config('fortify.guard'),
             $limiter ? 'throttle:'.$limiter : null,
