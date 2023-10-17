@@ -41,7 +41,7 @@
           </li>
           <li class="btn-group nav-item"></li>
           <li class="dropdown nav-item">
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none"> @csrf </form>
+            <form id="logout-form" action="{{ route('signout') }}" method="get" class="d-none"> @csrf </form>
           </li>
         </ul>
       </div>
@@ -62,7 +62,7 @@
                   <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                     <a href="{{ route('edit_admin_profile') }}" type="button" tabindex="0" class="dropdown-item">Edit Profile</a>
                     <a href="{{ route('change_password') }}" type="button" tabindex="0" class="dropdown-item">Change Password</a>
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" type="button" tabindex="0" class="dropdown-item">Logout</a>
+                    <a href="{{ route('signout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" type="button" tabindex="0" class="dropdown-item">Logout</a>
                   </div>
                 </div>
               </div>

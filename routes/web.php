@@ -27,6 +27,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\CustomloginController;
 
 
 
@@ -42,7 +43,6 @@ use App\Http\Controllers\EventController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-require_once __DIR__ . '/fortify.php';
 
 Route::get('ccc', function(){
     Artisan::call('config:clear');
@@ -51,6 +51,13 @@ Route::get('ccc', function(){
     Artisan::call('view:cache');
     return "Config-Cache is cleared";
 });
+
+Route::get('dashboard', [CustomloginController::class, 'dashboard']); 
+Route::get('admin/login', [CustomloginController::class, 'index'])->name('login');
+Route::post('custom-login', [CustomloginController::class, 'customLogin'])->name('login.custom'); 
+Route::get('admin/registration', [CustomloginController::class, 'registration'])->name('register-user');
+Route::post('custom-registration', [CustomloginController::class, 'customRegistration'])->name('register.custom'); 
+Route::get('signout', [CustomloginController::class, 'signOut'])->name('signout');
 
 Route::get('/', [HomeController::class,'landing'])->name('landing');
 Route::get('/four-zero-four', [WelcomeController::class,'four_zero_four'])->name('four-zero-four');

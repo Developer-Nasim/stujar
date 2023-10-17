@@ -10,11 +10,6 @@
 @extends($l.'.layouts.app')
 @section('content')  
 
-  @if(session('success')) 
-    <div class="alert alert-success">
-      <strong>Success!</strong> {{ session('success') }} 
-    </div>
-  @endif 
   <style>
     h1{
       font-weight:700;

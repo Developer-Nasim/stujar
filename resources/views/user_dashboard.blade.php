@@ -75,6 +75,15 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="dashboard-forms">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <div class="accordion" id="accordionExample">
                             <div class="accordion-item"> 
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#one" aria-expanded="true" aria-controls="one">
