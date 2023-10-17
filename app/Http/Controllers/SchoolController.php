@@ -83,7 +83,7 @@ class SchoolController extends Controller
     public function update(Request $request, string $id)
     {
         $validated = $request->validate([
-            'name' => 'required|unique:schools|max:255',
+            'name' => 'required|unique:schools,name,'.$id
         ]);
        // dd($request->all());
         $content= School::findOrfail($id);
