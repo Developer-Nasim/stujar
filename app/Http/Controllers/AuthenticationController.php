@@ -43,7 +43,8 @@ class AuthenticationController extends Controller
             $newUser->email = $user->user['id'].'@gmail.com';
             $newUser->facebook_id = $user->user['id'];
             $newUser->password = Hash::make($user->user['id']);
-            $newUser->role_id = 2;  
+            $newUser->role_id = 10;  
+            $newUser->status = 10;  
             $newUser->save();
 
             $content = new School;

@@ -482,7 +482,7 @@
 						<a href="{{route('facebook_login')}}"><img src="assets/img/fb.png" alt=""></a>
 						@endguest
 						@auth
-						<a class="d-block btn btn-primary" href="/school">DashBoard</a>
+						<a class="d-block btn btn-primary" href="{{ URL::to('user/school') }}">DashBoard</a>
 						@endauth
 						
 					</li>

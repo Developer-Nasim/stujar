@@ -251,7 +251,7 @@
                                                 <div class="col-lg-6">
                                                     <label for="#">
                                                         Position
-                                                        <input type="text" name="position" id="">
+                                                        <input type="text" name="position" id="" >
                                                     </label>
                                                 </div> 
                                                 <div class="col-lg-6">
