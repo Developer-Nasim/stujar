@@ -256,4 +256,16 @@ class SchoolController extends Controller
   
         return response()->json(['success'=>'Status change successfully.']);
     }
+    public function school_show(){
+        $schools = School::paginate(50);
+       // dd($schools);
+        return view('admin.contact.list-school',compact('schools'));
+    }
+    public function school_status($id){
+      //  dd($id);
+        $school= School::findOrfail($id);
+        $school->status = 2;
+        $school->update();    
+        return redirect()->back();
+    }
 }

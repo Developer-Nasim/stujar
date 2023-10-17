@@ -59,6 +59,18 @@
                     
                   </ul>
                 </li>
+                <li>
+                  <a href="#">
+                    <i class="metismenu-icon "></i> School <i class="metismenu-state-icon fa fa-angle-down caret-left"></i>
+                  </a>
+                  <ul>
+                    <li>
+                      <a href="{{URL::to('admin/school/show')}}">
+                        <i class="metismenu-icon"></i> View All School </a>
+                    </li>
+                    
+                  </ul>
+                </li>
                 {{-- User --}}
                 <li>
                   <a href="#">

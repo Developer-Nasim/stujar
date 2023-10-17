@@ -58,6 +58,7 @@ Route::post('custom-login', [CustomloginController::class, 'customLogin'])->name
 Route::get('admin/registration', [CustomloginController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomloginController::class, 'customRegistration'])->name('register.custom'); 
 Route::get('signout', [CustomloginController::class, 'signOut'])->name('signout');
+Route::post('signout/school', [CustomloginController::class, 'signoutSchool'])->name('signout.school');
 
 Route::get('/', [HomeController::class,'landing'])->name('landing');
 Route::get('/four-zero-four', [WelcomeController::class,'four_zero_four'])->name('four-zero-four');
@@ -96,6 +97,8 @@ Route::middleware(['auth','user-permission'])->group(function () {
         Route::get('profile/edit', [UserController::class,'edit_admin_profile'])->name('edit_admin_profile');
         Route::post('profile/update/{id}', [UserController::class,'update_admin_profile'])->name('update_admin_profile');
         Route::get('subscribers', [WelcomeController::class,'subscribers'])->name('subscribers');
+        Route::get('school/show', [SchoolController::class,'school_show'])->name('school.show');
+        Route::post('school/status/{id}', [SchoolController::class,'school_status'])->name('school.status');
         Route::resource('slider', SliderController::class);
         Route::resource('choose', ChooseController::class);
         Route::resource('blog', BlogController::class);

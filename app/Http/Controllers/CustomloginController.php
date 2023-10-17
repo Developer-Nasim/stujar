@@ -80,4 +80,10 @@ class CustomloginController extends Controller
   
         return Redirect('admin/login');
     }
+    public function signoutSchool() {
+        Session::flush();
+        Auth::logout();
+  
+        return Redirect('/');
+    }
 }
