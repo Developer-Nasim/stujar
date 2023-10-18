@@ -316,6 +316,7 @@ a.theme-btn:hover{
 
 .hero-wrp-left h3 {
   color: #fff;
+  font-size: 24px;
 }
 
 .hero-wrp-left p {
@@ -664,12 +665,12 @@ section.testimonial-section {
 ul.addrLst {
   display: flex;
   justify-content: space-between;
-  margin-top: 45px;
+  margin-top: 20px;
 }
 .addrLst li {
   width: 48%;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 0;
   background: #fff;
   padding: 30px;
   border-radius: 5px;
@@ -699,9 +700,15 @@ input, optgroup, select, textarea {
   border-radius: 4px;
   background: #DDE1E8;
 }
-
-textarea {
-  min-height: 150px;
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #adadad;
+  outline: 0;
+  box-shadow: unset;
+}
+textarea,textarea.form-control {
+  min-height: 150px !important;
 }
 
 ul.addrLst span {
@@ -1382,6 +1389,48 @@ transform: translateX(20px);
   padding: 80px 0;
 }
 
+.paymentAlrt {
+  padding: 20px;
+  margin: 15px 0;
+  width: 100%;
+  border: 1px solid #d92b2b;
+  background: #a1000000;
+  border-radius: 5px;
+}
+section.contents-area {
+  padding: 60px 0;
+} 
+
+.content-wrp h4 {
+  margin-top: 24px;
+}
+ 
+.content-wrp h4 {
+  margin-top: 24px;
+}
+
+.content-wrp ul {
+  display: block;
+}
+
+.content-wrp ul li {
+  display: block;
+  padding-left: 13px;
+  margin-bottom: 10px;
+  position: relative;
+  margin-left: 10px;
+}
+
+.content-wrp ul li:after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00000082;
+  left: 0;
+  top: 7px;
+}
 
 
 
@@ -1496,3 +1545,29 @@ ul.added_item_lists.imgs li {
   margin: auto;
   display: block;
 }
+.login_signup ul li a {
+  display: inline-block;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.login_signup p a {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
