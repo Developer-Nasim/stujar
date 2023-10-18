@@ -9,6 +9,7 @@
     <tr>
     <th>Id</th>
     <th>School Name</th>
+    <th>School Website Link</th>
     <th width="150x">School logo</th>
     <th>status</th>
     <th width="15%">Action</th>
@@ -20,6 +21,11 @@
     <tr>
         <th scope="row">{{ $i++ }}</th>
         <td>{{ $content->name }}</td>
+        <td>
+            <a href="https://www.stujar.com/{{ $content->slug }}" target="_blank">
+                <span class="badge badge-primary">View Website</span>   
+            </a>
+        </td>
         <td>
             @if (!empty($content->file))
                  <img src="{{ asset('images/uploads/thumb'.'/'.$content->file) }}" alt="" width="50px" height="50px">
