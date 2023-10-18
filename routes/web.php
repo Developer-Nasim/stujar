@@ -138,3 +138,13 @@ Route::get('sitemap.xml', [SitemapController::class, 'index'])->name('sitemap.xm
 Route::get('image-sitemap.xml', [SitemapController::class, 'imagesitemap'])->name('image-sitemap.xml');
 Route::get('robots.txt', [SitemapController::class, 'robots'])->name('robots.txt');
 Route::get('/{pagelink}', [HomeController::class,'landing']);
+
+
+ 
+Route::get('/privacy-policy', function() {
+    return view('sa.privacypolicy'); 
+});
+Route::get('/termsofservices', function() { 
+    return view('sa.termsofservice');
+});
+

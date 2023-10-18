@@ -66,9 +66,8 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3 text-center">
                         <div class="section-title">
-                            <h3>Our Teachers and stuffs</h3>
-                            <p>Who’s are feeling gret to use our application and solve the examination problem
-                                by taking online examination</p>
+                            <h3>Teachers & Stuffs</h3>
+                            <p>All of our pride teachers & stuffs here, we all are building our institute great together.</p>
                         </div>
                     </div>
                 </div>
@@ -110,7 +109,7 @@
                     <div class="col-lg-6 offset-lg-3 text-center">
                         <div class="section-title">
                             <h3>Messages</h3>
-                            <p>the users had shared their experinces that how nice it is and how much help full</p>
+                            <p>These are the messages from the Chief/Honorable persons of our institute.</p>
                         </div>
                     </div>
                 </div>
@@ -152,7 +151,7 @@
                     <div class="col-lg-6 offset-lg-3 text-center">
                         <div class="section-title">
                             <h3>Notices</h3>
-                            <p>the users had shared their experinces that how nice it is and how much help full</p>
+                            <p>Notices from our institute & to stay updated, always check our latest notices.</p>
                         </div>
                     </div>
                 </div>
@@ -193,8 +192,7 @@
                     <div class="col-lg-6 offset-lg-3 text-center">
                         <div class="section-title">
                             <h3>Events</h3>
-                            <p>Who’s are feeling gret to use our application and solve the examination problem
-                                by taking online examination</p>
+                            <p>All of our upcoming/next or present next event details below.</p>
                         </div>
                     </div>
                 </div>
@@ -228,8 +226,7 @@
                     <div class="col-lg-6 offset-lg-3 text-center">
                         <div class="section-title">
                             <h3>Gallery</h3>
-                            <p>Who’s are feeling gret to use our application and solve the examination problem
-                                by taking online examination</p>
+                            <p>Some of our memory or important photo below</p>
                         </div>
                     </div>
                 </div>
@@ -256,9 +253,8 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3 text-center">
                         <div class="section-title">
-                            <h3>Contact US</h3>
-                            <p>Who’s are feeling gret to use our application and solve the examination problem
-                                by taking online examination</p>
+                            <h3>Contact us</h3>
+                            <p>If you want to contact with us then you can contact us using below informations.</p>
                         </div>
                     </div>
                 </div>

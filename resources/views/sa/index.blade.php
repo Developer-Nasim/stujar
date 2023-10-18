@@ -1,6 +1,9 @@
 @extends($websettings['cms_layout'].'.frontend.layouts.app')
 
 @section('content')
+
+  
+
 <!-- main START -->
 <main>
 	<!-- Hero-section START -->
@@ -10,8 +13,8 @@
 				<div class="col-lg-12">
 					<div class="hero-wrp">
 						<div class="hero-wrp-left">
-							<h3>Create website for your school by just 1 click</h3>
-							<p>build your school website by just 1 click and it’s fully free and most modern till now</p>
+							<h3>মাত্র 1 মিনিটে আপনার School, Collage, Coaching, Madrasah এর জন্য ওয়েবসাইট তৈরি করুন সম্পূর্ণ বিনামূল্যে</h3>
+							<p>ডোমেইন, হোস্টিং, নিরাপত্তা, রক্ষণাবেক্ষণ নিয়ে আর কোন চিন্তা করতে হবে না। আপনি শুধু আপনার প্রতিষ্ঠানের তথ্য দিবেন কারন অ্যাকাউন্ট খুলার সাথে সাথেই আপনার ওয়েবসাইট তৈরি হয়ে যাবে।</p>
 							<button type="button" data-bs-toggle="modal" data-bs-target="#LoginSignup">Start Free</button>
 						</div>
 						<div class="popupVideo">
@@ -36,26 +39,26 @@
 						<div class="row"> 
 							<div class="col-md-3">
 								<div class="infoBlk">
-									<h1>100</h1>
+									<h1>56</h1>
 									<span>School</span>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="infoBlk">
-									<h1>50</h1>
+									<h1>13</h1>
 									<span>College</span>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="infoBlk">
-									<h1>78</h1>
+									<h1>34</h1>
 									<span>Madrasha</span>
 								</div>
 							</div>
 							<div class="col-md-3">
 								<div class="infoBlk">
 									<h1>300</h1>
-									<span>Coacing</span>
+									<span>Coacing Center</span>
 								</div>
 							</div>
 						</div>
@@ -75,8 +78,13 @@
 				<div class="col-lg-12">
 					<div class="about-wrps">
 						<div class="about-contents">
-							<h3>About BookMart</h3>
-							<p>Book mart is online exam system which is able to take  exam in the online. In this corona sitation our many-many students are losing  their interest from reading and our board exams are also stop cause the covid situation are going so hard so the institutes are off that’s why the exam and class is not possble to take also we don’t have alternative way to take to examination ar class so we have made this system to keep run our education</p>
+							<h3>About us</h3>
+							<p>স্কুল, কলেজ, কোচিং সেন্টার এবং মাদ্রাসাগুলির জন্য আমাদের এই প্ল্যাটফর্মটি তৈরি করা হয়েছে। শিক্ষা প্রতিষ্ঠানগুলো মাত্র ১ মিনিটের মধ্যে নিজেরাই নিজেদের ওয়েবসাইট তৈরি করতে পারবেন।  এখানে আপনাদের শুধু আপনাদের ইনস্টিটিউটের তথ্য আপডেট করতে হবে, আর আপনার ওয়েবসাইট তৈরি হয়ে যাবে।
+
+								আমরা শিক্ষা প্রতিষ্ঠানগুলির ওয়েবসাইট বানানোর প্রক্রিয়াটি সহজ করেছি, যেখানে ওয়েবসাইট ডেভেলপমেন্ট/ডিজাইন, ডোমেইন, হোস্টিং ক্রয়, নবায়ন, নিরাপত্তা এবং পরিচর্যা সহ যে সকল ঝামেলা থাকে, সেগুলি নিয়ে আর কোন চিন্তা করতে হবে না। 
+								প্রতিষ্ঠানগুলি সরকারি নির্দেশনা অনুযায়ী তাদের প্রয়োজনীয় সকল তথ্য আপডেট করতে পারেন, যাতে আমাদের প্ল্যাটফর্ম তাদের প্রতিষ্ঠানের প্রয়োজনীয় ওয়েবসাইট তৈরি করতে পারে।
+								  
+								আমাদের লক্ষ্য হলো শিক্ষা প্রতিষ্ঠানগুলির অনলাইন উপস্থিতি নিরবিগ্নে নিশ্চিত করার প্রক্রিয়াটি পরিচালনা করা। আমরা শিক্ষকদের কে ঝামেলা থেকে বিরত রেখে কেবলমাত্র শিক্ষা দান এ মনোনিবেশ করতে সাহায্য করতে চাই।</p>
 						</div>
 						<div class="popupVideo">
 							<img src="assets/img/video.png" alt="">
@@ -101,8 +109,7 @@
 				<div class="col-lg-6 offset-lg-3 text-center">
 					<div class="section-title">
 						<h3>Why you will use?</h3>
-						<p>Who’s are feeling gret to use our application and solve the examination problem
-							by taking online examination</p>
+						<p>Why you will use our platform we have seen some reasons</p>
 					</div>
 				</div>
 			</div>
@@ -115,7 +122,7 @@
 							<path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/>
 						  </svg></span>
 						<h5>Fully Free</h5>
-						<p>matro 1 click ai apnar website ready </p> 
+						<p>You will get website free of cost.</p> 
 					</div>
 				</div> 
 				<div class="col-lg-4 col-md-6">
@@ -125,8 +132,8 @@
 							<path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z"/>
 							<path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/>
 						  </svg></span>
-						<h5>Fully Free</h5>
-						<p>matro 1 click ai apnar website ready </p> 
+						<h5>Risk Free</h5>
+						<p>you don't need to think about security & others.</p> 
 					</div>
 				</div> 
 				<div class="col-lg-4 col-md-6">
@@ -136,8 +143,8 @@
 							<path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z"/>
 							<path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/>
 						  </svg></span>
-						<h5>Fully Free</h5>
-						<p>matro 1 click ai apnar website ready </p> 
+						<h5>Smart & Modern</h5>
+						<p>Our platform is undoubtedly Very smart and Modern.</p>
 					</div>
 				</div> 
 				<div class="col-lg-4 col-md-6">
@@ -147,8 +154,8 @@
 							<path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z"/>
 							<path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/>
 						  </svg></span>
-						<h5>Fully Free</h5>
-						<p>matro 1 click ai apnar website ready </p> 
+						<h5>Hasle Free</h5>
+						<p>You just need to update your institute information, that's it.</p> 
 					</div>
 				</div> 
 				<div class="col-lg-4 col-md-6">
@@ -158,8 +165,8 @@
 							<path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z"/>
 							<path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/>
 						  </svg></span>
-						<h5>Fully Free</h5>
-						<p>matro 1 click ai apnar website ready </p> 
+						<h5>No Coding</h5>
+						<p>You don't need to have any coding or technical knowledge to use stujar.</p> 
 					</div>
 				</div> 
 				<div class="col-lg-4 col-md-6">
@@ -169,8 +176,8 @@
 							<path d="m10.273 2.513-.921-.944.715-.698.622.637.89-.011a2.89 2.89 0 0 1 2.924 2.924l-.01.89.636.622a2.89 2.89 0 0 1 0 4.134l-.637.622.011.89a2.89 2.89 0 0 1-2.924 2.924l-.89-.01-.622.636a2.89 2.89 0 0 1-4.134 0l-.622-.637-.89.011a2.89 2.89 0 0 1-2.924-2.924l.01-.89-.636-.622a2.89 2.89 0 0 1 0-4.134l.637-.622-.011-.89a2.89 2.89 0 0 1 2.924-2.924l.89.01.622-.636a2.89 2.89 0 0 1 4.134 0l-.715.698a1.89 1.89 0 0 0-2.704 0l-.92.944-1.32-.016a1.89 1.89 0 0 0-1.911 1.912l.016 1.318-.944.921a1.89 1.89 0 0 0 0 2.704l.944.92-.016 1.32a1.89 1.89 0 0 0 1.912 1.911l1.318-.016.921.944a1.89 1.89 0 0 0 2.704 0l.92-.944 1.32.016a1.89 1.89 0 0 0 1.911-1.912l-.016-1.318.944-.921a1.89 1.89 0 0 0 0-2.704l-.944-.92.016-1.32a1.89 1.89 0 0 0-1.912-1.911l-1.318.016z"/>
 							<path d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"/>
 						  </svg></span>
-						<h5>Fully Free</h5>
-						<p>matro 1 click ai apnar website ready </p> 
+						<h5>Support</h5>
+						<p>You will get support 24/7 for free.</p> 
 					</div>
 				</div> 
 			</div>
@@ -186,9 +193,8 @@
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3 text-center">
 					<div class="section-title">
-						<h3>A few institutes</h3>
-						<p>Who’s are feeling gret to use our application and solve the examination problem
-							by taking online examination</p>
+						<h3>A Few Institutes</h3>
+						<p>These institutions are using our stujar platform for their institute.</p>
 					</div>
 				</div>
 			</div>
@@ -312,8 +318,8 @@
 			<div class="row">
 				<div class="col-lg-6 offset-lg-3 text-center">
 					<div class="section-title">
-						<h3>Our User Experiences</h3>
-						<p>the users had shared their experinces that how nice it is and how much help full</p>
+						<h3>Feedbacks</h3>
+						<p>Stujar users shared their experiences.</p>
 					</div>
 				</div>
 			</div>
@@ -324,9 +330,15 @@
 						<div class="testimonial-blk">
 							<img src="assets/img/avt.png" alt="">
 							<div class="testimonial-blk-wrp">
-								<h5>AJ Nasim <span>Teacher of moddhayanagar B P</span></h5>
-								<p>This solution is great for  this time and we area taking the test
-									exams easily and this is also secure</p>
+								<h5>Abdur Rahman <span>Teacher</span></h5>
+								<p>Stujar.com has significantly simplified our online presence, allowing us to focus more on our students' growth and development rather than worrying about technicalities.</p>
+							</div>
+						</div>
+						<div class="testimonial-blk">
+							<img src="assets/img/avt.png" alt="">
+							<div class="testimonial-blk-wrp">
+								<h5>Muhammad Alamin <span>Committee</span></h5>
+								<p>Stujar.com has significantly simplified our online presence, allowing us to focus more on our students' growth and development rather than worrying about technicalities</p>
 							</div>
 						</div>
 						<div class="testimonial-blk">
@@ -340,17 +352,8 @@
 						<div class="testimonial-blk">
 							<img src="assets/img/avt.png" alt="">
 							<div class="testimonial-blk-wrp">
-								<h5>AJ Nasim <span>Teacher of moddhayanagar B P</span></h5>
-								<p>This solution is great for  this time and we area taking the test
-									exams easily and this is also secure</p>
-							</div>
-						</div>
-						<div class="testimonial-blk">
-							<img src="assets/img/avt.png" alt="">
-							<div class="testimonial-blk-wrp">
-								<h5>AJ Nasim <span>Teacher of moddhayanagar B P</span></h5>
-								<p>This solution is great for  this time and we area taking the test
-									exams easily and this is also secure</p>
+								<h5>Rama Sarker <span>Principal</span></h5>
+								<p>The comprehensive services provided by Stujar.com, including domain management and hosting, have simplified our administrative tasks. We appreciate the user-friendly interface that requires minimal technical knowledge.</p>
 							</div>
 						</div>
 					</div>
@@ -368,9 +371,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="cta-wrp">
-						<h3>So let’s ge start</h3>
-						<p>What are you waiting for you..? let’s get started from now just click 
-							on the bellow get start button.</p>
+						<h3>So let’s get start</h3>
+						<p>What are you waiting for? Let’s get started from now, just click on the below get start button.</p>
 						<button type="button" data-bs-toggle="modal" data-bs-target="#LoginSignup">Get START <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
 							<path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
 						  </svg></button>
@@ -391,8 +393,8 @@
 					<div class="contact-wrp">
 
 							<div class="blk-title"> 
-								<h4>Contact US</h4> 
-								<p>Just send me a message we will back to you soon</p>
+								<h4>Contact us</h4> 
+								<p>Don't hesitate to contact us for anything.</p>
 							</div>
 							<ul class="addrLst">
 								<li>
@@ -400,7 +402,7 @@
 										<path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
 									  </svg></span>
 									  <div class="text-truncate">
-										838 Cantt Sialkot, pakistan
+										Modhyanagor, Sunamgonj, Sylhet
 									  </div>
 								</li>
 								<li>
@@ -408,7 +410,7 @@
 										<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
 									  </svg></span>
 									<div class="text-truncate">
-										979-988-89787
+										+8801405618060
 									</div>
 								</li>
 								<li>
@@ -416,7 +418,7 @@
 										<path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
 									  </svg></span>
 									  <div class="text-truncate">
-										abcd123@gmail.com
+										stujarhelp@gmail.com
 									  </div>
 								</li>
 							</ul>
@@ -465,34 +467,34 @@
 
 <!--  login Modal -->
 <div class="modal fade" id="LoginSignup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="LoginSignupLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered">
-	<div class="modal-content"> 
-		<div class="modal-body">
-			<div class="login_signup">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content"> 
+			<div class="modal-body">
+				<div class="login_signup">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
-				<div class="blk-title"> 
-					<h4>Contact US</h4>
-					<p>Just send me a message we will back to you soon</p>
+					<div class="blk-title"> 
+						<h4>Join us</h4>
+						<p>To join with us just click on the "Continue with Facebook" and go ahead.</p>
+					</div>
+
+					<ul>
+						<li>
+							@guest
+							<a href="{{route('facebook_login')}}"><img src="assets/img/fb.png" alt=""></a>
+							@endguest
+							@auth
+							<a class="d-block btn btn-primary" href="{{ URL::to('user/school') }}">DashBoard</a>
+							@endauth
+							
+						</li>
+					</ul>
+					<p>Your are Login/Singup here means you are agree with with our rules and regulations. <a href="/privacy-policy">Privacy Policy</a> <a href="/termsofservices">Terms of services</a></p>
+
 				</div>
-
-				<ul>
-					<li>
-						@guest
-						<a href="{{route('facebook_login')}}"><img src="assets/img/fb.png" alt=""></a>
-						@endguest
-						@auth
-						<a class="d-block btn btn-primary" href="{{ URL::to('user/school') }}">DashBoard</a>
-						@endauth
-						
-					</li>
-				</ul>
-				<p>Your are login/singup it’s mean you are agree with with our rules and regulations TOS</p>
-
-			</div>
-		</div> 
+			</div> 
+		</div>
 	</div>
-</div>
 </div>
 
 <!--  Video Modal -->
