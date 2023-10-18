@@ -98,7 +98,9 @@ Route::middleware(['auth','user-permission'])->group(function () {
         Route::post('profile/update/{id}', [UserController::class,'update_admin_profile'])->name('update_admin_profile');
         Route::get('subscribers', [WelcomeController::class,'subscribers'])->name('subscribers');
         Route::get('school/show', [SchoolController::class,'school_show'])->name('school.show');
-        Route::post('school/status/{id}', [SchoolController::class,'school_status'])->name('school.status');
+        Route::get('school/status/{id}', [SchoolController::class,'school_status'])->name('school.status');
+        Route::get('school/active/{id}', [SchoolController::class,'school_active'])->name('school.active');
+        Route::post('school/delete/{id}', [SchoolController::class,'school_delete'])->name('school.delete');
         Route::resource('slider', SliderController::class);
         Route::resource('choose', ChooseController::class);
         Route::resource('blog', BlogController::class);

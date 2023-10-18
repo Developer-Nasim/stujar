@@ -34,11 +34,21 @@
                 }
         @endphp
         </td>
-        <td>
-            
-            <form action="{{URL::to('admin/school/status/'.$content->id)}}" method="post">
+        <td>          
+            @if ($content->status == 1)
+                <a href="{{URL::to('admin/school/status/'.$content->id)}}"
+                    class="btn btn-success btn-sm" title="Inactive Now">
+                    Inactive Now
+                </a>
+                @else
+                <a href="{{ route('school.active', $content->id) }}"
+                    class="btn btn-danger btn-sm" title="Active Now">
+                    Active Now 
+                </a>
+            @endif
+            <form action="{{URL::to('admin/school/delete/'.$content->id)}}" method="post">
                 @csrf
-                <button class="btn btn-sm btn-primary" type="submit" onclick="return confirm('Are you sure?')">Change Status</button>
+                <button class="btn btn-sm btn-danger mt-2" type="submit" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></button>
             </form>
         </td>
         </tr>

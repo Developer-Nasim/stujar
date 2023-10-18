@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Siteoption;
+use App\Models\User;
 use Session;
 use App\Models\App;
 use Intervention\Image\Facades\Image;
@@ -268,4 +269,25 @@ class SchoolController extends Controller
         $school->update();    
         return redirect()->back();
     }
+    public function school_active($id){
+        //  dd($id);
+          $school= School::findOrfail($id);
+          $school->status = 1;
+          $school->update();    
+          return redirect()->back();
+      }
+      public function school_delete($id){
+        //  dd($id);
+          $school= School::findOrfail($id);
+          //dd($school);
+          if(!empty($school->user_id)){
+              $user = User::where('id',$school->user_id)->first();
+              // dd($user);
+              if($user){
+                  $user->delete();
+              }
+          }
+          $school->delete();
+          return redirect()->back();
+      }
 }
