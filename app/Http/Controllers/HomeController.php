@@ -85,7 +85,7 @@ class HomeController extends Controller
         $websettings = $this->getWebSettings();
         $tags = $this->getWebMenus();
         $footermenu = $this->getfooterMenus();
-        return view('sa.privacypolicy',compact('websettings','tags','footermenu')); 
+        return view('sa.termsofservice',compact('websettings','tags','footermenu')); 
     }
 
     public function getWebMenus(){
