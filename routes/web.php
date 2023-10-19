@@ -51,6 +51,12 @@ Route::get('ccc', function(){
     Artisan::call('view:cache');
     return "Config-Cache is cleared";
 });
+Route::get('/privacy-policy', function() {
+    return view('sa.privacypolicy'); 
+});
+Route::get('/termsofservices', function() { 
+    return view('sa.termsofservice');
+});
 
 Route::get('dashboard', [CustomloginController::class, 'dashboard']); 
 Route::get('admin/login', [CustomloginController::class, 'index'])->name('login');
@@ -141,10 +147,5 @@ Route::get('/{pagelink}', [HomeController::class,'landing']);
 
 
  
-Route::get('/privacy-policy', function() {
-    return view('sa.privacypolicy'); 
-});
-Route::get('/termsofservices', function() { 
-    return view('sa.termsofservice');
-});
+
 
