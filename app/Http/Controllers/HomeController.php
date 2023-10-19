@@ -24,7 +24,7 @@ class HomeController extends Controller
         $footermenu = $this->getfooterMenus();
         if(empty($pagelink)){
             $pagesetting = $this->getPageSetting('index');      
-            $schools = School::where('status',1)->take(6)->get();
+            $schools = School::where('status',1)->take(3)->get();
             return view($websettings['cms_layout'].'.index',compact('websettings','pagesetting','tags','footermenu','schools'));
         }
 
@@ -75,6 +75,19 @@ class HomeController extends Controller
         }
         return $websettings;
     }
+    public function privacy_policy(){
+        $websettings = $this->getWebSettings();
+        $tags = $this->getWebMenus();
+        $footermenu = $this->getfooterMenus();
+        return view('sa.privacypolicy',compact('websettings','tags','footermenu')); 
+    }
+    public function terms(){
+        $websettings = $this->getWebSettings();
+        $tags = $this->getWebMenus();
+        $footermenu = $this->getfooterMenus();
+        return view('sa.privacypolicy',compact('websettings','tags','footermenu')); 
+    }
+
     public function getWebMenus(){
         $tags = Tag::where('status', 1)
                 ->where('tag_type',1)

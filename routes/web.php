@@ -40,12 +40,10 @@ Route::get('ccc', function(){
     Artisan::call('view:cache');
     return "Config-Cache is cleared";
 });
-Route::get('/privacy-policy', function() {
-    return view('sa.privacypolicy'); 
-});
-Route::get('/termsofservices', function() { 
-    return view('sa.termsofservice');
-});
+
+Route::get('/privacy-policy', [HomeController::class,'privacy_policy'])->name('privacy.policy');
+Route::get('/termsofservices', [HomeController::class,'terms'])->name('terms');
+
 
 Route::get('dashboard', [CustomloginController::class, 'dashboard']); 
 Route::get('admin/login', [CustomloginController::class, 'index'])->name('login');

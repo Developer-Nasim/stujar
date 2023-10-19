@@ -202,29 +202,31 @@
 			<div class="col-lg-10 offset-lg-1">
 				<div class="row">
 					@forelse ($schools as $school)
-					<div class="col-lg-4 col-md-6">
-						<div class="instBlk">
-							<div class="profile_title">
-								<a href="{{ $school->slug }}">
-									@if (!empty($school->file))
-										<img src="{{ asset('images/uploads/small'.'/'.$school->logo) }}" alt="{{ $school->name ?? '' }}">
-									@endif
-									
-								</a>
-								<div> 
-									<h5 class="text-truncate">		
-										{{Str::limit($school->name, 43, $end='...') ?? ''}}
-									</h5>
-									{{-- <span>College</span> --}}
+						@if (!empty($school->name))
+							<div class="col-lg-4 col-md-6">
+								<div class="instBlk">
+									<div class="profile_title">
+										<a href="{{ $school->slug }}">
+											@if (!empty($school->file))
+												<img src="{{ asset('images/uploads/small'.'/'.$school->logo) }}" alt="{{ $school->name ?? '' }}">
+											@endif
+											
+										</a>
+										<div> 
+											<h5 class="text-truncate">		
+												{{Str::limit($school->name, 43, $end='...') ?? ''}}
+											</h5>
+											{{-- <span>College</span> --}}
+										</div>
+									</div>
+									<img src="{{ asset('images/uploads/small'.'/'.$school->file) }}" alt="{{ $school->name ?? '' }}">
+									<a href="{{ $school->slug }}" class="theme-btn" target="_blank">Website</a>
 								</div>
 							</div>
-							<img src="{{ asset('images/uploads/small'.'/'.$school->file) }}" alt="{{ $school->name ?? '' }}">
-							<a href="{{ $school->slug }}" class="theme-btn" target="_blank">Website</a>
-						</div>
-					</div>
-				@empty
-					No School Found
-				@endforelse
+						@endif
+					@empty
+						No School Found
+					@endforelse
 				</div>
 			</div>
 		  </div>
