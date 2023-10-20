@@ -77,7 +77,7 @@
                         </ul>  
                     </div>
                     <div class="paymentAlrt">
-                        সাইন-আপ ফী ৫,০০০ টাকা আমাদের এই বিকাশ Agent নাম্বারে <b>01775255079</b> অথবা নগদ Agent নাম্বারে - <b>01987486342</b> ক্যাশআউট করুন নাহলে আপনার অ্যাকাউন্টি আমরা ডিলিট হয়ে যাবে।
+                        সাইন-আপ ফী ৫,০০০ টাকা আমাদের এই বিকাশ Agent নাম্বারে <b>01775255079</b> অথবা নগদ Agent নাম্বারে - <b>01987486342</b> ক্যাশআউট করুন নাহলে আপনার অ্যাকাউন্টি ডিলিট হয়ে যাবে।
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -391,7 +391,8 @@
                                             </label>  
                                             <label for="#">
                                                 Notice Details
-                                                <textarea name="message" id="sample"> </textarea>
+                                                {{-- <textarea name="message" id="sample"> </textarea> --}}
+                                                <textarea name="message" id="editor"> </textarea>
                                             </label>
                                             <button type="submit">Add</button>
                                         </form>
@@ -549,6 +550,7 @@
 </main>
 <!-- main END -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.ckeditor.com/4.8.0/full-all/ckeditor.js"></script>
 
 <script>
     $(function() {
@@ -567,5 +569,23 @@
           });
       })
     })
+  </script>
+  <script>
+    CKEDITOR.replace('editor', {
+    skin: 'moono',
+    enterMode: CKEDITOR.ENTER_BR,
+    shiftEnterMode:CKEDITOR.ENTER_P,
+    toolbar: [{ name: 'basicstyles', groups: [ 'basicstyles' ], items: [ 'Bold', 'Italic', 'Underline', "-", 'TextColor', 'BGColor' ] },
+                { name: 'styles', items: [ 'Format', 'Font', 'FontSize' ] },
+                { name: 'scripts', items: [ 'Subscript', 'Superscript' ] },
+                { name: 'justify', groups: [ 'blocks', 'align' ], items: [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
+                { name: 'paragraph', groups: [ 'list', 'indent' ], items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent'] },
+                { name: 'links', items: [ 'Link', 'Unlink' ] },
+                { name: 'insert', items: [ 'Image'] },
+                { name: 'spell', items: [ 'jQuerySpellChecker' ] },
+                { name: 'table', items: [ 'Table' ] }
+                ],
+    });
+
   </script>
 @endsection
