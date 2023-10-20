@@ -32,5 +32,6 @@
 	<script src="{{asset('assets/js/spotlight.bundle.js')}}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/suneditor@latest/dist/suneditor.min.js"></script> 
 	<script src="{{asset('assets/js/main.js')}}"></script> 
+	<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="73d16dd0-ed7b-4f0d-b8b6-f76d0bae3475";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </body>
 </html>
