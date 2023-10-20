@@ -570,6 +570,7 @@
       })
     })
   </script>
+  
   <script>
     CKEDITOR.replace('editor', {
     skin: 'moono',

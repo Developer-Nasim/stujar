@@ -306,7 +306,7 @@
                             <h4>{{ $notice->name ?? '' }}</h4>
                             <span>{{ \Carbon\Carbon::parse($notice->created_at)->diffForHumans() }}</span>  
                             <div class="notice-main-details">
-                                {{ $notice->message ?? "" }}
+                                {!! $notice->message ?? "" !!}
                             </div>
                         </div> 
                     </div> 
@@ -330,7 +330,8 @@
                             <h4>{{ $event->title ?? '' }}</h4> 
                             <span>{{ \Carbon\Carbon::parse($event->created_at)->diffForHumans() }}</span> 
                             <div class="notice-main-details">
-                                {{ $event->description ?? "" }}
+                           
+                                {!! $event->description ?? "" !!}
                             </div>
                         </div> 
                     </div> 
