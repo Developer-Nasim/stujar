@@ -1,6 +1,7 @@
     <!-- header-area START -->
 @php
 	$school = '';
+	$Estb = '';
 	if (request()->segment(1)) {
 		$school = DB::table('schools')->where('slug', trim(request()->segment(1)))->first();
 	}
@@ -10,12 +11,15 @@
 	if(!empty($d[3])){
 		$guestlogo = DB::table('schools')->where('slug', $d[3])->first();
 	}
+	if ($school->established) {
+		$Estb = date_format($school->established,"Y/m/d")
+	}
 @endphp
 	<div class="topHeading" id="topHeading">
 		<h5>{{ $school->name ?? " " }}</h5>
 		<ul>
-			<li>EIIN:{{ $school->eiin ?? " " }}</li>
-			<li>Est:{{ $school->established ?? " " }}</li>
+			<li>EIIN: {{ $school->eiin ?? " " }}</li>
+			<li>Est: {{ $Estb }}</li>
 		</ul>
 	</div> 
  
@@ -25,9 +29,9 @@
 				<div class="col-lg-2 col-6">
 					<div class="logo-area">
 						@if (!empty($school->logo))
-							<a href="{{ URL::to('/') }}"><img src="{{ asset('images/uploads/thumb'.'/'.$school->logo) }}" alt="" width="50px"></a>
+							<a href="#topHeading"><img src="{{ asset('images/uploads/thumb'.'/'.$school->logo) }}" alt="" width="50px"></a>
 						@elseif(!empty($guestlogo->logo))
-							<a href="#"><img src="{{ asset('images/uploads/thumb'.'/'.$guestlogo->logo) ?? asset('images/uploads/thumb'.'/'.$guestlogohome->logo) }}" alt="" width="50px"></a>
+							<a href="#topHeading"><img src="{{ asset('images/uploads/thumb'.'/'.$guestlogo->logo) ?? asset('images/uploads/thumb'.'/'.$guestlogohome->logo) }}" alt="" width="50px"></a>
 						@else
 							
 						@endif
@@ -72,9 +76,9 @@
 	<!-- mobile-menu START -->
 	<div class="mobile-menu"> 
 		@if (!empty($school->logo))
-			<a href="{{ URL::to('/') }}" class="logo"><img src="{{ asset('images/uploads/thumb'.'/'.$school->logo) }}" alt="" width="50px"></a>
+			<a href="#topHeading" class="logo"><img src="{{ asset('images/uploads/thumb'.'/'.$school->logo) }}" alt="" width="50px"></a>
 		@else
-			<a href="{{ URL::to('/') }}" class="logo"><img src="{{ asset('assets/img/logo.png') }}" alt=""></a>
+			<a href="#topHeading" class="logo"><img src="{{ asset('assets/img/logo.png') }}" alt=""></a>
 		@endif
 		<a href="#" class="bars siteBar-btn"><svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 			<path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clip-rule="evenodd"/>
