@@ -91,6 +91,7 @@
                                             @endif 
                                         </li>
 
+                                        <li>{{ $teacher->position ?? '' }}</li>
                                         <li>{{ $teacher->phone ?? '' }}</li>
                                         <li>{{ $teacher->email ?? '' }}</li>
                                     </ul>

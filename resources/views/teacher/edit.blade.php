@@ -28,8 +28,8 @@
                                 Stuff type [ teacher,stuff,commete member ]
                                 <select name="stuff_type" id="">
                                     <option value="1">Teacher</option>
-                                    <option value="2">Stuff</option>
-                                    <option value="3">Commete Member</option>
+                                    <option value="2">Committee Member</option>
+                                    <option value="3">Stuff</option>
                                 </select>
                             </label>
                         </div> 
