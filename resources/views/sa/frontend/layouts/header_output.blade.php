@@ -1,7 +1,6 @@
     <!-- header-area START -->
 @php
-	$school = '';
-	$Estb = '';
+	$school = ''; 
 	if (request()->segment(1)) {
 		$school = DB::table('schools')->where('slug', trim(request()->segment(1)))->first();
 	}
@@ -10,16 +9,13 @@
 	//dd($d[3]);
 	if(!empty($d[3])){
 		$guestlogo = DB::table('schools')->where('slug', $d[3])->first();
-	}
-	if ($school->established) {
-		$Estb = date_format($school->established,"Y/m/d")
-	}
+	} 
 @endphp
 	<div class="topHeading" id="topHeading">
 		<h5>{{ $school->name ?? " " }}</h5>
 		<ul>
 			<li>EIIN: {{ $school->eiin ?? " " }}</li>
-			<li>Est: {{ $Estb }}</li>
+			<li>Est: {{ $school->established ?? " "}}</li>
 		</ul>
 	</div> 
  
