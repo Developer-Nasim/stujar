@@ -7,6 +7,9 @@ use Hash;
 use Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Models\School;
+use App\Models\About;
+use App\Models\Welcome;
 
 class CustomloginController extends Controller
 {
@@ -27,8 +30,22 @@ class CustomloginController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->intended('dashboard');
         }
-  
+
         return redirect("login")->withSuccess('Login details are not valid');
+    }
+
+    public function schoolLogin(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+   
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('user/school');
+        }
+        return redirect()->back()->withSuccess('Login details are not valid');
     }
 
 
@@ -47,10 +64,31 @@ class CustomloginController extends Controller
             'password' => 'required|min:6',
         ]);
            
-        $data = $request->all();
-        $check = $this->create($data);
-         
-        return redirect("dashboard");
+        $newUser = new User();
+        $newUser->name = $request->name;
+        $newUser->email =$request->email;
+        $newUser->password = Hash::make($request->password);
+        $newUser->role_id = 10;  
+        $newUser->status = 10;  
+        $newUser->save();
+
+        $content = new School;
+        $content->user_id = $newUser->id;
+        $content->status = 1;
+        $content->save();
+
+        $welcome = new Welcome;
+        $welcome->user_id = $newUser->id;
+        $welcome->status = 1;
+        $welcome->save();
+
+        $about = new About;
+        $about->user_id = $newUser->id;
+        $about->status = 1;
+        $about->save();
+
+        Auth::login($newUser);
+        return redirect('user/school');
     }
 
 

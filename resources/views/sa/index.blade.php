@@ -396,7 +396,6 @@
 			<div class="modal-body">
 				<div class="login_signup">
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
 					<div class="blk-title"> 
 						<h4>Join us</h4>
 						<p>To join with us just click on the "Continue with Facebook" and go ahead.</p>
@@ -405,7 +404,65 @@
 					<ul>
 						<li>
 							@guest
-							<a href="{{route('facebook_login')}}"><img src="assets/img/fb.png" alt=""></a>
+							{{-- <a href="{{route('facebook_login')}}"><img src="assets/img/fb.png" alt=""></a> --}}
+							<div class="row">
+								<h4>Registration</h4>
+								<div class="col-md-6">
+									<form action="{{ route('register.custom') }}" method="post">
+										@csrf
+										<div class="mb-3">
+											<input type="text" name="name" id="name" class="form-control" placeholder="name" autofocus required  >
+											@if ($errors->has('name'))
+											<span class="text-danger">{{ $errors->first('name') }}</span>
+											@endif
+										</div>
+										<div class="mb-3">
+											
+											<input type="email" name="email" id="email" class="form-control" placeholder="Email" autofocus required>
+											@if ($errors->has('email'))
+											<span class="text-danger">{{ $errors->first('email') }}</span>
+											@endif
+										</div>
+										<div class="mb-3">
+											<input type="password" name="password" id="password" placeholder="password" class="form-control" required>
+											@if ($errors->has('password'))
+												<span class="text-danger">{{ $errors->first('password') }}</span>
+											@endif
+										</div>
+										<div class="d-grid mx-auto">
+											<button class="btn btn-primary" type="submit">Sign up</button>
+										</div>				  
+									</form>
+								</div>
+								<div class="col-md-6">
+									<h4>Login</h4>
+									<form action="{{ route('login.school') }}" method="POST">
+										@csrf
+										<div class="single-field mb-3">
+											<input id="email" type="email"
+											class="form-control @error('email') is-invalid @enderror" name="email"
+											value="{{ old('email') }}"  autocomplete="email" placeholder="Email" required autofocus>
+															
+										@error('email')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+										@enderror
+									</div>        
+									<div class="single-field">
+											<input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+										@error('password')
+										<span class="invalid-feedback" role="alert">
+											<strong>{{ $message }}</strong>
+										</span>
+										@enderror
+									</div>
+									<div class="d-grid mx-auto mt-4">
+										<button class="btn btn-primary" type="submit">log in</button>
+									</div>
+									</form>
+								</div>
+							</div>
 							@endguest
 							@auth
 							<a class="d-block btn btn-primary" href="{{ URL::to('user/school') }}">DashBoard</a>
