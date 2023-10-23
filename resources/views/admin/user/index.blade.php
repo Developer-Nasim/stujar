@@ -39,7 +39,7 @@
                             @elseif($user->role_id == 4)
                                 <span class="badge badge-warning">Content Writter</span>
                             @else
-                                Member
+                                School User
                             @endif
                         </td>
                         <th scope="row">{{ $user->name }}</th>

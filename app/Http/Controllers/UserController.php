@@ -77,13 +77,10 @@ class UserController extends Controller
      //   dd($request->all());
         $data = User::find($id);
         $data->name = $request->name;
-        $data->email = $request->email;
+        $data->phone = $request->phone;
         if(!empty($request->password)){
             $data->password = Hash::make($request->password);
         }
-     //   dd($data->password);
-        $data->role_id = $request->role_id;
-        $data->status = $request->status;
         $data->save();
         $notification=array(
             'message' => 'Successfully Done',

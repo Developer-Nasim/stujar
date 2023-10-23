@@ -21,24 +21,14 @@
                         <input name="name" type="text" class="form-control" value="{{ $user->name }}">
                     </div> 
                     <div class="position-relative form-group">
-                        <label for="Email" class="">Email</label>
-                        <input name="email" type="email" class="form-control" value="{{ $user->email }}">
+                        <label for="Email" class="">Phone</label>
+                        <input name="phone" type="text" class="form-control" value="{{ $user->phone }}">
                     </div> 
                     <div class="position-relative form-group">
                         <label for="password" class="">Password</label>
                         <input name="password" type="text" class="form-control">
                     </div> 
-                    <div class="position-relative form-group">
-                        <label for="exampleEmail" class="">Role</label>
-                        <select class="form-select" aria-label="Default select example" name="role_id">
-                            <option value="1" @php echo $user->role_id==1?"selected":""; @endphp>CMS Admin</option>
-                            <option value="2" @php echo $user->role_id==2?"selected":""; @endphp>Super Admin</option>
-                            <option value="3" @php echo $user->role_id==3?"selected":""; @endphp>Editor</option>
-                            <option value="4" @php echo $user->role_id==4?"selected":""; @endphp>Content Writter</option>
-                            <option value="7" @php echo $user->role_id==7?"selected":""; @endphp>Member</option>
-                        </select>
-                    </div>
-                    @include('admin.form_status',['value'=>$user->status])
+                   
                     @include('admin.button_submit')
                 </form>
             </div>
