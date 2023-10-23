@@ -47,8 +47,9 @@ Route::get('/termsofservices', [HomeController::class,'terms'])->name('terms');
 
 Route::get('dashboard', [CustomloginController::class, 'dashboard']); 
 Route::get('admin/login', [CustomloginController::class, 'index'])->name('login');
-Route::post('custom-login', [CustomloginController::class, 'customLogin'])->name('login.custom'); 
-Route::get('admin/registration', [CustomloginController::class, 'registration'])->name('register-user');
+Route::post('custom-login', [CustomloginController::class, 'customLogin'])->name('login.custom');
+Route::post('school-login', [CustomloginController::class, 'schoolLogin'])->name('login.school');
+// Route::get('admin/registration', [CustomloginController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomloginController::class, 'customRegistration'])->name('register.custom'); 
 Route::get('signout', [CustomloginController::class, 'signOut'])->name('signout');
 Route::post('signout/school', [CustomloginController::class, 'signoutSchool'])->name('signout.school');
