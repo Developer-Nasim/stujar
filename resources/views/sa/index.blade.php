@@ -15,7 +15,7 @@
 							<button type="button" data-bs-toggle="modal" data-bs-target="#LoginSignup">Start Free</button>
 						</div>
 						<div class="popupVideo">
-							<img src="assets/img/video.png" alt="">
+							<img src="{{ asset('assets/img/thumbnail.png') }}" alt="">
 							<button data-bs-toggle="modal" data-bs-target="#DemoVideo" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
 								<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
 							  </svg></button>
@@ -84,7 +84,7 @@
 								আমাদের লক্ষ্য হলো শিক্ষা প্রতিষ্ঠানগুলির অনলাইন উপস্থিতি নিরবিগ্নে নিশ্চিত করার প্রক্রিয়াটি পরিচালনা করা। আমরা শিক্ষকদের কে ঝামেলা থেকে বিরত রেখে কেবলমাত্র শিক্ষা দান এ মনোনিবেশ করতে সাহায্য করতে চাই।</p>
 						</div>
 						<div class="popupVideo">
-							<img src="assets/img/video.png" alt="">
+							<img src="{{ asset('assets/img/thumbnail.png') }}" alt="">
 							<button data-bs-toggle="modal" data-bs-target="#DemoVideo" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
 								<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
 							  </svg>
