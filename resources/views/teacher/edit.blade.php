@@ -52,7 +52,7 @@
                             </label>
                         </div> 
                     </div>
-                    <label for="#">
+                    <label for="#" class="d-none">
                         About
                         <textarea name="about">{{ $teacher->about }}</textarea>
                     </label>

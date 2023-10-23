@@ -274,7 +274,7 @@
                                                     </label>
                                                 </div> 
                                             </div>
-                                            <label for="#">
+                                            <label for="#" class="d-none">
                                                 About
                                                 <textarea name="about"></textarea>
                                             </label>
@@ -450,7 +450,7 @@
                                             </label> 
                                             <label for="#">
                                                 Event Details
-                                                <textarea id="sample2" name="description">Hi</textarea>
+                                                <textarea id="sample2" name="description"></textarea>
                                             </label>
                                             <button type="submit">Add</button>
                                         </form>

@@ -4,17 +4,17 @@
 <div class="col-lg-12">
     
     <div class="main-card mb-3 card">
-    <table class="mb-0 table table-bordered">
-    <thead>
-    <tr>
-    <th>Id</th>
-    <th>School Name</th>
-    <th>School Website Link</th>
-    <th width="150x">School logo</th>
-    <th>status</th>
-    <th width="15%">Action</th>
-    </tr>
-    </thead>
+    <table id="datable" class="mb-0 table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>School Name</th>
+                <th>School Website Link</th>
+                <th width="150x">School logo</th>
+                <th>status</th>
+                <th width="15%">Action</th>
+            </tr>
+        </thead>
     <tbody>
     @php $i= 1;@endphp
     @forelse ($schools as $content)
