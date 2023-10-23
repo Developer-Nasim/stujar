@@ -16,7 +16,7 @@
           <table></table>
         </div>
         <div class="fixed-table-body">
-          <table data-toggle="table" data-sort-name="stargazers_count" data-sort-order="desc" class="table table-bordered table-hover">
+          <table id="datable" data-toggle="table" data-sort-name="stargazers_count" data-sort-order="desc" class="table table-bordered table-hover">
             <thead>
               <tr>
                 <th>Share Image</th>

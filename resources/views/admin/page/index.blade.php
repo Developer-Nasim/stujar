@@ -10,7 +10,7 @@
     <div class="main-card mb-3 card">      
         <div class="card-body"><h5 class="card-title">Manage Page</h5>
             <a href="{{ URL::to('admin/page/create') }}" type="button" class="btn btn-primary mb-3 text-white">Add Page</a>
-            <table class="mb-0 table table-bordered">
+            <table id="datable" class="mb-0 table table-bordered">
                 <thead>
                     <tr>
                         <th>ID</th>

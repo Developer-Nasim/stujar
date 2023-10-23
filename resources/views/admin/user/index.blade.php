@@ -11,7 +11,7 @@
             ]  
         ])
         <div class="card-body">
-            <table class="mb-0 table table-bordered">
+            <table id="datable" class="mb-0 table table-bordered">
                 <thead>
                     <tr>
                         <th>Serial number</th>

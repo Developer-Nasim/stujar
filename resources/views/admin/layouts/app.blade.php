@@ -65,6 +65,13 @@
 </div>
 <script type="text/javascript" src="{{ asset('admin/assets/scripts/main.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/searchbuilder/1.6.0/js/dataTables.searchBuilder.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/datetime/1.5.1/js/dataTables.dateTime.min.js"></script> 
+{{-- https://code.jquery.com/jquery-3.7.0.js --}}
+
+
+
 @yield('page_script')
 @yield('script_footer')
 <script type="text/javascript">
@@ -122,7 +129,7 @@
     var txt = str.replace(/ /g,"-")
     $("#slug").val(txt.toLowerCase())
     checkUniqueSlug()
-})
+  })
 
   function checkUniqueSlug(){
     if($("#slug").val()){
@@ -171,6 +178,13 @@
       hideSlugExistsNotice()
     }
   }
+</script>
+<script>
+  $(document).ready(function() {
+      $('#datable').DataTable( {
+          dom: 'Qlfrtip'
+      });
+  });
 </script>
 </body>
 </html>
