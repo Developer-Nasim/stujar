@@ -213,7 +213,7 @@
 											<h5 class="text-truncate">		
 												{{Str::limit($school->name, 43, $end='...') ?? ''}}
 											</h5>
-											{{-- <span>College</span> --}}
+											<span>Institute</span>
 										</div>
 									</div>
 									<img src="{{ asset('images/uploads/small'.'/'.$school->file) }}" alt="{{ $school->name ?? '' }}">
