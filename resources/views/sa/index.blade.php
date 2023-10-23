@@ -398,49 +398,57 @@
 						<p>To join with us just click on the "Continue with Facebook" and go ahead.</p>
 					</div>
 
-					<ul>
-						<li>
-							@guest
-							{{-- <a href="{{route('facebook_login')}}"><img src="assets/img/fb.png" alt=""></a> --}}
-							<div class="row">
+					@guest
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item" role="presentation">
+						  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Registration</button>
+						</li>
+						<li class="nav-item" role="presentation">
+						  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Login</button>
+						</li> 
+					</ul>
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+							<div class="authArea">
 								<h4>Registration</h4>
-								<div class="col-md-6">
-									<form action="{{ route('register.custom') }}" method="post">
-										@csrf
-										<div class="mb-3">
-											<input type="text" name="name" id="name" class="form-control" placeholder="name" autofocus required  >
-											@if ($errors->has('name'))
-											<span class="text-danger">{{ $errors->first('name') }}</span>
-											@endif
-										</div>
-										<div class="mb-3">								
-											<input type="text" name="phone" id="phone" class="form-control" placeholder="Phone Number" autofocus required>
-											@if ($errors->has('phone'))
-											<span class="text-danger">{{ $errors->first('phone') }}</span>
-											@endif
-										</div>
-										<div class="mb-3">
-											<input type="password" name="password" id="password" placeholder="password" class="form-control" required>
-											@if ($errors->has('password'))
-												<span class="text-danger">{{ $errors->first('password') }}</span>
-											@endif
-										</div>
-										<div class="d-grid mx-auto">
-											<button type="submit">Sign up</button>
-										</div>				  
-									</form>
-								</div>
-								<div class="col-md-6">
-									<h4>Login</h4>
-									@if(session('error')) 
-										<div class="alert alert-danger m-4">
-											{{ session('error') }} 
-										</div>
-									@endif
-									<form action="{{ route('login.school') }}" method="POST">
-										@csrf
-										<div class="single-field mb-3">
-											<input id="phone" type="text"
+								<form action="{{ route('register.custom') }}" method="post">
+									@csrf
+									<div class="mb-3">
+										<input type="text" name="name" id="name" class="form-control" placeholder="name" autofocus required  >
+										@if ($errors->has('name'))
+										<span class="text-danger">{{ $errors->first('name') }}</span>
+										@endif
+									</div>
+									<div class="mb-3">								
+										<input type="number" name="phone" id="phone" class="form-control" placeholder="Phone Number" autofocus required>
+										@if ($errors->has('phone'))
+										<span class="text-danger">{{ $errors->first('phone') }}</span>
+										@endif
+									</div>
+									<div class="mb-3">
+										<input type="password" name="password" id="password" placeholder="password" class="form-control" required>
+										@if ($errors->has('password'))
+											<span class="text-danger">{{ $errors->first('password') }}</span>
+										@endif
+									</div>
+									<div class="d-grid mx-auto">
+										<button type="submit">Sign up</button>
+									</div>				  
+								</form>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+							<div class="authArea">
+								<h4>Login</h4>
+								@if(session('error')) 
+									<div class="alert alert-danger m-4">
+										{{ session('error') }} 
+									</div>
+								@endif
+								<form action="{{ route('login.school') }}" method="POST">
+									@csrf
+									<div class="single-field mb-3">
+										<input id="phone" type="number"
 											class="form-control @error('phone') is-invalid @enderror" name="phone"
 											value="{{ old('phone') }}"  autocomplete="Phone" placeholder="Phone Number" required autofocus>
 															
@@ -461,17 +469,16 @@
 									<div class="d-grid mx-auto mt-4">
 										<button  type="submit">log in</button>
 									</div>
-									</form>
-								</div>
+								</form>
 							</div>
-							@endguest
-							@auth
-							<a class="d-block btn btn-primary" href="{{ URL::to('user/school') }}">DashBoard</a>
-							@endauth
-							
-						</li>
-					</ul>
-					<p>Your are Login/Singup here means you are agree with with our rules and regulations. <a href="/privacy-policy">Privacy Policy</a> <a href="/termsofservices">Terms of services</a></p>
+						</div> 
+					</div>
+					@endguest
+					@auth
+					<a class="d-block btn btn-primary" href="{{ URL::to('user/school') }}">DashBoard</a>
+					@endauth
+ 
+					<p>Your are Login/Singup here means you are agree with with our rules and regulations. <a href="/privacy-policy">Privacy Policy</a> & <a href="/termsofservices">Terms of services</a></p>
 
 				</div>
 			</div> 
