@@ -1586,7 +1586,10 @@ ul.added_item_lists.imgs li {
   font-size: 32px;
   color: #333;
 }
-
+.hero-wrp .popupVideo {
+  max-width: 480px;
+  border-radius: 10px;
+}
 
 
 
