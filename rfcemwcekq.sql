@@ -32,8 +32,10 @@ INSERT INTO `abouts` (`id`, `user_id`, `about`, `slug`, `total_student`, `total_
 (7,	1397,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-15 06:03:52',	'2023-10-15 06:03:52'),
 (8,	1398,	'If this reason is not intentional, we recommend that you fix it in order to get affected pages indexed and appearing on Google. If this reason is not intentional, we recommend that you fix it in order to get affected pages indexed and appearing on Google. If this reason is not intentional, we recommend that you fix it in order to get affected pages indexed and appearing on Google. If this reason is not intentional, we recommend that you fix it in order to get affected pages indexed and appearing on Google. If this reason is not intentional, we recommend that you fix it in order to get affected pages indexed and appearing on Google. If this reason is not intentional, we recommend that you fix it in order to get affected pages indexed and appearing on Google. If this reason is not intentional, we recommend that you fix it in order to get affected pages indexed and appearing on Google. If this reason is not intentional, we recommend that you fix it in order to get affected pages indexed and appearing on Google. If this reason is not intentional, we recommend that you fix it in order to get affected pages indexed and appearing on Google.',	'modhyanagar-bp-high-school-college',	'23',	'414',	'12',	1,	'2023-10-15 09:59:35',	'2023-10-15 10:08:18'),
 (9,	1400,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-18 06:30:48',	'2023-10-18 06:30:48'),
-(10,	1401,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-18 19:53:05',	'2023-10-18 19:53:05'),
-(11,	1402,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-19 08:11:48',	'2023-10-19 08:11:48');
+(10,	1401,	'Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh Sdff sddg dggfhh',	'modhyanagar-bp',	'234',	'42',	'12',	1,	'2023-10-18 19:53:05',	'2023-10-20 07:29:29'),
+(11,	1402,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-19 08:11:48',	'2023-10-19 08:11:48'),
+(12,	1403,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-23 06:45:33',	'2023-10-23 06:45:33'),
+(13,	1404,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-23 10:23:09',	'2023-10-23 10:23:09');
 
 DROP TABLE IF EXISTS `branches`;
 CREATE TABLE `branches` (
@@ -230,7 +232,8 @@ INSERT INTO `events` (`id`, `event_type`, `title`, `slug`, `user_id`, `start_dat
 (4,	NULL,	'event 011',	'guest',	1395,	NULL,	NULL,	NULL,	NULL,	NULL,	'banner10.jpg',	'Hi cvgbfgb xfgb',	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-14 01:41:49',	'2023-10-14 01:44:46'),
 (5,	NULL,	'w frter ertertert',	'modhyanagar-bp-high-school-college',	1396,	NULL,	NULL,	NULL,	NULL,	NULL,	'learn-english-2.jpg',	'Hifg dfgdfg df gdferte',	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-14 14:06:05',	'2023-10-14 14:06:05'),
 (6,	NULL,	'gh',	'modhyanagar-bp-high-school',	1396,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	'Hiy yuytuytu',	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-14 14:17:46',	'2023-10-14 14:17:46'),
-(7,	NULL,	'Tomorrow',	'modhyanagar-bp-high-school-college',	1398,	NULL,	NULL,	NULL,	NULL,	NULL,	'img-0152.JPG',	'Search Console has identified that some pages on your site are not being indexed due to the following new reason:\r\n\r\nSearch Console has identified that some pages on your site are not being indexed due to the following new reason:\r\n\r\nSearch Console has identified that some pages on your site are not being indexed due to the following new reason:\r\n\r\nSearch Console has identified that some pages on your site are not being indexed due to the following new reason:',	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-15 10:07:38',	'2023-10-15 10:07:38');
+(7,	NULL,	'Tomorrow',	'modhyanagar-bp-high-school-college',	1398,	NULL,	NULL,	NULL,	NULL,	NULL,	'img-0152.JPG',	'Search Console has identified that some pages on your site are not being indexed due to the following new reason:\r\n\r\nSearch Console has identified that some pages on your site are not being indexed due to the following new reason:\r\n\r\nSearch Console has identified that some pages on your site are not being indexed due to the following new reason:\r\n\r\nSearch Console has identified that some pages on your site are not being indexed due to the following new reason:',	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-15 10:07:38',	'2023-10-15 10:07:38'),
+(8,	NULL,	'ersfsgs',	'modhyanagar-bp',	1401,	NULL,	NULL,	NULL,	NULL,	NULL,	'learn-english.jpg',	'Hi',	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-20 07:29:00',	'2023-10-20 07:29:00');
 
 DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE `failed_jobs` (
@@ -896,7 +899,9 @@ INSERT INTO `messages` (`id`, `user_id`, `name`, `slug`, `position`, `file`, `me
 (4,	1395,	'message one',	'guest',	'12',	'sunmi-logo.jpg',	'guest welcome guest welcome guest welcome',	1,	'2023-10-14 01:41:13',	'2023-10-14 01:41:13'),
 (5,	1396,	'Amirujjaman Nasim',	'modhyanagar-bp-high-school-college',	'head',	'screenshot-20210315-210205.jpg',	'g fhhhjjgtury ry rh',	1,	'2023-10-14 14:04:59',	'2023-10-14 14:18:13'),
 (6,	1398,	'MD NAYEM MIYA',	'modhyanagar-bp-high-school-college',	'Principle',	'processed-4b12eb34-2ca1-43a1-8334-56415824faac-ni1girxr.jpeg',	'Search Console has identified that some pages on your site are not being indexed due to the following new reason:\r\n\r\nSearch Console has identified that some pages on your site are not being indexed due to the following new reason:\r\n\r\nSearch Console has identified that some pages on your site are not being indexed due to the following new reason:',	1,	'2023-10-15 10:04:46',	'2023-10-15 10:04:46'),
-(7,	1397,	'sadique',	'test-website',	'Web Developer',	'home-sec1.jpg',	'xffv',	1,	'2023-10-16 06:59:08',	'2023-10-16 06:59:08');
+(7,	1397,	'sadique',	'test-website',	'Web Developer',	'home-sec1.jpg',	'xffv',	1,	'2023-10-16 06:59:08',	'2023-10-16 06:59:08'),
+(8,	1401,	'Nasim',	'modhyanagar-bp',	'head',	'262543129-596943634916314-2259857185010618049-n.jpg',	'sfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdfsfffg sgdfgdf',	1,	'2023-10-20 07:31:12',	'2023-10-20 07:31:12'),
+(9,	1401,	'Amirujjaman Nasim',	'modhyanagar-bp',	'Principle',	'profile-pic.png',	'sfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg tysfsdgdfg dfgdf gdfgdfg dg ty',	1,	'2023-10-20 07:31:29',	'2023-10-20 07:31:29');
 
 DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
@@ -957,7 +962,9 @@ INSERT INTO `notices` (`id`, `user_id`, `name`, `slug`, `message`, `status`, `cr
 (5,	1394,	'notice two',	NULL,	'notice 2 details',	1,	'2023-09-16 03:33:14',	'2023-09-16 03:33:14'),
 (6,	1394,	'notice one',	NULL,	'notice details',	1,	'2023-09-16 04:28:14',	'2023-09-16 04:28:14'),
 (7,	1395,	'notice 01',	'guest',	'guest welcome guest welcome guest welcome',	1,	'2023-10-14 01:41:28',	'2023-10-14 01:41:28'),
-(8,	1398,	'ddfdfdf sdf sdfsdf',	'modhyanagar-bp-high-school-college',	'sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu',	1,	'2023-10-15 10:15:17',	'2023-10-15 10:15:17');
+(8,	1398,	'ddfdfdf sdf sdfsdf',	'modhyanagar-bp-high-school-college',	'sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu sdfs dfoi sfdhfs idfshg dfhgu',	1,	'2023-10-15 10:15:17',	'2023-10-15 10:15:17'),
+(9,	1401,	'sdfsd sdf sdfsdfsdf',	'modhyanagar-bp',	'sf sfsd fsdf sdfsdf sdf',	1,	'2023-10-20 06:45:11',	'2023-10-20 06:45:11'),
+(10,	1401,	'new',	'modhyanagar-bp',	'<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:500px\">\r\n	<tbody>\r\n		<tr>\r\n			<td>dasffsd</td>\r\n			<td>&nbsp;</td>\r\n			<td>sdfsdfds</td>\r\n		</tr>\r\n		<tr>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>23423</td>\r\n			<td>4525</td>\r\n		</tr>\r\n		<tr>\r\n			<td>sdds</td>\r\n			<td>gfgfd</td>\r\n		</tr>\r\n	</tbody>\r\n</table>',	1,	'2023-10-20 06:46:28',	'2023-10-20 07:19:49');
 
 DROP TABLE IF EXISTS `pagesettings`;
 CREATE TABLE `pagesettings` (
@@ -1030,9 +1037,7 @@ CREATE TABLE `schools` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `schools` (`id`, `name`, `user_id`, `slug`, `file`, `logo`, `eiin`, `established`, `phone`, `address`, `status`, `created_at`, `updated_at`) VALUES
-(10,	'Modhyanagar B.P High School',	1396,	'modhyanagar-bp-high-school',	'screenshot-20210315-210205.jpg',	'81abc896-cb75-469c-9a83-b6855d5d7710.webp',	'6775',	'2023-10-14',	'01405618060',	'kamar dehunda',	2,	'2023-10-14 12:57:41',	'2023-10-19 04:47:05'),
-(14,	'Modhyanagar B.P',	1401,	'modhyanagar-bp',	'learn-english-2.jpg',	'81abc896-cb75-469c-9a83-b6855d5d7710-1.webp',	'1232',	'2023-10-20',	'01405618060',	'kamar dehunda',	1,	'2023-10-18 19:53:05',	'2023-10-19 10:09:29'),
-(15,	NULL,	1402,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	1,	'2023-10-19 08:11:48',	'2023-10-19 08:11:48');
+(10,	'Modhyanagar B.P High School',	1396,	'modhyanagar-bp-high-school',	'screenshot-20210315-210205.jpg',	'81abc896-cb75-469c-9a83-b6855d5d7710.webp',	'6775',	'2023-10-14',	'01405618060',	'kamar dehunda',	1,	'2023-10-14 12:57:41',	'2023-10-23 12:37:41');
 
 DROP TABLE IF EXISTS `siteoptions`;
 CREATE TABLE `siteoptions` (
@@ -1148,7 +1153,10 @@ INSERT INTO `teachers` (`id`, `user_id`, `name`, `slug`, `stuff_type`, `file`, `
 (11,	1398,	'Nasim',	'modhyanagar-bp-high-school-college',	'2',	'profile-pic.png',	'head',	'01405618060',	'ajnasim72@gmail.com',	'sdfsf sdfsdf sfwsfr',	1,	'2023-10-15 10:04:06',	'2023-10-15 10:04:06'),
 (12,	1398,	'Amirujjaman',	'modhyanagar-bp-high-school-college',	'2',	'312287693-1032922417666463-8859088931249841412-n.jpg',	'Co- Founder',	'01405618060',	'ajnasim72@gmail.com',	'fgfg fgfgf',	1,	'2023-10-15 10:04:25',	'2023-10-15 10:04:25'),
 (14,	1398,	'Amirujjaman Nasim',	NULL,	'1',	'screenshot-1.png',	'head',	'01405618060',	'ajnasim72@gmail.com',	NULL,	1,	'2023-10-15 10:26:08',	'2023-10-15 10:26:08'),
-(17,	1397,	'nnnn',	'test-website',	'1',	'nuruzzaman-sardar.jpeg',	'Web Developer',	'0184374667',	'admin@gmail.com',	'3jgfjhcchchdd',	1,	'2023-10-16 07:01:46',	'2023-10-16 07:15:24');
+(17,	1397,	'nnnn',	'test-website',	'1',	'nuruzzaman-sardar.jpeg',	'Web Developer',	'0184374667',	'admin@gmail.com',	'3jgfjhcchchdd',	1,	'2023-10-16 07:01:46',	'2023-10-16 07:15:24'),
+(18,	1401,	'nasim',	'modhyanagar-bp',	'3',	'profile-pic-1.png',	'head',	'01405618060',	'ajnasim72@gmail.com',	'sdfsd ffsfsdfg',	1,	'2023-10-20 07:30:22',	'2023-10-20 07:30:22'),
+(19,	1401,	'NoName',	'modhyanagar-bp',	'1',	'262543129-596943634916314-2259857185010618049-n-1.jpg',	'Assistant',	'01405618060',	'ajnasim72@gmail.com',	'dfd sdfsdsd',	1,	'2023-10-20 07:30:41',	'2023-10-20 07:33:46'),
+(20,	1401,	'Amirujjaman Nasim',	'modhyanagar-bp',	'1',	'312287693-1032922417666463-8859088931249841412-n-1.jpg',	'Principle',	'01405618060',	'ajnasim72@gmail.com',	'sdfsd gfgdfg dfg',	1,	'2023-10-20 07:30:53',	'2023-10-20 07:30:53');
 
 DROP TABLE IF EXISTS `uploads`;
 CREATE TABLE `uploads` (
@@ -1175,7 +1183,8 @@ INSERT INTO `uploads` (`id`, `user_id`, `slug`, `content_id`, `name`, `caption`,
 (501,	1395,	'guest',	NULL,	NULL,	'atm',	NULL,	NULL,	'crucial-logo.webp',	NULL,	1,	'2023-10-14 01:42:04',	'2023-10-14 01:42:04'),
 (502,	1396,	'modhyanagar-bp-high-school-college',	NULL,	NULL,	'sdf',	NULL,	NULL,	'screenshot-20210315-210205.jpg',	NULL,	1,	'2023-10-14 14:06:15',	'2023-10-14 14:06:15'),
 (504,	1398,	'modhyanagar-bp-high-school-college',	NULL,	NULL,	NULL,	NULL,	NULL,	'profile-pic.png',	NULL,	1,	'2023-10-15 10:07:52',	'2023-10-15 10:07:52'),
-(505,	1397,	'test-website',	NULL,	NULL,	'atm',	NULL,	NULL,	'banner6.jpg',	NULL,	1,	'2023-10-16 06:59:38',	'2023-10-16 06:59:50');
+(505,	1397,	'test-website',	NULL,	NULL,	'atm',	NULL,	NULL,	'banner6.jpg',	NULL,	1,	'2023-10-16 06:59:38',	'2023-10-16 06:59:50'),
+(506,	1401,	'modhyanagar-bp',	NULL,	NULL,	NULL,	NULL,	NULL,	'262543129-596943634916314-2259857185010618049-n.jpg',	NULL,	1,	'2023-10-20 07:31:38',	'2023-10-20 07:31:38');
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -1183,6 +1192,7 @@ CREATE TABLE `users` (
   `school_id` bigint(20) DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `profile_photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1200,11 +1210,9 @@ CREATE TABLE `users` (
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `users` (`id`, `school_id`, `name`, `email`, `profile_photo`, `email_verified_at`, `password`, `password_str`, `facebook_id`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `remember_token`, `created_at`, `updated_at`, `role_id`, `status`) VALUES
-(1,	NULL,	'Admin',	'a@a.com',	NULL,	NULL,	'$2y$10$7IzXyKtCdzlTz0Lflbkr/eRV8MrSPgjlB8hsdeKJ3nu5LXUkbDVVi',	NULL,	NULL,	NULL,	NULL,	NULL,	'TxOpoSCZxiku7z7ZGvWoJn8kbjwSlRlUee75QrCUp094RTMNPRGCrN5ZXVYI',	'2023-03-23 01:20:24',	'2023-08-06 02:50:00',	1,	1),
-(1399,	NULL,	'nasim',	'nasim@gmail.com',	NULL,	NULL,	'$2y$10$btmUnDJiyCCWs5aEx2qnKu7x3z8LwksVEh7yqRbZ4TDwGNozRUrjK',	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	'2023-10-17 09:02:43',	'2023-10-17 09:02:43',	1,	1),
-(1401,	NULL,	'Amirujjaman Nasim',	'1517523435717730@gmail.com',	NULL,	NULL,	'$2y$10$zgslX8gtz3w6cW4NaHn5o.H4iwt0julaGmXdoyuEowGPhQMr0vAe2',	NULL,	'1517523435717730',	NULL,	NULL,	NULL,	NULL,	'2023-10-18 19:53:05',	'2023-10-18 19:53:05',	10,	10),
-(1402,	NULL,	'Shahriar Shuvo',	'5945705798862427@gmail.com',	NULL,	NULL,	'$2y$10$azQeDazORN6/HOGm.m91IuUcJTh6Pz4NPbEdUtM5cshEONI7FRGJu',	NULL,	'5945705798862427',	NULL,	NULL,	NULL,	NULL,	'2023-10-19 08:11:48',	'2023-10-19 08:11:48',	10,	10);
+INSERT INTO `users` (`id`, `school_id`, `name`, `email`, `phone`, `profile_photo`, `email_verified_at`, `password`, `password_str`, `facebook_id`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `remember_token`, `created_at`, `updated_at`, `role_id`, `status`) VALUES
+(1,	NULL,	'Admin',	'a@a.com',	'',	NULL,	NULL,	'$2y$10$7IzXyKtCdzlTz0Lflbkr/eRV8MrSPgjlB8hsdeKJ3nu5LXUkbDVVi',	NULL,	NULL,	NULL,	NULL,	NULL,	'TxOpoSCZxiku7z7ZGvWoJn8kbjwSlRlUee75QrCUp094RTMNPRGCrN5ZXVYI',	'2023-03-23 01:20:24',	'2023-08-06 02:50:00',	1,	1),
+(1399,	NULL,	'nasim',	'nasim@gmail.com',	'',	NULL,	NULL,	'$2y$10$btmUnDJiyCCWs5aEx2qnKu7x3z8LwksVEh7yqRbZ4TDwGNozRUrjK',	NULL,	NULL,	NULL,	NULL,	NULL,	NULL,	'2023-10-17 09:02:43',	'2023-10-17 09:02:43',	1,	1);
 
 DROP TABLE IF EXISTS `welcomes`;
 CREATE TABLE `welcomes` (
@@ -1233,7 +1241,9 @@ INSERT INTO `welcomes` (`id`, `title`, `slug`, `user_id`, `file`, `description`,
 (7,	'vbgb',	'test-website',	1397,	'whatsapp-image-2023-10-09-at-10-50-44-am.jpeg',	'xvbxb',	NULL,	NULL,	NULL,	'1',	'2023-10-15 06:03:52',	'2023-10-16 06:58:42'),
 (8,	'Welcome to you !',	'modhyanagar-bp-high-school-college',	1398,	'add-a-subheading-1.jpg',	'If this reason is not intentional, we recommend t   reason is not intentional, we recommend that you fix it in order to get affected pages indexed and appearing on Google.',	NULL,	NULL,	NULL,	'1',	'2023-10-15 09:59:35',	'2023-10-15 10:01:43'),
 (9,	NULL,	NULL,	1400,	NULL,	NULL,	NULL,	NULL,	NULL,	'1',	'2023-10-18 06:30:48',	'2023-10-18 06:30:48'),
-(10,	NULL,	NULL,	1401,	NULL,	NULL,	NULL,	NULL,	NULL,	'1',	'2023-10-18 19:53:05',	'2023-10-18 19:53:05'),
-(11,	NULL,	NULL,	1402,	NULL,	NULL,	NULL,	NULL,	NULL,	'1',	'2023-10-19 08:11:48',	'2023-10-19 08:11:48');
+(10,	'Hey we are here',	'modhyanagar-bp',	1401,	'school.png',	'sdof sdfsdif sdufsdf siufhsi fhsdihfs',	NULL,	NULL,	NULL,	'1',	'2023-10-18 19:53:05',	'2023-10-20 07:49:11'),
+(11,	NULL,	NULL,	1402,	NULL,	NULL,	NULL,	NULL,	NULL,	'1',	'2023-10-19 08:11:48',	'2023-10-19 08:11:48'),
+(12,	NULL,	NULL,	1403,	NULL,	NULL,	NULL,	NULL,	NULL,	'1',	'2023-10-23 06:45:33',	'2023-10-23 06:45:33'),
+(13,	NULL,	NULL,	1404,	NULL,	NULL,	NULL,	NULL,	NULL,	'1',	'2023-10-23 10:23:09',	'2023-10-23 10:23:09');
 
--- 2023-10-20 06:36:27
+-- 2023-10-23 20:35:21

@@ -1557,7 +1557,35 @@ ul.added_item_lists.imgs li {
 .login_signup p a {
   text-decoration: underline;
 }
+.login_signup > ul {
+  text-align: center;
+  justify-content: center;
+  border-bottom: none;
+  margin-bottom: 20px;
+}
 
+.login_signup > ul button {
+  padding: 10px 15px;
+  background: #00000021;
+  border: none !important;
+  border-radius: 3px !important;
+  color: #000;
+}
+
+.login_signup > ul button.active,.login_signup > ul button:hover {
+  color: #fff !important;
+  background: #462cf8 !important;
+}
+
+.login_signup div#myTabContent {
+  margin-bottom: 20px;
+} 
+
+.authArea h4 {
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #333;
+}
 
 
 

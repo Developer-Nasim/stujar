@@ -14,12 +14,12 @@
             <table id="datable" class="mb-0 table table-bordered">
                 <thead>
                     <tr>
-                        <th>Serial number</th>
+                        <th>#id</th>
                         <th>Role</th>
-                        <th>User Name</th>
-                        <th>Phone Number</th>
+                        <th>Name</th>
+                        <th>Number</th>
                         <th>Email</th>
-                        <th>status</th>
+                        <th>Status</th>
                         <th width="120px">Action</th>
                     </tr>
                 </thead>
@@ -27,7 +27,7 @@
                     @php $i=1 @endphp
                     @forelse ($users as $user)
                     <tr>
-                        <th scope="row">{{$i++}}</th>
+                        <th scope="row">{{$user->id}}</th>
                         <td>
                             @if($user->role_id == 1)
                                 <span  class="badge badge-primary">CMS Admin</span>
