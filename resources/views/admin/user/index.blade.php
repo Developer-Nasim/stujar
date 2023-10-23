@@ -17,6 +17,7 @@
                         <th>Serial number</th>
                         <th>Role</th>
                         <th>User Name</th>
+                        <th>Phone Number</th>
                         <th>Email</th>
                         <th>status</th>
                         <th width="120px">Action</th>
@@ -43,6 +44,11 @@
                             @endif
                         </td>
                         <th scope="row">{{ $user->name }}</th>
+                        <td>
+                            @if (!empty($user->phone))
+                              {{ $user->phone }}
+                            @endif
+                        </td>
                         <td>
                             {{ $user->email }}
                         </td>
