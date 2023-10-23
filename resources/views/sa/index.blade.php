@@ -1,9 +1,6 @@
 @extends($websettings['cms_layout'].'.frontend.layouts.app')
 
 @section('content')
-
-  
-
 <!-- main START -->
 <main>
 	<!-- Hero-section START -->
@@ -416,11 +413,10 @@
 											<span class="text-danger">{{ $errors->first('name') }}</span>
 											@endif
 										</div>
-										<div class="mb-3">
-											
-											<input type="email" name="email" id="email" class="form-control" placeholder="Email" autofocus required>
-											@if ($errors->has('email'))
-											<span class="text-danger">{{ $errors->first('email') }}</span>
+										<div class="mb-3">								
+											<input type="text" name="phone" id="phone" class="form-control" placeholder="Phone Number" autofocus required>
+											@if ($errors->has('phone'))
+											<span class="text-danger">{{ $errors->first('phone') }}</span>
 											@endif
 										</div>
 										<div class="mb-3">
@@ -430,25 +426,30 @@
 											@endif
 										</div>
 										<div class="d-grid mx-auto">
-											<button class="btn btn-primary" type="submit">Sign up</button>
+											<button type="submit">Sign up</button>
 										</div>				  
 									</form>
 								</div>
 								<div class="col-md-6">
 									<h4>Login</h4>
+									@if(session('error')) 
+										<div class="alert alert-danger m-4">
+											{{ session('error') }} 
+										</div>
+									@endif
 									<form action="{{ route('login.school') }}" method="POST">
 										@csrf
 										<div class="single-field mb-3">
-											<input id="email" type="email"
-											class="form-control @error('email') is-invalid @enderror" name="email"
-											value="{{ old('email') }}"  autocomplete="email" placeholder="Email" required autofocus>
+											<input id="phone" type="text"
+											class="form-control @error('phone') is-invalid @enderror" name="phone"
+											value="{{ old('phone') }}"  autocomplete="Phone" placeholder="Phone Number" required autofocus>
 															
-										@error('email')
+										@error('phone')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
 										</span>
 										@enderror
-									</div>        
+									</div>      
 									<div class="single-field">
 											<input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 										@error('password')
@@ -458,7 +459,7 @@
 										@enderror
 									</div>
 									<div class="d-grid mx-auto mt-4">
-										<button class="btn btn-primary" type="submit">log in</button>
+										<button  type="submit">log in</button>
 									</div>
 									</form>
 								</div>

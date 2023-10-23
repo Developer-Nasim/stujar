@@ -806,6 +806,7 @@ button.btn-close{
   background: none;
   width: 100%;
   margin-bottom: 10px;
+  background: #0d6efd;
 }
 .login_signup ul button:hover{
   background: none !important;

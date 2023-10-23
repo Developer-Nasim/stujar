@@ -37,15 +37,15 @@ class CustomloginController extends Controller
     public function schoolLogin(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'phone' => 'required',
             'password' => 'required',
         ]);
    
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('phone', 'password');
         if (Auth::attempt($credentials)) {
             return redirect()->intended('user/school');
         }
-        return redirect()->back()->withSuccess('Login details are not valid');
+        return redirect()->back()->with('error','Login details are not matched');
     }
 
 
@@ -60,13 +60,13 @@ class CustomloginController extends Controller
     {  
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users',
+            'phone' => 'required|unique:users',
             'password' => 'required|min:6',
         ]);
            
         $newUser = new User();
         $newUser->name = $request->name;
-        $newUser->email =$request->email;
+        $newUser->email =$request->name.'@gmail.com';  
         $newUser->password = Hash::make($request->password);
         $newUser->role_id = 10;  
         $newUser->status = 10;  
