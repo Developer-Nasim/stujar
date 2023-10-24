@@ -8,6 +8,7 @@
   }); 
   $('.mobile-menu nav ul li a').click( function (){ 
     $('.mobile-menu').removeClass('siteBar'); 
+    $('.manu-overlay').removeClass('show'); 
   }); 
 
    
