@@ -28,7 +28,11 @@
                     </div> 
                     <div class="position-relative form-group">
                         <label for="Email" class="">Email</label>
-                        <input name="email" type="email" class="form-control" >
+                        <input name="email" type="email" class="form-control" required>
+                    </div>
+                    <div class="position-relative form-group">
+                        <label for="Email" class="">phone</label>
+                        <input name="phone" type="text" class="form-control" required >
                     </div> 
                     <div class="position-relative form-group">
                         <label for="password" class="">Password</label>
