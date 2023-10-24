@@ -76,11 +76,7 @@
             </div>
         </div>
     </div>
-    <div class="fixed-table-pagination">
-        <div class="paginated">
-          {{ $users->links() }}
-          </div>
-    </div>
+    
 </div>
 
 @endsection

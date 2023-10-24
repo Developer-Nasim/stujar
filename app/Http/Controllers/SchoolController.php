@@ -258,7 +258,7 @@ class SchoolController extends Controller
         return response()->json(['success'=>'Status change successfully.']);
     }
     public function school_show(){
-        $schools = School::paginate(50);
+        $schools = School::orderBy('id', 'desc')->get();
        // dd($schools);
         return view('admin.contact.list-school',compact('schools'));
     }
