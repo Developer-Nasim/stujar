@@ -12,7 +12,8 @@
 						<ul id="nav">
 							<li><a href="#header-area">Home</a></li>
 							<li><a href="#about-section">About</a></li> 
-							<li><a href="#why-section">Features</a></li> 
+							<li><a href="#why-section">Why us</a></li> 
+							<li><a href="#recent-joined-section">Demos</a></li> 
 							<li><a href="#testimonial-section">Testimonials</a></li> 
 							<li><a href="#contact-section">Contact Us</a></li>    
 						</ul>
@@ -44,7 +45,7 @@
 	<!-- mobile-menu START -->
 	<div class="mobile-menu">
 		<a href="/" class="logo"><img src="{{ asset('assets/img/logo.png') }}" alt=""></a>  
-		<a href="#" class="bars siteBar-btn"><svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		<a href="javascript:void(0)" class="bars siteBar-btn"><svg class="bi bi-x" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 			<path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clip-rule="evenodd"/>
 			<path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clip-rule="evenodd"/>
 		</svg></a> 
@@ -52,7 +53,8 @@
 			<ul>
 				<li><a href="#header-area">Home</a></li>
 				<li><a href="#about-section">About</a></li> 
-				<li><a href="#why-section">Features</a></li> 
+				<li><a href="#why-section">Why us</a></li> 
+				<li><a href="#recent-joined-section">Demos</a></li> 
 				<li><a href="#testimonial-section">Testimonials</a></li> 
 				<li><a href="#contact-section">Contact Us</a></li>   
 			</ul>

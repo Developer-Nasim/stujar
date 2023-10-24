@@ -5,6 +5,9 @@
   $('.siteBar-btn').click( function (){ 
     $('.mobile-menu').toggleClass('siteBar');
     $('.manu-overlay').toggleClass('show');
+
+    $('.mobile-menu nav ul li a').removeClass('show');
+
   }); 
 
    
