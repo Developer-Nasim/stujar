@@ -395,7 +395,7 @@
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					<div class="blk-title"> 
 						<h4>Join us</h4>
-						<p>To join with us just click on the "Continue with Facebook" and go ahead.</p>
+						<p>Create account or login to get access dashboard & create your own website for your educational institute.</p>
 					</div>
 
 					@guest
@@ -478,7 +478,7 @@
 					<a class="d-block btn btn-primary" href="{{ URL::to('user/school') }}">DashBoard</a>
 					@endauth
  
-					<p>Your are Login/Singup here means you are agree with with our rules and regulations. <a href="/privacy-policy">Privacy Policy</a> & <a href="/termsofservices">Terms of services</a></p>
+					<p>If You will Login/Singup here that means you are agree with with our rules and regulations. <a href="/privacy-policy">Privacy Policy</a> & <a href="/termsofservices">Terms of services</a></p>
 
 				</div>
 			</div> 

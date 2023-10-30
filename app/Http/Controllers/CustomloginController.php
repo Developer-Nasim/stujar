@@ -67,10 +67,10 @@ class CustomloginController extends Controller
         $newUser = new User();
         $newUser->name = $request->name;
         $newUser->phone = $request->phone;
-        $newUser->email =$request->name.'@gmail.com';  
+        $newUser->email =$request->name.'@gmail.com';
         $newUser->password = Hash::make($request->password);
         $newUser->role_id = 10;  
-        $newUser->status = 10;  
+        $newUser->status = 10;
         $newUser->save();
 
         $content = new School;
