@@ -493,11 +493,23 @@
 			<div class="modal-body">
 				<div class="demoVideo">
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/tI1901Zju4c?si=LXvSY-5HGzdjFrnT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/IHV2iPSSIGU?si=VAd0owRDcnaUZkws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
 				</div>
 			</div> 
 		</div>
 	</div>
 </div>
+
+
+<script>
+	window.addEventListener(load => {
+		let dmv = document.querySelector('.demoVideo')
+		dmv.querySelector('.btn-close').addEventListener('click', () => {
+			dmv.querySelector('iframe').click()
+		})
+	})
+</script>
+
+
 @endsection
 
