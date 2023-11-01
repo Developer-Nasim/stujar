@@ -16,9 +16,9 @@
 						</div>
 						<div class="popupVideo">
 							<img src="{{ asset('assets/img/thumbnail.png') }}" alt="">
-							<button data-bs-toggle="modal" data-bs-target="#DemoVideo" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+							<a class="popup-youtube" href="https://www.youtube.com/watch?v=IHV2iPSSIGU"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
 								<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
-							  </svg></button>
+							  </svg></a>
 						</div>
 					</div>
 				</div>
@@ -85,10 +85,14 @@
 						</div>
 						<div class="popupVideo">
 							<img src="{{ asset('assets/img/thumbnail.png') }}" alt="">
-							<button data-bs-toggle="modal" data-bs-target="#DemoVideo" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+							<a class="popup-youtube" href="https://www.youtube.com/watch?v=IHV2iPSSIGU"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
 								<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
 							  </svg>
-							</button>
+							</a>
+							{{-- <button data-bs-toggle="modal" data-bs-target="#DemoVideo" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+								<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+							  </svg>
+							</button> --}}
 						</div>
 					</div>
 				</div>
@@ -486,7 +490,7 @@
 	</div>
 </div>
 
-<!--  Video Modal -->
+<!--  Video Modal 
 <div class="modal fade" id="DemoVideo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="DemoVideoLabel" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content"> 
@@ -498,18 +502,9 @@
 			</div> 
 		</div>
 	</div>
-</div>
+</div>-->
 
-
-<script>
-	window.addEventListener(load => {
-		let dmv = document.querySelector('.demoVideo')
-		dmv.querySelector('.btn-close').addEventListener('click', () => {
-			dmv.querySelector('iframe').click()
-		})
-	})
-</script>
-
+ 
 
 @endsection
 

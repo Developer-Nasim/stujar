@@ -334,7 +334,7 @@ a.theme-btn:hover{
   overflow: hidden;
 }
 
-.popupVideo > button {
+.popupVideo > button,.popupVideo > a {
   display: block;
   position: absolute;
   top: 50%;
@@ -345,13 +345,13 @@ a.theme-btn:hover{
   background: no-repeat;
 }
 
-.popupVideo > button svg {
+.popupVideo > button svg,.popupVideo > a svg {
   width: 60px;
   height: 60px;
   transition: .3s;
 }
 
-.popupVideo > button:hover svg {
+.popupVideo > button:hover svg,.popupVideo > a:hover svg {
   opacity: .8;
 }
 
